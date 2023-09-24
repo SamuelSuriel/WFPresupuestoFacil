@@ -41,31 +41,38 @@
             // 
             // btnCancelarLogin
             // 
-            btnCancelarLogin.Location = new Point(448, 370);
+            btnCancelarLogin.BackColor = Color.DimGray;
+            btnCancelarLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancelarLogin.ForeColor = Color.White;
+            btnCancelarLogin.Location = new Point(408, 370);
             btnCancelarLogin.Name = "btnCancelarLogin";
-            btnCancelarLogin.Size = new Size(134, 46);
+            btnCancelarLogin.Size = new Size(162, 57);
             btnCancelarLogin.TabIndex = 0;
             btnCancelarLogin.Text = "CANCELAR";
-            btnCancelarLogin.UseVisualStyleBackColor = true;
+            btnCancelarLogin.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(420, 258);
+            label1.BackColor = Color.Gray;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(408, 250);
             label1.Name = "label1";
-            label1.Size = new Size(59, 20);
+            label1.Size = new Size(84, 28);
             label1.TabIndex = 1;
             label1.Text = "Usuario";
             // 
             // txtUsuarioLogin
             // 
-            txtUsuarioLogin.Location = new Point(522, 251);
+            txtUsuarioLogin.Location = new Point(532, 251);
             txtUsuarioLogin.Name = "txtUsuarioLogin";
             txtUsuarioLogin.Size = new Size(242, 27);
             txtUsuarioLogin.TabIndex = 2;
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.BackColor = Color.White;
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -74,7 +81,7 @@
             // 
             // txtContraseñaLogin
             // 
-            txtContraseñaLogin.Location = new Point(522, 300);
+            txtContraseñaLogin.Location = new Point(532, 300);
             txtContraseñaLogin.Name = "txtContraseñaLogin";
             txtContraseñaLogin.Size = new Size(242, 27);
             txtContraseñaLogin.TabIndex = 5;
@@ -82,37 +89,48 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(420, 307);
+            label2.BackColor = Color.Gray;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(408, 299);
             label2.Name = "label2";
-            label2.Size = new Size(83, 20);
+            label2.Size = new Size(118, 28);
             label2.TabIndex = 4;
             label2.Text = "Contraseña";
             // 
             // btnEntrarLogin
             // 
-            btnEntrarLogin.Location = new Point(630, 370);
+            btnEntrarLogin.BackColor = Color.DimGray;
+            btnEntrarLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEntrarLogin.ForeColor = Color.White;
+            btnEntrarLogin.Location = new Point(612, 370);
             btnEntrarLogin.Name = "btnEntrarLogin";
-            btnEntrarLogin.Size = new Size(134, 46);
+            btnEntrarLogin.Size = new Size(162, 57);
             btnEntrarLogin.TabIndex = 6;
             btnEntrarLogin.Text = "ENTRAR";
-            btnEntrarLogin.UseVisualStyleBackColor = true;
+            btnEntrarLogin.UseVisualStyleBackColor = false;
             btnEntrarLogin.Click += btnEntrarLogin_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(555, 147);
+            label3.BackColor = Color.Gray;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(532, 144);
             label3.Name = "label3";
-            label3.Size = new Size(114, 20);
+            label3.Size = new Size(161, 28);
             label3.TabIndex = 7;
             label3.Text = "INICIAR SESIÓN";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(770, 9);
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(763, 9);
             label4.Name = "label4";
-            label4.Size = new Size(18, 20);
+            label4.Size = new Size(25, 28);
             label4.TabIndex = 8;
             label4.Text = "X";
             label4.Click += label4_Click;
@@ -121,6 +139,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Gray;
             ClientSize = new Size(800, 450);
             Controls.Add(label4);
             Controls.Add(label3);

@@ -1,16 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
 using PresupuestoFacil_CapaDatos;
-using PresupuestoFacil_CapaNegocio;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace WFPresupuestoFacil_Presentable
 {
@@ -45,9 +35,6 @@ namespace WFPresupuestoFacil_Presentable
                 try
                 {
                     conexion.AbrirConexion();
-                    //Query que trae los datos desde la base de datos
-                    //string query = "SELECT u.Usuario_Id, u.Usuario_Nombre, u.Clave, u.IdPerfil, p.Perfil FROM Usuarios u INNER JOIN Perfiles p on u.IdPerfil = p.IdPerfil WHERE Clave = " + passwordValido;
-
                     SqlCommand comando = new SqlCommand(conexion.query(passwordValido), conexion.Conexion);
                     SqlDataReader registro = comando.ExecuteReader();
 
@@ -86,16 +73,16 @@ namespace WFPresupuestoFacil_Presentable
                         {
                             MessageBox.Show("Usuario o contraseña no son correctos!");
                         }
-                      
+
                     }
                     conexion.CerrarConexion();
                 }
                 catch (Exception ex)
                 {
 
-                    MessageBox.Show("Ups, ocurrio un error inesperado! Error:"+ ex);
-                }               
-               
+                    MessageBox.Show("Ups, ocurrio un error inesperado! Error:" + ex);
+                }
+
             }
             else
             {

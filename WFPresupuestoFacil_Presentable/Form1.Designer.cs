@@ -173,7 +173,7 @@
             // 
             // btnGuardarUsuario
             // 
-            btnGuardarUsuario.BackColor = Color.FromArgb(0, 0, 192);
+            btnGuardarUsuario.BackColor = Color.DimGray;
             btnGuardarUsuario.FlatAppearance.BorderColor = Color.Magenta;
             btnGuardarUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnGuardarUsuario.ForeColor = Color.White;
@@ -187,7 +187,7 @@
             // 
             // btnEditarUsuario
             // 
-            btnEditarUsuario.BackColor = Color.DarkSeaGreen;
+            btnEditarUsuario.BackColor = Color.DimGray;
             btnEditarUsuario.FlatAppearance.BorderColor = Color.White;
             btnEditarUsuario.FlatAppearance.BorderSize = 5;
             btnEditarUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
@@ -202,7 +202,7 @@
             // 
             // btnEliminarUsuario
             // 
-            btnEliminarUsuario.BackColor = Color.DarkSeaGreen;
+            btnEliminarUsuario.BackColor = Color.DimGray;
             btnEliminarUsuario.FlatAppearance.BorderColor = Color.White;
             btnEliminarUsuario.FlatAppearance.BorderSize = 5;
             btnEliminarUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
@@ -217,7 +217,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(128, 128, 255);
+            panel1.BackColor = Color.White;
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label7);
             panel1.Dock = DockStyle.Top;
@@ -242,8 +242,9 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.White;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = Color.White;
+            label7.ForeColor = Color.DimGray;
             label7.Location = new Point(633, 39);
             label7.Name = "label7";
             label7.Size = new Size(64, 28);
@@ -265,7 +266,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Navy;
+            BackColor = Color.Gray;
             ClientSize = new Size(1392, 738);
             Controls.Add(label9);
             Controls.Add(panel1);
