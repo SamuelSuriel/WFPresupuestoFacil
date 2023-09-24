@@ -6,7 +6,7 @@ namespace WFPresupuestoFacil_Presentable
     public partial class Form1 : Form
     {
         CN_Usuarios objetoUsuarioCN = new CN_Usuarios();
-        private string idUsuario = null;
+        private string? idUsuario = null;
         private bool EsEditar = false;
         public Form1()
         {
@@ -20,8 +20,7 @@ namespace WFPresupuestoFacil_Presentable
 
         private void MostrarUsuarios()
         {
-            CN_Usuarios objetoCN = new CN_Usuarios();
-            dataGridView1.DataSource = objetoCN.MostrarProd();
+            dataGridView1.DataSource = objetoUsuarioCN.MostrarProd();
         }
 
         private void btnGuardarUsuario_Click(object sender, EventArgs e)
@@ -158,9 +157,9 @@ namespace WFPresupuestoFacil_Presentable
             this.Close();
         }
 
-        private void label12_Click(object sender, EventArgs e)
+        private void btnAtrasCRUD_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             PanelPresupuesto panelPresupuesto = new PanelPresupuesto();
             panelPresupuesto.ShowDialog();
         }

@@ -68,10 +68,13 @@
             label8 = new Label();
             dgvIngresos = new DataGridView();
             tabGastos = new TabPage();
+            btnEditarGasto = new Button();
+            label16 = new Label();
+            cbArticuloGasto = new ComboBox();
             btnGuardarGasto = new Button();
             label11 = new Label();
             label10 = new Label();
-            cbArticulosGastos = new ComboBox();
+            cbCategoriaGastos = new ComboBox();
             txtImporte = new TextBox();
             label9 = new Label();
             cbEstatusGasto = new ComboBox();
@@ -493,10 +496,13 @@
             // 
             // tabGastos
             // 
+            tabGastos.Controls.Add(btnEditarGasto);
+            tabGastos.Controls.Add(label16);
+            tabGastos.Controls.Add(cbArticuloGasto);
             tabGastos.Controls.Add(btnGuardarGasto);
             tabGastos.Controls.Add(label11);
             tabGastos.Controls.Add(label10);
-            tabGastos.Controls.Add(cbArticulosGastos);
+            tabGastos.Controls.Add(cbCategoriaGastos);
             tabGastos.Controls.Add(txtImporte);
             tabGastos.Controls.Add(label9);
             tabGastos.Controls.Add(cbEstatusGasto);
@@ -510,21 +516,51 @@
             tabGastos.Text = "Gastos";
             tabGastos.UseVisualStyleBackColor = true;
             // 
+            // btnEditarGasto
+            // 
+            btnEditarGasto.BackColor = Color.DimGray;
+            btnEditarGasto.ForeColor = Color.White;
+            btnEditarGasto.Location = new Point(501, 415);
+            btnEditarGasto.Name = "btnEditarGasto";
+            btnEditarGasto.Size = new Size(112, 46);
+            btnEditarGasto.TabIndex = 11;
+            btnEditarGasto.Text = "Editar";
+            btnEditarGasto.UseVisualStyleBackColor = false;
+            btnEditarGasto.Click += btnEditarGasto_Click;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(524, 123);
+            label16.Name = "label16";
+            label16.Size = new Size(61, 20);
+            label16.TabIndex = 9;
+            label16.Text = "Artículo";
+            // 
+            // cbArticuloGasto
+            // 
+            cbArticuloGasto.FormattingEnabled = true;
+            cbArticuloGasto.Location = new Point(524, 146);
+            cbArticuloGasto.Name = "cbArticuloGasto";
+            cbArticuloGasto.Size = new Size(205, 28);
+            cbArticuloGasto.TabIndex = 10;
+            // 
             // btnGuardarGasto
             // 
             btnGuardarGasto.BackColor = Color.DimGray;
             btnGuardarGasto.ForeColor = Color.White;
-            btnGuardarGasto.Location = new Point(555, 375);
+            btnGuardarGasto.Location = new Point(647, 415);
             btnGuardarGasto.Name = "btnGuardarGasto";
-            btnGuardarGasto.Size = new Size(137, 51);
+            btnGuardarGasto.Size = new Size(112, 46);
             btnGuardarGasto.TabIndex = 8;
             btnGuardarGasto.Text = "Guardar";
             btnGuardarGasto.UseVisualStyleBackColor = false;
+            btnGuardarGasto.Click += btnGuardarGasto_Click;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(529, 216);
+            label11.Location = new Point(524, 252);
             label11.Name = "label11";
             label11.Size = new Size(62, 20);
             label11.TabIndex = 7;
@@ -533,23 +569,23 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(529, 152);
+            label10.Location = new Point(524, 188);
             label10.Name = "label10";
-            label10.Size = new Size(61, 20);
+            label10.Size = new Size(69, 20);
             label10.TabIndex = 5;
-            label10.Text = "Artículo";
+            label10.Text = "Categiría";
             // 
-            // cbArticulosGastos
+            // cbCategoriaGastos
             // 
-            cbArticulosGastos.FormattingEnabled = true;
-            cbArticulosGastos.Location = new Point(529, 175);
-            cbArticulosGastos.Name = "cbArticulosGastos";
-            cbArticulosGastos.Size = new Size(205, 28);
-            cbArticulosGastos.TabIndex = 6;
+            cbCategoriaGastos.FormattingEnabled = true;
+            cbCategoriaGastos.Location = new Point(524, 211);
+            cbCategoriaGastos.Name = "cbCategoriaGastos";
+            cbCategoriaGastos.Size = new Size(205, 28);
+            cbCategoriaGastos.TabIndex = 6;
             // 
             // txtImporte
             // 
-            txtImporte.Location = new Point(529, 243);
+            txtImporte.Location = new Point(524, 279);
             txtImporte.Name = "txtImporte";
             txtImporte.Size = new Size(208, 27);
             txtImporte.TabIndex = 4;
@@ -557,7 +593,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(529, 287);
+            label9.Location = new Point(524, 323);
             label9.Name = "label9";
             label9.Size = new Size(55, 20);
             label9.TabIndex = 1;
@@ -566,7 +602,7 @@
             // cbEstatusGasto
             // 
             cbEstatusGasto.FormattingEnabled = true;
-            cbEstatusGasto.Location = new Point(529, 310);
+            cbEstatusGasto.Location = new Point(524, 346);
             cbEstatusGasto.Name = "cbEstatusGasto";
             cbEstatusGasto.Size = new Size(205, 28);
             cbEstatusGasto.TabIndex = 3;
@@ -717,10 +753,8 @@
         private Button btnGuardarGasto;
         private Label label11;
         private Label label10;
-        private ComboBox cbArticulosGastos;
         private TextBox txtImporte;
         private Label label9;
-        private ComboBox cbEstatusGasto;
         private ProgressBar pbrResumen;
         private Button btnGuardarIngreso;
         private Label label12;
@@ -739,5 +773,10 @@
         private Label label14;
         private Label lblDivisor;
         public Label lblFecha;
+        private Label label16;
+        private Button btnEditarGasto;
+        public ComboBox cbCategoriaGastos;
+        public ComboBox cbEstatusGasto;
+        public ComboBox cbArticuloGasto;
     }
 }

@@ -9,7 +9,7 @@ namespace LoginSistem.Forms
     public partial class mdlEditarUsuario : Form
     {
         CD_Conexion conexion = new CD_Conexion();
-        CN_Usuarios objetoUsuarioCN = new CN_Usuarios();
+        //CN_Usuarios objetoUsuarioCN = new CN_Usuarios();
         public mdlEditarUsuario()
         {
             InitializeComponent();
@@ -67,9 +67,6 @@ namespace LoginSistem.Forms
                     string passw = txtEditUsuarioClave.Text;
                     int id_perfil = (int)cbPerfiles.SelectedValue;
                     
-                    //int idPerfil = Global.GlobalVarIdPerfil;
-
-
                     MessageBox.Show("Se editó correctamente!");
                     Global.GlobalVarIdPerfil = (int)id_perfil;
                 }
@@ -78,40 +75,12 @@ namespace LoginSistem.Forms
                     MessageBox.Show("no se pudo realizar la operación!");
                 }
 
-                //LimpiarCamposUsuario();
-                //MostrarUsuarios();
-                //EsEditar = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("no se pudo realizar la operación: " + ex);
             }
-            //int id = Global.GlobalVarId;
-            //string name = txtEditUsuarioNombre.Text;
-            //string passw = txtEditUsuarioClave.Text;
-            //int id_perfil = (int)cbPerfiles.SelectedValue;
-
-
-            //int idPerfil = Global.GlobalVarIdPerfil;
-
-            //EditarProd(id, name, passw, idPerfil);
-
-            //string query = "SELECT u.UsuarioID, u.Nombre, u.Clave, u.IdPerfil, p.Perfil FROM Usuarios u INNER JOIN Perfiles p on u.IdPerfil = p.IdPerfil WHERE UsuarioID = " + id;
-            //comando = new SqlCommand(query, conexion.Conexion);
-            //SqlDataReader registro = comando.ExecuteReader();
-
-            //if (registro.Read())
-            //{
-            //    Global.GlobalVarId = (int)registro["UsuarioID"];
-            //    Global.GlobalVarNombre = (string)registro["Nombre"];
-            //    Global.GlobalVarClave = (string)registro["Clave"];
-            //    Global.GlobalVarIdPerfil = (int)registro["IdPerfil"];
-            //    Global.GlobalVarPerfil = (string)registro["Perfil"];
-
-            //}
-            //MessageBox.Show("Se editó correctamente");
-            //conexion.CerrarConexion();
-
+           
         }
 
         public void LlenarComboBox(ComboBox combo, string strSql, string id, string desc)

@@ -45,6 +45,7 @@
             btnEditarUsuario = new Button();
             btnEliminarUsuario = new Button();
             panel1 = new Panel();
+            btnAtrasCRUD = new Label();
             label8 = new Label();
             label7 = new Label();
             label9 = new Label();
@@ -52,7 +53,6 @@
             label10 = new Label();
             label11 = new Label();
             cbPerfiles = new ComboBox();
-            label12 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -223,7 +223,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(label12);
+            panel1.Controls.Add(btnAtrasCRUD);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label7);
             panel1.Dock = DockStyle.Top;
@@ -231,6 +231,20 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1392, 95);
             panel1.TabIndex = 16;
+            // 
+            // btnAtrasCRUD
+            // 
+            btnAtrasCRUD.AutoSize = true;
+            btnAtrasCRUD.BackColor = Color.White;
+            btnAtrasCRUD.Cursor = Cursors.Hand;
+            btnAtrasCRUD.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAtrasCRUD.ForeColor = Color.DimGray;
+            btnAtrasCRUD.Location = new Point(12, 39);
+            btnAtrasCRUD.Name = "btnAtrasCRUD";
+            btnAtrasCRUD.Size = new Size(26, 28);
+            btnAtrasCRUD.TabIndex = 2;
+            btnAtrasCRUD.Text = "<";
+            btnAtrasCRUD.Click += btnAtrasCRUD_Click;
             // 
             // label8
             // 
@@ -305,20 +319,6 @@
             cbPerfiles.Size = new Size(280, 28);
             cbPerfiles.TabIndex = 22;
             // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.BackColor = Color.White;
-            label12.Cursor = Cursors.Hand;
-            label12.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.ForeColor = Color.DimGray;
-            label12.Location = new Point(12, 39);
-            label12.Name = "label12";
-            label12.Size = new Size(26, 28);
-            label12.TabIndex = 2;
-            label12.Text = "<";
-            label12.Click += label12_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -385,6 +385,6 @@
         private Label label10;
         private Label label11;
         private ComboBox cbPerfiles;
-        private Label label12;
+        private Label btnAtrasCRUD;
     }
 }
