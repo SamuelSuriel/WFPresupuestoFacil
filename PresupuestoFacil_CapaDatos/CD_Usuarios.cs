@@ -46,7 +46,7 @@ namespace PresupuestoFacil_CapaDatos
 
         }
 
-        public void Editar(string nombre, string apellido, string correo, string telefono, int edad, string posicion, bool activo, int id)
+        public void Editar(string nombre, string apellido, string correo, string telefono, int edad, string posicion, bool activo, int id, string passw, int idPerfil)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "EditarUsuarios";
@@ -60,6 +60,8 @@ namespace PresupuestoFacil_CapaDatos
             comando.Parameters.AddWithValue("@fechaModificacion", DateTime.Now);
             comando.Parameters.AddWithValue("@activo", activo);
             comando.Parameters.AddWithValue("@id", id);
+            comando.Parameters.AddWithValue("@clave", passw);
+            comando.Parameters.AddWithValue("@idPerfil", idPerfil);
 
             comando.ExecuteNonQuery();
 

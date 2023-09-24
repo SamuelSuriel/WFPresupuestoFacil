@@ -48,6 +48,11 @@
             label8 = new Label();
             label7 = new Label();
             label9 = new Label();
+            txtClaveEdit = new TextBox();
+            label10 = new Label();
+            label11 = new Label();
+            cbPerfiles = new ComboBox();
+            label12 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -177,7 +182,7 @@
             btnGuardarUsuario.FlatAppearance.BorderColor = Color.Magenta;
             btnGuardarUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnGuardarUsuario.ForeColor = Color.White;
-            btnGuardarUsuario.Location = new Point(994, 377);
+            btnGuardarUsuario.Location = new Point(994, 442);
             btnGuardarUsuario.Name = "btnGuardarUsuario";
             btnGuardarUsuario.Size = new Size(373, 55);
             btnGuardarUsuario.TabIndex = 13;
@@ -218,6 +223,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(label12);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label7);
             panel1.Dock = DockStyle.Top;
@@ -262,12 +268,67 @@
             label9.TabIndex = 17;
             label9.Text = "Listado de usuarios";
             // 
+            // txtClaveEdit
+            // 
+            txtClaveEdit.Location = new Point(1087, 342);
+            txtClaveEdit.Name = "txtClaveEdit";
+            txtClaveEdit.Size = new Size(280, 27);
+            txtClaveEdit.TabIndex = 19;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(994, 345);
+            label10.Name = "label10";
+            label10.Size = new Size(60, 28);
+            label10.TabIndex = 18;
+            label10.Text = "Clave";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(994, 378);
+            label11.Name = "label11";
+            label11.Size = new Size(58, 28);
+            label11.TabIndex = 20;
+            label11.Text = "Perfil";
+            // 
+            // cbPerfiles
+            // 
+            cbPerfiles.FormattingEnabled = true;
+            cbPerfiles.Location = new Point(1087, 378);
+            cbPerfiles.Name = "cbPerfiles";
+            cbPerfiles.Size = new Size(280, 28);
+            cbPerfiles.TabIndex = 22;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.White;
+            label12.Cursor = Cursors.Hand;
+            label12.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.ForeColor = Color.DimGray;
+            label12.Location = new Point(12, 39);
+            label12.Name = "label12";
+            label12.Size = new Size(26, 28);
+            label12.TabIndex = 2;
+            label12.Text = "<";
+            label12.Click += label12_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
             ClientSize = new Size(1392, 738);
+            Controls.Add(cbPerfiles);
+            Controls.Add(label11);
+            Controls.Add(txtClaveEdit);
+            Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(panel1);
             Controls.Add(btnEliminarUsuario);
@@ -320,5 +381,10 @@
         private Label label7;
         private Label label8;
         private Label label9;
+        private TextBox txtClaveEdit;
+        private Label label10;
+        private Label label11;
+        private ComboBox cbPerfiles;
+        private Label label12;
     }
 }

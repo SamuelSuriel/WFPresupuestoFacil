@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using LoginSistem.Forms;
+using Microsoft.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
 using PresupuestoFacil_CapaDatos;
 
@@ -54,7 +55,7 @@ namespace WFPresupuestoFacil_Presentable
                         {
                             MessageBox.Show("Usuario y contraseña son correctos!");
                             this.Hide();
-                            Form1 menuPrincipal = new Form1();
+                            PanelPresupuesto menuPrincipal = new PanelPresupuesto();
 
                             //Almacenamos los datos en las variables globales
                             Global global = new Global();
@@ -63,10 +64,15 @@ namespace WFPresupuestoFacil_Presentable
                             Global.GlobalVarClave = usuario.Clave;
                             Global.GlobalVarIdPerfil = (int)usuario.IdPerfil;
                             Global.GlobalVarPerfil = usuario.Perfil;
+                            Global.GlobalVarCorreo = usuario.Usuario_Correo;
+                            Global.GlobalVarEdad = 20;//(int)usuario.Usuario_Edad;
+                            Global.GlobalVarTelefono = usuario.Usuario_Telefono;
+                            Global.GlobalVarPosicion = usuario.Usuario_Posicion;
 
                             //Llenamos el textbox del modal Menú principal
-                            //menuPrincipal.txtUsuarioMenu.Text = Global.GlobalVarNombre;
-                            menuPrincipal.ShowDialog();
+                            menuPrincipal.lblUser.Text = Global.GlobalVarNombre;
+                            menuPrincipal.lblPerfil.Text = Global.GlobalVarPerfil;
+                            menuPrincipal.Show();
 
                         }
                         else

@@ -21,9 +21,9 @@ namespace PresupuestoFacil_CapaNegocio
             objetoCD.Insertar(nombre, apellido, correo, telefono, Convert.ToInt32(edad), posicion, activo);
         }
 
-        public void EditarProd(string nombre, string apellido, string correo, string telefono, string edad, string posicion, bool activo, string id)
+        public void EditarProd(string nombre, string apellido, string correo, string telefono, string edad, string posicion, bool activo, string id, string passw, int idPerfil)
         {
-            objetoCD.Editar(nombre, apellido, correo, telefono, Convert.ToInt32(edad), posicion, activo, Convert.ToInt32(id));
+            objetoCD.Editar(nombre, apellido, correo, telefono, Convert.ToInt32(edad), posicion, activo, Convert.ToInt32(id), passw, Convert.ToInt32(idPerfil));
         }
 
         public void EliminarPRod(string id)

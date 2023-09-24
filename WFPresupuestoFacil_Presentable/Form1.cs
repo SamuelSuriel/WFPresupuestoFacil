@@ -1,3 +1,4 @@
+using LoginSistem.Forms;
 using PresupuestoFacil_CapaNegocio;
 
 namespace WFPresupuestoFacil_Presentable
@@ -61,7 +62,9 @@ namespace WFPresupuestoFacil_Presentable
                             txtEdadUsuario.Text,
                             txtPosicionUsuario.Text,
                             true,
-                            idUsuario);
+                            idUsuario,
+                            txtClaveEdit.Text,
+                            (int)cbPerfiles.SelectedValue);
 
                         MessageBox.Show("Se editó correctamente!");
                         LimpiarCamposUsuario();
@@ -153,6 +156,13 @@ namespace WFPresupuestoFacil_Presentable
         private void label8_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            PanelPresupuesto panelPresupuesto = new PanelPresupuesto();
+            panelPresupuesto.ShowDialog();
         }
     }
 }

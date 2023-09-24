@@ -13,6 +13,10 @@ namespace PresupuestoFacil_CapaDatos
         private static string _globalVarClave = "";
         private static int _globalVarIdPerfil = 0;
         private static string _globalVarPerfil = "";
+        private static string _globalVarCorreo = "";
+        private static string _globalVarTelefono = "";
+        private static int _globalVarEdad = 0;
+        private static string _globalVarPosicion = "";
 
         public static int GlobalVarId
         {
@@ -41,5 +45,28 @@ namespace PresupuestoFacil_CapaDatos
             get { return _globalVarPerfil; }
             set { _globalVarPerfil = value; }
         }
+
+        public static string GlobalVarCorreo
+        {
+            get { return _globalVarCorreo; }
+            set { _globalVarCorreo = value; }
+        }
+        public static string GlobalVarTelefono
+        {
+            get { return _globalVarTelefono; }
+            set { _globalVarTelefono = value; }
+        }
+
+        public static int GlobalVarEdad
+        {
+            get { return _globalVarEdad; }
+            set { _globalVarEdad = value; }
+        }
+        public static string GlobalVarPosicion
+        {
+            get { return _globalVarPosicion; }
+            set { _globalVarPosicion = value; }
+        }
+
     }
 }
