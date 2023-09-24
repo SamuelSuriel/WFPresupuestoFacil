@@ -142,13 +142,17 @@ namespace WFPresupuestoFacil_Presentable
                     objetoUsuarioCN.EliminarPRod(idUsuario);
                     MessageBox.Show("Se eliminó correctamente a '" + user + "'!");
                     MostrarUsuarios();
-                }              
+                }
             }
             else
             {
                 MessageBox.Show("Seleccione una celda para eliminar!");
             }
         }
-        
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
