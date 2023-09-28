@@ -212,7 +212,7 @@
             btnEliminarUsuario.FlatAppearance.BorderSize = 5;
             btnEliminarUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminarUsuario.ForeColor = Color.White;
-            btnEliminarUsuario.Location = new Point(276, 681);
+            btnEliminarUsuario.Location = new Point(747, 681);
             btnEliminarUsuario.Name = "btnEliminarUsuario";
             btnEliminarUsuario.Size = new Size(232, 45);
             btnEliminarUsuario.TabIndex = 15;
@@ -265,11 +265,11 @@
             label7.BackColor = Color.White;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label7.ForeColor = Color.DimGray;
-            label7.Location = new Point(633, 39);
+            label7.Location = new Point(550, 39);
             label7.Name = "label7";
-            label7.Size = new Size(64, 28);
+            label7.Size = new Size(251, 28);
             label7.TabIndex = 0;
-            label7.Text = "CRUD";
+            label7.Text = "ADMINISTRAR USUARIOS ";
             // 
             // label9
             // 

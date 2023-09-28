@@ -66,7 +66,7 @@ namespace WFPresupuestoFacil_Presentable
                             Global.GlobalVarIdPerfil = (int)usuario.IdPerfil;
                             Global.GlobalVarPerfil = usuario.Perfil;
                             Global.GlobalVarCorreo = usuario.Usuario_Correo;
-                            Global.GlobalVarEdad = 20;//(int)usuario.Usuario_Edad;
+                            Global.GlobalVarEdad = (int)usuario.Usuario_Edad;
                             Global.GlobalVarTelefono = usuario.Usuario_Telefono;
                             Global.GlobalVarPosicion = usuario.Usuario_Posicion;
 

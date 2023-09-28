@@ -85,6 +85,10 @@
             panel6 = new Panel();
             btnCerrarPanel = new Label();
             label7 = new Label();
+            label17 = new Label();
+            btnAdministrarUsuarios = new PictureBox();
+            lblAdministrarUsuarios = new Label();
+            panelAdmin = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picSetup).BeginInit();
@@ -100,6 +104,8 @@
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvGastos).BeginInit();
             panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnAdministrarUsuarios).BeginInit();
+            panelAdmin.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -678,11 +684,56 @@
             label7.TabIndex = 17;
             label7.Text = "PRESUPUESTO FÁCIL";
             // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.ForeColor = Color.Gray;
+            label17.Location = new Point(30, 51);
+            label17.Name = "label17";
+            label17.Size = new Size(147, 20);
+            label17.TabIndex = 28;
+            label17.Text = "-----------------------";
+            // 
+            // btnAdministrarUsuarios
+            // 
+            btnAdministrarUsuarios.Cursor = Cursors.Hand;
+            btnAdministrarUsuarios.Image = (Image)resources.GetObject("btnAdministrarUsuarios.Image");
+            btnAdministrarUsuarios.Location = new Point(9, 16);
+            btnAdministrarUsuarios.Name = "btnAdministrarUsuarios";
+            btnAdministrarUsuarios.Size = new Size(32, 21);
+            btnAdministrarUsuarios.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnAdministrarUsuarios.TabIndex = 27;
+            btnAdministrarUsuarios.TabStop = false;
+            // 
+            // lblAdministrarUsuarios
+            // 
+            lblAdministrarUsuarios.AutoSize = true;
+            lblAdministrarUsuarios.Cursor = Cursors.Hand;
+            lblAdministrarUsuarios.Location = new Point(44, 19);
+            lblAdministrarUsuarios.Name = "lblAdministrarUsuarios";
+            lblAdministrarUsuarios.Size = new Size(144, 20);
+            lblAdministrarUsuarios.TabIndex = 26;
+            lblAdministrarUsuarios.Text = "Administrar usuarios";
+            lblAdministrarUsuarios.Click += lblAdministrarUsuarios_Click;
+            // 
+            // panelAdmin
+            // 
+            panelAdmin.BackColor = Color.White;
+            panelAdmin.Controls.Add(btnAdministrarUsuarios);
+            panelAdmin.Controls.Add(label17);
+            panelAdmin.Controls.Add(lblAdministrarUsuarios);
+            panelAdmin.Location = new Point(856, 80);
+            panelAdmin.Name = "panelAdmin";
+            panelAdmin.Size = new Size(202, 83);
+            panelAdmin.TabIndex = 29;
+            // 
             // PanelPresupuesto
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1070, 734);
+            Controls.Add(panelAdmin);
             Controls.Add(lblFecha);
             Controls.Add(panel6);
             Controls.Add(label5);
@@ -715,6 +766,9 @@
             ((System.ComponentModel.ISupportInitialize)dgvGastos).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnAdministrarUsuarios).EndInit();
+            panelAdmin.ResumeLayout(false);
+            panelAdmin.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -778,5 +832,9 @@
         private ComboBox cbCategoriaGastos;
         private ComboBox cbEstatusGasto;
         private ComboBox cbArticuloGasto;
+        private Label label17;
+        private PictureBox btnAdministrarUsuarios;
+        private Label lblAdministrarUsuarios;
+        private Panel panelAdmin;
     }
 }

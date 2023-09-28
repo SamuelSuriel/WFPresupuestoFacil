@@ -32,6 +32,11 @@ namespace LoginSistem.Forms
         {
             txtEditUsuarioNombre.Text = Global.GlobalVarNombre;
             txtEditUsuarioClave.Text = Global.GlobalVarClave;
+            txtCorreoEdit.Text = Global.GlobalVarCorreo;
+            txtEdadEdit.Text = Global.GlobalVarEdad.ToString();
+            txtPosicionEdit.Text = Global.GlobalVarPosicion;
+            txtTelefonoEdit.Text = Global.GlobalVarTelefono;
+
             if (Global.GlobalVarIdPerfil == 1)
             {
                 LlenarComboBox(cbPerfiles, "Select * From Perfiles", "IdPerfil", "Perfil");

@@ -55,6 +55,12 @@ namespace LoginSistem.Forms
 
             System.Text.RegularExpressions.Regex.IsMatch(txtImporte.Text, "[ ^ 0-9]");
 
+            if (Global.GlobalVarIdPerfil == 1) {
+                    panelAdmin.Visible = true;
+            } else {
+                    panelAdmin.Visible = false;
+            }
+
             //Llenar DataGridView
             MostrarGastos();
 
@@ -89,7 +95,7 @@ namespace LoginSistem.Forms
             mdlEditarUsuario.ShowDialog();
 
         }
-     
+
 
         public List<Articulos> ObtenerArticulos()
         {
@@ -165,8 +171,9 @@ namespace LoginSistem.Forms
 
         private void picSetup_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.ShowDialog();
+
+            Setup setupForm = new Setup();
+            setupForm.ShowDialog();
         }
 
         private void MostrarGastos()
@@ -267,6 +274,12 @@ namespace LoginSistem.Forms
             }
             else
                 MessageBox.Show("Seleccione una celda para editar!");
+        }
+
+        private void lblAdministrarUsuarios_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
         }
     }
 }
