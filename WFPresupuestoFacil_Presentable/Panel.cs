@@ -2,9 +2,12 @@
 using Microsoft.Data.SqlClient;
 using PresupuestoFacil_CapaDatos;
 using PresupuestoFacil_CapaNegocio;
+using System.Configuration;
 using System.Data;
 using System.Windows.Forms;
 using WFPresupuestoFacil_Presentable;
+using WFPresupuestoFacil_Presentable.Clases;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace LoginSistem.Forms
 {
@@ -50,13 +53,29 @@ namespace LoginSistem.Forms
             string date = DateTime.UtcNow.ToString("D");
             lblFecha.Text = date;
 
+            System.Text.RegularExpressions.Regex.IsMatch(txtImporte.Text, "[ ^ 0-9]");
+
+            //Llenar DataGridView
             MostrarGastos();
 
-            LlenarComboBox(cbEstatusGasto, "Select * From Estatus where Activo = 1", "Estatus_Id", "Estatus");
-            LlenarComboBox(cbArticuloGasto, "Select * From Articulos where Activo = 1", "Articulo_Id", "Articulo");
-            LlenarComboBox(cbCategoriaGastos, "Select * From Categorias where Activo = 1", "Categoria_Id", "Categoria");
+            //Llenar combo Articulos
+            cbArticuloGasto.DataSource = ObtenerArticulos();
+            cbArticuloGasto.DisplayMember = "Articulo";
+            cbArticuloGasto.ValueMember = "Articulo_Id";
+
+            //Llenar combo Categorias
+            cbCategoriaGastos.DataSource = ObtenerCategorias();
+            cbCategoriaGastos.DisplayMember = "Categoria";
+            cbCategoriaGastos.ValueMember = "Categoria_Id";
+
+            //Llenar combo Estatus
+            cbEstatusGasto.DataSource = ObtenerEstatus();
+            cbEstatusGasto.DisplayMember = "Estatu";
+            cbEstatusGasto.ValueMember = "Estatus_Id";
+
             //cbEstatusGasto.Text = Global.GlobalVarPerfil;
         }
+
 
         private void picModifyUser_Click(object sender, EventArgs e)
         {
@@ -70,13 +89,78 @@ namespace LoginSistem.Forms
             mdlEditarUsuario.ShowDialog();
 
         }
-        public void LlenarComboBox(ComboBox combo, string strSql, string id, string desc)
+     
+
+        public List<Articulos> ObtenerArticulos()
         {
-            SqlDataAdapter da = new SqlDataAdapter(strSql, conexion.Conexion);
-            da.Fill(tabla);
-            combo.ValueMember = id;
-            combo.DisplayMember = desc;
-            combo.DataSource = tabla;
+            List<Articulos> oListaArticulos = new List<Articulos>();
+            {
+                SqlCommand cmd = new SqlCommand("prcGetArticulos", conexion.Conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                conexion.AbrirConexion();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    oListaArticulos.Add(new Articulos
+                    {
+                        Articulo_Id = Convert.ToInt32(dr["Articulo_Id"]),
+                        Articulo = Convert.ToString(dr["Articulo"].ToString())
+                    });
+
+                }
+                dr.Close();
+            }
+            return oListaArticulos;
+
+        }
+
+        public List<Categorias> ObtenerCategorias()
+        {
+            List<Categorias> oListaCategorias = new List<Categorias>();
+            {
+                SqlCommand cmd = new SqlCommand("prcGetCategorias", conexion.Conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                conexion.AbrirConexion();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    oListaCategorias.Add(new Categorias
+                    {
+                        Categoria_Id = Convert.ToInt32(dr["Categoria_Id"]),
+                        Categoria = Convert.ToString(dr["Categoria"].ToString())
+                    });
+
+                }
+                dr.Close();
+            }
+            return oListaCategorias;
+
+        }
+
+
+        public List<Estatus> ObtenerEstatus()
+        {
+            List<Estatus> oListaCategorias = new List<Estatus>();
+            {
+                SqlCommand cmd = new SqlCommand("prcGetEstatus", conexion.Conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                conexion.AbrirConexion();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    oListaCategorias.Add(new Estatus
+                    {
+                        Estatus_Id = Convert.ToInt32(dr["Estatus_Id"]),
+                        Estatu = Convert.ToString(dr["Estatu"].ToString())
+                    });
+
+                }
+                dr.Close();
+            }
+            return oListaCategorias;
         }
 
         private void picSetup_Click(object sender, EventArgs e)
@@ -107,6 +191,7 @@ namespace LoginSistem.Forms
                 string importe = txtImporte.Text;
                 int estatus = (int)cbEstatusGasto.SelectedValue;
                 int categoria = (int)cbCategoriaGastos.SelectedValue;
+                bool activo = true;
                 int articulo = (int)cbArticuloGasto.SelectedValue;
 
                 if (EsEditar == false)
@@ -114,9 +199,9 @@ namespace LoginSistem.Forms
                     try
                     {
 
-                        objetoGastosCN.InsertarPRod(Convert.ToInt32(importe), estatus, categoria, articulo, true);
+                        objetoGastosCN.InsertarPRod(Convert.ToInt32(importe), estatus, categoria, activo, articulo);
 
-                        MessageBox.Show("Se insertó correctamente!");
+                        MessageBox.Show("SE INSERTÓ CORRECTAMENTE!");
                         LimpiarCampos();
                         MostrarGastos();
                     }
@@ -163,9 +248,9 @@ namespace LoginSistem.Forms
         }
         private void LimpiarCampos()
         {
-            cbArticuloGasto.Text = "";
-            cbCategoriaGastos.Text = "";
-            cbEstatusGasto.Text = "";
+            cbArticuloGasto.SelectedValue = 0;
+            cbCategoriaGastos.SelectedValue = 0;
+            cbEstatusGasto.SelectedValue = 0;
             txtImporte.Clear();
         }
 

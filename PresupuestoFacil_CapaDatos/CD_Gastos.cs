@@ -26,7 +26,7 @@ namespace PresupuestoFacil_CapaDatos
 
         }
 
-        public void Insertar(decimal Gasto_Importe, int Estatus_Id, int Categoria_id, int Articulo_Id, bool activo)
+        public void Insertar(decimal Gasto_Importe, int Estatus_Id, int Categoria_id, bool activo, int Articulo_Id)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "InsertarGasto";
@@ -34,9 +34,8 @@ namespace PresupuestoFacil_CapaDatos
             comando.Parameters.AddWithValue("@Gasto_Importe", Gasto_Importe);
             comando.Parameters.AddWithValue("@Estatus_Id", Estatus_Id);
             comando.Parameters.AddWithValue("@Categoria_id", Categoria_id);
-            comando.Parameters.AddWithValue("@Articulo_Id", Articulo_Id);
             comando.Parameters.AddWithValue("@activo", activo);
-            comando.Parameters.AddWithValue("@fechacreacion", DateTime.Now);
+            comando.Parameters.AddWithValue("@Articulo_Id", Articulo_Id);
 
             comando.ExecuteNonQuery();
 

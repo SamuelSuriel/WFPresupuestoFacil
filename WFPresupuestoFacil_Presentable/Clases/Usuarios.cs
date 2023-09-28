@@ -4,15 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PresupuestoFacil_CapaDatos
+namespace WFPresupuestoFacil_Presentable.Clases
 {
     public class Usuarios
     {
-        //public int UsuarioID { get; set; }
-        //public string Nombre { get; set; }
-        //public string Clave { get; set; }
-        //public int? IdPerfil { get; set; }
-        //public string Perfil { get; set; }
+        
         public int Usuario_Id { get; set; }
         public string? Usuario_Nombre { get; set; }
         public string? Usuario_Apellidos { get; set; }

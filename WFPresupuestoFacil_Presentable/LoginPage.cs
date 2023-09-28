@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
 using PresupuestoFacil_CapaDatos;
+using WFPresupuestoFacil_Presentable.Clases;
 
 namespace WFPresupuestoFacil_Presentable
 {
@@ -41,7 +42,7 @@ namespace WFPresupuestoFacil_Presentable
 
                     if (registro.Read())
                     {
-                        Usuarios usuario = new Usuarios();
+                        Clases.Usuarios usuario = new Clases.Usuarios();
                         usuario.Usuario_Id = (int)registro["Usuario_Id"];
                         usuario.Usuario_Nombre = (string)registro["Usuario_Nombre"];
                         usuario.Clave = (string)registro["Clave"];

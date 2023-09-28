@@ -3,6 +3,7 @@ using Microsoft.Data.SqlClient;
 using PresupuestoFacil_CapaDatos;
 using PresupuestoFacil_CapaNegocio;
 using System.Data;
+using WFPresupuestoFacil_Presentable.Clases;
 
 namespace LoginSistem.Forms
 {

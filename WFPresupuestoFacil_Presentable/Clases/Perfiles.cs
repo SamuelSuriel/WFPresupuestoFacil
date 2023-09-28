@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LoginSistem.Clases
+namespace WFPresupuestoFacil_Presentable.Clases
 {
     public class Perfiles
     {

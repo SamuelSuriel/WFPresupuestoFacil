@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelPresupuesto));
             panel1 = new Panel();
-            lblFecha = new Label();
             label15 = new Label();
             label14 = new Label();
             lblDivisor = new Label();
@@ -46,6 +45,7 @@
             label04 = new Label();
             lblUser = new Label();
             lblPerfil = new Label();
+            lblFecha = new Label();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             tabResumen = new TabControl();
             tabPage1 = new TabPage();
@@ -105,7 +105,6 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(lblFecha);
             panel1.Controls.Add(label15);
             panel1.Controls.Add(label14);
             panel1.Controls.Add(lblDivisor);
@@ -126,18 +125,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(263, 734);
             panel1.TabIndex = 0;
-            // 
-            // lblFecha
-            // 
-            lblFecha.AutoSize = true;
-            lblFecha.BackColor = Color.White;
-            lblFecha.Font = new Font("Segoe UI Variable Small", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFecha.ForeColor = Color.Gray;
-            lblFecha.Location = new Point(17, 287);
-            lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(12, 17);
-            lblFecha.TabIndex = 27;
-            lblFecha.Text = " ";
             // 
             // label15
             // 
@@ -300,6 +287,18 @@
             lblPerfil.Size = new Size(17, 27);
             lblPerfil.TabIndex = 14;
             lblPerfil.Text = " ";
+            // 
+            // lblFecha
+            // 
+            lblFecha.AutoSize = true;
+            lblFecha.BackColor = Color.White;
+            lblFecha.Font = new Font("Segoe UI Variable Small", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblFecha.ForeColor = Color.Gray;
+            lblFecha.Location = new Point(273, 176);
+            lblFecha.Name = "lblFecha";
+            lblFecha.Size = new Size(12, 17);
+            lblFecha.TabIndex = 27;
+            lblFecha.Text = " ";
             // 
             // tabResumen
             // 
@@ -684,6 +683,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1070, 734);
+            Controls.Add(lblFecha);
             Controls.Add(panel6);
             Controls.Add(label5);
             Controls.Add(tabResumen);
@@ -775,8 +775,8 @@
         public Label lblFecha;
         private Label label16;
         private Button btnEditarGasto;
-        public ComboBox cbCategoriaGastos;
-        public ComboBox cbEstatusGasto;
-        public ComboBox cbArticuloGasto;
+        private ComboBox cbCategoriaGastos;
+        private ComboBox cbEstatusGasto;
+        private ComboBox cbArticuloGasto;
     }
 }
