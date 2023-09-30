@@ -2,22 +2,24 @@
 using Microsoft.Data.SqlClient;
 using PresupuestoFacil_CapaDatos;
 using PresupuestoFacil_CapaNegocio;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Windows.Forms;
 using WFPresupuestoFacil_Presentable;
 using WFPresupuestoFacil_Presentable.Clases;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace LoginSistem.Forms
 {
     public partial class PanelPresupuesto : Form
     {
         CN_Gastos objetoGastosCN = new CN_Gastos();
+        CN_Ingresos objetoIngresoCN = new CN_Ingresos();
         CD_Conexion conexion = new CD_Conexion();
         DataTable tabla = new DataTable();
 
         private string? idGasto = null;
+        private string? idIngreso = null;
         private bool EsEditar = false;
         public PanelPresupuesto()
         {
@@ -55,17 +57,20 @@ namespace LoginSistem.Forms
 
             System.Text.RegularExpressions.Regex.IsMatch(txtImporte.Text, "[ ^ 0-9]");
 
-            if (Global.GlobalVarIdPerfil == 1) {
-                    panelAdmin.Visible = true;
-            } else {
-                    panelAdmin.Visible = false;
+            if (Global.GlobalVarIdPerfil == 1)
+            {
+                panelAdmin.Visible = true;
+            }
+            else
+            {
+                panelAdmin.Visible = false;
             }
 
             //Llenar DataGridView
             MostrarGastos();
 
             //Llenar combo Articulos
-            cbArticuloGasto.DataSource = ObtenerArticulos();
+            cbArticuloGasto.DataSource = ObtenerArticulos("prcGetArticulos");
             cbArticuloGasto.DisplayMember = "Articulo";
             cbArticuloGasto.ValueMember = "Articulo_Id";
 
@@ -79,7 +84,12 @@ namespace LoginSistem.Forms
             cbEstatusGasto.DisplayMember = "Estatu";
             cbEstatusGasto.ValueMember = "Estatus_Id";
 
-            //cbEstatusGasto.Text = Global.GlobalVarPerfil;
+
+            MostrarIngresos();
+            //Llenar combo Articulos Ingresos
+            cbArticuloIngreso.DataSource = ObtenerArticulos("prcGetArticulosIngresos");
+            cbArticuloIngreso.DisplayMember = "Articulo";
+            cbArticuloIngreso.ValueMember = "Articulo_Id";
         }
 
 
@@ -97,11 +107,11 @@ namespace LoginSistem.Forms
         }
 
 
-        public List<Articulos> ObtenerArticulos()
+        public List<Articulos> ObtenerArticulos(string proc)
         {
             List<Articulos> oListaArticulos = new List<Articulos>();
             {
-                SqlCommand cmd = new SqlCommand("prcGetArticulos", conexion.Conexion);
+                SqlCommand cmd = new SqlCommand(proc, conexion.Conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 conexion.AbrirConexion();
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -120,6 +130,7 @@ namespace LoginSistem.Forms
             return oListaArticulos;
 
         }
+        #region Gastos
 
         public List<Categorias> ObtenerCategorias()
         {
@@ -178,12 +189,13 @@ namespace LoginSistem.Forms
 
         private void MostrarGastos()
         {
-            dgvGastos.DataSource = objetoGastosCN.MostrarProd();
+            CN_Gastos objetoGastos = new CN_Gastos();
+            dgvGastos.DataSource = objetoGastos.MostrarProd();
         }
 
         private void txtImporte_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //System.Text.RegularExpressions.Regex.IsMatch(txtImporte.Text, "[ ^ 0-9]");
+            System.Text.RegularExpressions.Regex.IsMatch(txtImporte.Text, "[ ^ 0-9]");
 
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
@@ -281,5 +293,143 @@ namespace LoginSistem.Forms
             Form1 form1 = new Form1();
             form1.ShowDialog();
         }
+
+
+        private void btnEliminarGasto_Click(object sender, EventArgs e)
+        {
+            if (dgvGastos.SelectedCells.Count > 0)
+            {
+
+                string message = "¿Estás seguro de que quieres eliminar a este registro?";
+                string title = "Eliminar registro";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+
+                if (result == DialogResult.Yes)
+                {
+                    idGasto = dgvGastos.CurrentRow.Cells["Gasto_Id"].Value.ToString();
+                    objetoGastosCN.EliminarPRod(idGasto);
+                    MessageBox.Show("Se eliminó correctamente!");
+                    MostrarGastos();
+                }
+            }
+            else
+                MessageBox.Show("Seleccione una celda para eliminar!");
+        }
+
+        #endregion Gastos
+
+        #region M Ingresos
+
+        private void btnEditarIngresos_Click(object sender, EventArgs e)
+        {
+            if (dgvIngresos.SelectedCells.Count > 0)
+            {
+                EsEditar = true;
+                cbArticuloIngreso.Text = dgvIngresos.CurrentRow.Cells["Articulo"].Value.ToString();
+                txtImporteIngreso.Text = dgvIngresos.CurrentRow.Cells["Importe"].Value.ToString();
+                idIngreso = dgvIngresos.CurrentRow.Cells["Ingreso_Id"].Value.ToString();
+            }
+            else
+                MessageBox.Show("Seleccione una celda para editar!");
+        }
+
+        private void btnGuardarIngreso_Click(object sender, EventArgs e)
+        {
+            if (EsValidoIngresos())
+            {
+                int articulo = (int)cbArticuloIngreso.SelectedValue;
+                string importe = txtImporteIngreso.Text;
+                bool activo = true;
+
+                if (EsEditar == false)
+                {
+                    try
+                    {
+
+                        objetoIngresoCN.InsertarPRod(Convert.ToInt32(articulo), Convert.ToInt32(importe), activo);
+
+                        MessageBox.Show("SE INSERTÓ CORRECTAMENTE!");
+                        LimpiarCamposIngresos();
+                        MostrarIngresos();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("no se pudo realizar la operación: " + ex);
+                    }
+                }
+                if (EsEditar == true)
+                {
+                    try
+                    {
+                        objetoIngresoCN.EditarProd(Convert.ToInt32(idIngreso), Convert.ToInt32(articulo), Convert.ToInt32(importe), activo);
+
+                        MessageBox.Show("Se editó correctamente!");
+                        LimpiarCamposIngresos();
+                        MostrarIngresos();
+                        EsEditar = false;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("no se pudo realizar la operación: " + ex);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe completar todos los datos!");
+            }
+        }
+
+        private void MostrarIngresos()
+        {
+            CN_Ingresos objetoIngreso = new CN_Ingresos();
+            dgvIngresos.DataSource = objetoIngreso.MostrarProd();
+        }
+
+        private bool EsValidoIngresos()
+        {
+            bool articulo = cbArticuloIngreso.Text != "";
+            bool importe = txtImporteIngreso.Text != "";
+
+            if (articulo && importe)
+                return true;
+            else
+                return false;
+
+        }
+        
+        private void LimpiarCamposIngresos()
+        {
+            cbArticuloIngreso.SelectedValue = 0;
+            txtImporteIngreso.Clear();
+        }
+
+        private void btnEliminarIngreso_Click(object sender, EventArgs e)
+        {
+          
+            if (dgvIngresos.SelectedCells.Count > 0)
+            {
+                
+                string message = "¿Estás seguro de que quieres eliminar a este registro?";
+                string title = "Eliminar registro";
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons);
+
+                if (result == DialogResult.Yes)
+                {
+                    idIngreso = dgvIngresos.CurrentRow.Cells["Ingreso_Id"].Value.ToString();
+                    objetoIngresoCN.EliminarPRod(idIngreso);
+                    MessageBox.Show("Se eliminó correctamente!");
+                    MostrarIngresos();
+                }
+            }
+            else
+                MessageBox.Show("Seleccione una celda para eliminar!");
+        }
+
+
+# endregion Ingresos
+
     }
 }

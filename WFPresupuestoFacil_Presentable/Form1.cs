@@ -20,7 +20,8 @@ namespace WFPresupuestoFacil_Presentable
 
         private void MostrarUsuarios()
         {
-            dataGridView1.DataSource = objetoUsuarioCN.MostrarProd();
+            CN_Usuarios objetoUsuario = new CN_Usuarios();
+            dataGridView1.DataSource = objetoUsuario.MostrarProd();
         }
 
         private void btnGuardarUsuario_Click(object sender, EventArgs e)

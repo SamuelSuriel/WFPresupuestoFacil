@@ -11,5 +11,6 @@ namespace WFPresupuestoFacil_Presentable.Clases
         public int Articulo_Id { get; set; }
         public string? Articulo { get; set; }
         public bool Activo { get; set; }
+        public bool EsIngreso { get; set; }
     }
 }

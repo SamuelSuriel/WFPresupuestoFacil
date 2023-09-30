@@ -59,6 +59,7 @@
             label2 = new Label();
             label1 = new Label();
             tabIngresos = new TabPage();
+            btnEditarIngresos = new Button();
             btnGuardarIngreso = new Button();
             label12 = new Label();
             label13 = new Label();
@@ -89,6 +90,8 @@
             btnAdministrarUsuarios = new PictureBox();
             lblAdministrarUsuarios = new Label();
             panelAdmin = new Panel();
+            btnEliminarIngreso = new Button();
+            btnEliminarGasto = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picSetup).BeginInit();
@@ -297,9 +300,9 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.BackColor = Color.White;
+            lblFecha.BackColor = Color.DimGray;
             lblFecha.Font = new Font("Segoe UI Variable Small", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblFecha.ForeColor = Color.Gray;
+            lblFecha.ForeColor = Color.White;
             lblFecha.Location = new Point(273, 176);
             lblFecha.Name = "lblFecha";
             lblFecha.Size = new Size(12, 17);
@@ -411,6 +414,8 @@
             // 
             // tabIngresos
             // 
+            tabIngresos.Controls.Add(btnEliminarIngreso);
+            tabIngresos.Controls.Add(btnEditarIngresos);
             tabIngresos.Controls.Add(btnGuardarIngreso);
             tabIngresos.Controls.Add(label12);
             tabIngresos.Controls.Add(label13);
@@ -426,16 +431,29 @@
             tabIngresos.Text = "Ingresos";
             tabIngresos.UseVisualStyleBackColor = true;
             // 
+            // btnEditarIngresos
+            // 
+            btnEditarIngresos.BackColor = Color.DimGray;
+            btnEditarIngresos.ForeColor = Color.White;
+            btnEditarIngresos.Location = new Point(463, 339);
+            btnEditarIngresos.Name = "btnEditarIngresos";
+            btnEditarIngresos.Size = new Size(112, 46);
+            btnEditarIngresos.TabIndex = 16;
+            btnEditarIngresos.Text = "Editar";
+            btnEditarIngresos.UseVisualStyleBackColor = false;
+            btnEditarIngresos.Click += btnEditarIngresos_Click;
+            // 
             // btnGuardarIngreso
             // 
             btnGuardarIngreso.BackColor = Color.DimGray;
             btnGuardarIngreso.ForeColor = Color.White;
-            btnGuardarIngreso.Location = new Point(524, 301);
+            btnGuardarIngreso.Location = new Point(603, 339);
             btnGuardarIngreso.Name = "btnGuardarIngreso";
-            btnGuardarIngreso.Size = new Size(137, 51);
+            btnGuardarIngreso.Size = new Size(118, 46);
             btnGuardarIngreso.TabIndex = 15;
             btnGuardarIngreso.Text = "Guardar";
             btnGuardarIngreso.UseVisualStyleBackColor = false;
+            btnGuardarIngreso.Click += btnGuardarIngreso_Click;
             // 
             // label12
             // 
@@ -501,6 +519,7 @@
             // 
             // tabGastos
             // 
+            tabGastos.Controls.Add(btnEliminarGasto);
             tabGastos.Controls.Add(btnEditarGasto);
             tabGastos.Controls.Add(label16);
             tabGastos.Controls.Add(cbArticuloGasto);
@@ -525,7 +544,7 @@
             // 
             btnEditarGasto.BackColor = Color.DimGray;
             btnEditarGasto.ForeColor = Color.White;
-            btnEditarGasto.Location = new Point(501, 415);
+            btnEditarGasto.Location = new Point(501, 394);
             btnEditarGasto.Name = "btnEditarGasto";
             btnEditarGasto.Size = new Size(112, 46);
             btnEditarGasto.TabIndex = 11;
@@ -554,7 +573,7 @@
             // 
             btnGuardarGasto.BackColor = Color.DimGray;
             btnGuardarGasto.ForeColor = Color.White;
-            btnGuardarGasto.Location = new Point(647, 415);
+            btnGuardarGasto.Location = new Point(647, 394);
             btnGuardarGasto.Name = "btnGuardarGasto";
             btnGuardarGasto.Size = new Size(112, 46);
             btnGuardarGasto.TabIndex = 8;
@@ -643,6 +662,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.ForeColor = Color.White;
             label5.Location = new Point(492, 119);
             label5.Name = "label5";
             label5.Size = new Size(227, 20);
@@ -728,10 +748,35 @@
             panelAdmin.Size = new Size(202, 83);
             panelAdmin.TabIndex = 29;
             // 
+            // btnEliminarIngreso
+            // 
+            btnEliminarIngreso.BackColor = Color.DimGray;
+            btnEliminarIngreso.ForeColor = Color.White;
+            btnEliminarIngreso.Location = new Point(541, 401);
+            btnEliminarIngreso.Name = "btnEliminarIngreso";
+            btnEliminarIngreso.Size = new Size(112, 46);
+            btnEliminarIngreso.TabIndex = 17;
+            btnEliminarIngreso.Text = "Eliminar";
+            btnEliminarIngreso.UseVisualStyleBackColor = false;
+            btnEliminarIngreso.Click += btnEliminarIngreso_Click;
+            // 
+            // btnEliminarGasto
+            // 
+            btnEliminarGasto.BackColor = Color.DimGray;
+            btnEliminarGasto.ForeColor = Color.White;
+            btnEliminarGasto.Location = new Point(583, 444);
+            btnEliminarGasto.Name = "btnEliminarGasto";
+            btnEliminarGasto.Size = new Size(112, 46);
+            btnEliminarGasto.TabIndex = 18;
+            btnEliminarGasto.Text = "Eliminar";
+            btnEliminarGasto.UseVisualStyleBackColor = false;
+            btnEliminarGasto.Click += btnEliminarGasto_Click;
+            // 
             // PanelPresupuesto
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DimGray;
             ClientSize = new Size(1070, 734);
             Controls.Add(panelAdmin);
             Controls.Add(lblFecha);
@@ -739,7 +784,7 @@
             Controls.Add(label5);
             Controls.Add(tabResumen);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.SizableToolWindow;
             Name = "PanelPresupuesto";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Panel";
@@ -836,5 +881,8 @@
         private PictureBox btnAdministrarUsuarios;
         private Label lblAdministrarUsuarios;
         private Panel panelAdmin;
+        private Button btnEditarIngresos;
+        private Button btnEliminarIngreso;
+        private Button btnEliminarGasto;
     }
 }

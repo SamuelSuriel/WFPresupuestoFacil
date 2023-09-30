@@ -104,6 +104,7 @@
             // 
             // panel5
             // 
+            panel5.BackColor = Color.White;
             panel5.Controls.Add(label4);
             panel5.Location = new Point(479, 1);
             panel5.Name = "panel5";
@@ -139,11 +140,11 @@
             btnAtrasSetup.AutoSize = true;
             btnAtrasSetup.BackColor = Color.White;
             btnAtrasSetup.Cursor = Cursors.Hand;
-            btnAtrasSetup.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAtrasSetup.Font = new Font("Segoe Fluent Icons", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             btnAtrasSetup.ForeColor = Color.DimGray;
             btnAtrasSetup.Location = new Point(12, 39);
             btnAtrasSetup.Name = "btnAtrasSetup";
-            btnAtrasSetup.Size = new Size(26, 28);
+            btnAtrasSetup.Size = new Size(25, 28);
             btnAtrasSetup.TabIndex = 2;
             btnAtrasSetup.Text = "<";
             btnAtrasSetup.Click += btnAtrasSetup_Click;
@@ -233,7 +234,8 @@
             // 
             // dataGridView1
             // 
-            dataGridView1.BackgroundColor = Color.DimGray;
+            dataGridView1.BackgroundColor = Color.Gray;
+            dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(16, 155);
             dataGridView1.Name = "dataGridView1";
@@ -304,7 +306,8 @@
             // 
             // dataGridView2
             // 
-            dataGridView2.BackgroundColor = Color.DimGray;
+            dataGridView2.BackgroundColor = Color.Gray;
+            dataGridView2.BorderStyle = BorderStyle.None;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(566, 155);
             dataGridView2.Name = "dataGridView2";
@@ -374,7 +377,8 @@
             // 
             // dataGridView3
             // 
-            dataGridView3.BackgroundColor = Color.DimGray;
+            dataGridView3.BackgroundColor = Color.Gray;
+            dataGridView3.BorderStyle = BorderStyle.None;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView3.Location = new Point(1132, 155);
             dataGridView3.Name = "dataGridView3";
@@ -423,7 +427,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkGray;
+            BackColor = Color.DimGray;
             ClientSize = new Size(1700, 727);
             Controls.Add(panel4);
             Controls.Add(panel3);

@@ -42,12 +42,16 @@ namespace WFPresupuestoFacil_Presentable
 
                     if (registro.Read())
                     {
-                        Clases.Usuarios usuario = new Clases.Usuarios();
+                        Usuarios usuario = new Usuarios();
                         usuario.Usuario_Id = (int)registro["Usuario_Id"];
                         usuario.Usuario_Nombre = (string)registro["Usuario_Nombre"];
                         usuario.Clave = (string)registro["Clave"];
                         usuario.IdPerfil = (int)registro["IdPerfil"];
                         usuario.Perfil = (string)registro["Perfil"];
+                        //usuario.Usuario_Edad = (int)registro["Usuario_Edad"];
+                        //usuario.Usuario_Correo = (string)registro["Usuario_Correo"];
+                        //usuario.Usuario_Telefono = (string)registro["Usuario_Telefono"];
+                        //usuario.Usuario_Posicion = (string)registro["Usuario_Posicion"];
 
                         if (usuarioValido == usuario.Usuario_Nombre && passwordValido == usuario.Clave)
                             esValido = true;
@@ -66,9 +70,11 @@ namespace WFPresupuestoFacil_Presentable
                             Global.GlobalVarIdPerfil = (int)usuario.IdPerfil;
                             Global.GlobalVarPerfil = usuario.Perfil;
                             Global.GlobalVarCorreo = usuario.Usuario_Correo;
-                            Global.GlobalVarEdad = (int)usuario.Usuario_Edad;
-                            Global.GlobalVarTelefono = usuario.Usuario_Telefono;
-                            Global.GlobalVarPosicion = usuario.Usuario_Posicion;
+                            //int num = (int)usuario.Usuario_Edad;
+                            //string? edadString = num.ToString();
+                            //Global.GlobalVarEdad = edadString;
+                            //Global.GlobalVarTelefono = usuario.Usuario_Telefono;
+                            //Global.GlobalVarPosicion = usuario.Usuario_Posicion;
 
                             //Llenamos el textbox del modal Menú principal
                             menuPrincipal.lblUser.Text = Global.GlobalVarNombre;
