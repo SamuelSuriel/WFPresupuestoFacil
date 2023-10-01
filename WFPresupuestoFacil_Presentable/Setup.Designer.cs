@@ -207,6 +207,7 @@
             btnGuardarCategoria.TabIndex = 44;
             btnGuardarCategoria.Text = "Guardar";
             btnGuardarCategoria.UseVisualStyleBackColor = false;
+            btnGuardarCategoria.Click += btnGuardarCategoria_Click;
             // 
             // txtCategoria
             // 
@@ -223,11 +224,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Variable Text", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(77, 97);
+            label2.Location = new Point(35, 97);
             label2.Name = "label2";
-            label2.Size = new Size(127, 31);
+            label2.Size = new Size(204, 31);
             label2.TabIndex = 42;
-            label2.Text = "Categorías";
+            label2.Text = "Categorías Gastos";
             // 
             // dgvCategorias
             // 
@@ -254,6 +255,7 @@
             btnGuardarEstatus.TabIndex = 50;
             btnGuardarEstatus.Text = "Guardar";
             btnGuardarEstatus.UseVisualStyleBackColor = false;
+            btnGuardarEstatus.Click += btnGuardarEstatus_Click;
             // 
             // txtEstatus
             // 
@@ -363,6 +365,7 @@
             btnEliminarCategoria.Size = new Size(91, 25);
             btnEliminarCategoria.TabIndex = 42;
             btnEliminarCategoria.Text = "ELIMINAR";
+            btnEliminarCategoria.Click += btnEliminarCategoria_Click;
             // 
             // btnEditarCategoria
             // 
@@ -375,6 +378,7 @@
             btnEditarCategoria.Size = new Size(70, 25);
             btnEditarCategoria.TabIndex = 41;
             btnEditarCategoria.Text = "EDITAR";
+            btnEditarCategoria.Click += btnEditarCategoria_Click;
             // 
             // panel4
             // 
@@ -400,6 +404,7 @@
             btnEliminarEstatus.Size = new Size(91, 25);
             btnEliminarEstatus.TabIndex = 48;
             btnEliminarEstatus.Text = "ELIMINAR";
+            btnEliminarEstatus.Click += btnEliminarEstatus_Click;
             // 
             // btnEditarEstatus
             // 
@@ -412,6 +417,7 @@
             btnEditarEstatus.Size = new Size(70, 25);
             btnEditarEstatus.TabIndex = 47;
             btnEditarEstatus.Text = "EDITAR";
+            btnEditarEstatus.Click += btnEditarEstatus_Click;
             // 
             // Setup
             // 
