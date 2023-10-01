@@ -58,7 +58,6 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            pbrResumen = new ProgressBar();
             panelResumenSaldo = new Panel();
             tabIngresos = new TabPage();
             btnEliminarIngreso = new Label();
@@ -93,6 +92,9 @@
             btnAdministrarUsuarios = new PictureBox();
             lblAdministrarUsuarios = new Label();
             panelAdmin = new Panel();
+            panel3 = new Panel();
+            label17 = new Label();
+            lblSaldoMain = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picSetup).BeginInit();
@@ -101,6 +103,7 @@
             tabResumen.SuspendLayout();
             tabPage1.SuspendLayout();
             panel2.SuspendLayout();
+            panelResumenSaldo.SuspendLayout();
             tabIngresos.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvIngresos).BeginInit();
@@ -344,8 +347,8 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(panel3);
             tabPage1.Controls.Add(panel2);
-            tabPage1.Controls.Add(pbrResumen);
             tabPage1.Controls.Add(panelResumenSaldo);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
@@ -440,17 +443,11 @@
             label1.TabIndex = 0;
             label1.Text = "Total de ingresos mensuales";
             // 
-            // pbrResumen
-            // 
-            pbrResumen.ForeColor = Color.Transparent;
-            pbrResumen.Location = new Point(28, 118);
-            pbrResumen.Name = "pbrResumen";
-            pbrResumen.Size = new Size(665, 31);
-            pbrResumen.TabIndex = 8;
-            // 
             // panelResumenSaldo
             // 
             panelResumenSaldo.BackColor = Color.White;
+            panelResumenSaldo.Controls.Add(lblSaldoMain);
+            panelResumenSaldo.Controls.Add(label17);
             panelResumenSaldo.Location = new Point(23, 155);
             panelResumenSaldo.Name = "panelResumenSaldo";
             panelResumenSaldo.Size = new Size(680, 324);
@@ -857,6 +854,35 @@
             panelAdmin.Size = new Size(202, 66);
             panelAdmin.TabIndex = 29;
             // 
+            // panel3
+            // 
+            panel3.BackColor = Color.LightGray;
+            panel3.Location = new Point(23, 100);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(676, 49);
+            panel3.TabIndex = 30;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label17.ForeColor = Color.Gray;
+            label17.Location = new Point(231, 48);
+            label17.Name = "label17";
+            label17.Size = new Size(224, 38);
+            label17.TabIndex = 0;
+            label17.Text = "SALDO ACTUAL";
+            // 
+            // lblSaldoMain
+            // 
+            lblSaldoMain.AutoSize = true;
+            lblSaldoMain.Font = new Font("Segoe UI", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblSaldoMain.ForeColor = Color.MidnightBlue;
+            lblSaldoMain.Location = new Point(166, 111);
+            lblSaldoMain.Name = "lblSaldoMain";
+            lblSaldoMain.Size = new Size(0, 81);
+            lblSaldoMain.TabIndex = 1;
+            // 
             // PanelPresupuesto
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -884,6 +910,8 @@
             tabPage1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panelResumenSaldo.ResumeLayout(false);
+            panelResumenSaldo.PerformLayout();
             tabIngresos.ResumeLayout(false);
             tabIngresos.PerformLayout();
             panel4.ResumeLayout(false);
@@ -969,6 +997,8 @@
         private Label btnEliminarIngreso;
         private Label btnEditarIngresos;
         public Panel panelResumenSaldo;
-        public ProgressBar pbrResumen;
+        private Panel panel3;
+        private Label lblSaldoMain;
+        private Label label17;
     }
 }

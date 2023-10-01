@@ -25,11 +25,6 @@ namespace LoginSistem.Forms
             InitializeComponent();
         }
 
-        //private void btnCerrarPanel_Click(object sender, EventArgs e)
-        //{
-        //    this.Close();
-        //}
-
         private void picClose_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -96,6 +91,12 @@ namespace LoginSistem.Forms
             cbArticuloIngreso.ValueMember = "Articulo_Id";
         }
 
+
+        //private void btnCerrarPanel_Click(object sender, EventArgs e)
+        //{
+        //    this.Close();
+        //}
+
         //public void BarExample()
         //{
         //this.chartControl.Series.Clear();
@@ -150,6 +151,7 @@ namespace LoginSistem.Forms
             return oListaArticulos;
 
         }
+
         #region Gastos
 
         public List<Categorias> ObtenerCategorias()
@@ -175,7 +177,6 @@ namespace LoginSistem.Forms
             return oListaCategorias;
 
         }
-
 
         public List<Estatus> ObtenerEstatus()
         {
@@ -226,7 +227,9 @@ namespace LoginSistem.Forms
                 lblTotalIngresos.Text = "";
                 lblsaldo.Text = "";
                 lblsaldo.BackColor = Color.RoyalBlue;
-                pbrResumen.BackColor = Color.DarkGreen;
+                lblSaldoMain.Text = "";
+                lblSaldoMain.ForeColor = Color.MidnightBlue;
+
 
                 while (dr.Read())
                 {
@@ -241,15 +244,17 @@ namespace LoginSistem.Forms
                     lblTotalGastos.Text = "$ " + Convert.ToString(dr["TotalGastos"].ToString());
                     lblTotalIngresos.Text = "$ " + Convert.ToString(dr["TotalIngresos"].ToString());
                     lblsaldo.Text = "$ " + Convert.ToString(saldo);
+                    lblSaldoMain.Text = "$ " + Convert.ToString(saldo);
 
                     if (saldo < 0)
                     {
                         lblsaldo.BackColor = Color.Red;
-                        pbrResumen.BackColor = Color.DarkRed;
+                        lblSaldoMain.ForeColor = Color.DarkRed;
                     }
                     else
                     {
                         lblsaldo.BackColor = Color.RoyalBlue;
+                        lblSaldoMain.ForeColor = Color.MidnightBlue;
                     }
                 }
                 dr.Close();
