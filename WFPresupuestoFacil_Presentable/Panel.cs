@@ -25,10 +25,10 @@ namespace LoginSistem.Forms
             InitializeComponent();
         }
 
-        private void btnCerrarPanel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        //private void btnCerrarPanel_Click(object sender, EventArgs e)
+        //{
+        //    this.Close();
+        //}
 
         private void picClose_Click(object sender, EventArgs e)
         {
@@ -49,7 +49,7 @@ namespace LoginSistem.Forms
         {
             string date = DateTime.UtcNow.ToString("D");
             lblFecha.Text = date;
-                       
+
             System.Text.RegularExpressions.Regex.IsMatch(txtImporte.Text, "[ ^ 0-9]");
 
             if (Global.GlobalVarIdPerfil == 1)
@@ -218,9 +218,9 @@ namespace LoginSistem.Forms
                 conexion.AbrirConexion();
                 SqlDataReader dr = cmd.ExecuteReader();
 
-                int saldo = 0;
-                int ttingresos = 0;
-                int ttgastos = 0;
+                int? saldo = 0;
+                string? ttingresos = "";
+                string? ttgastos = "";
 
                 lblTotalGastos.Text = "";
                 lblTotalIngresos.Text = "";
@@ -229,12 +229,12 @@ namespace LoginSistem.Forms
 
                 while (dr.Read())
                 {
-                     ttgastos = Convert.ToInt32(dr["TotalGastos"]);
-                     ttingresos = Convert.ToInt32(dr["TotalIngresos"]);
+                    ttgastos = dr["TotalGastos"].ToString();
+                    ttingresos = dr["TotalIngresos"].ToString();
 
-                    if (ttgastos > 0 && ttingresos > 0)
+                    if (ttgastos != "" && ttingresos != "")
                     {
-                        saldo = ttingresos - ttgastos;
+                        saldo = Convert.ToInt32(ttingresos) - Convert.ToInt32(ttgastos);
                     }
 
                     lblTotalGastos.Text = "$ " + Convert.ToString(dr["TotalGastos"].ToString());

@@ -52,6 +52,9 @@
             pbrResumen = new ProgressBar();
             panel3 = new Panel();
             panel2 = new Panel();
+            lblsaldo = new Label();
+            lblttgastos = new Label();
+            lblttingresos = new Label();
             lblTotalGastos = new Label();
             lblTotalIngresos = new Label();
             label3 = new Label();
@@ -91,9 +94,6 @@
             btnAdministrarUsuarios = new PictureBox();
             lblAdministrarUsuarios = new Label();
             panelAdmin = new Panel();
-            lblttingresos = new Label();
-            lblttgastos = new Label();
-            lblsaldo = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picSetup).BeginInit();
@@ -258,7 +258,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.Gray;
-            label6.Location = new Point(17, 129);
+            label6.Location = new Point(27, 129);
             label6.Name = "label6";
             label6.Size = new Size(160, 27);
             label6.TabIndex = 16;
@@ -269,7 +269,7 @@
             label04.AutoSize = true;
             label04.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label04.ForeColor = Color.Gray;
-            label04.Location = new Point(12, 205);
+            label04.Location = new Point(29, 205);
             label04.Name = "label04";
             label04.Size = new Size(63, 27);
             label04.TabIndex = 15;
@@ -280,8 +280,8 @@
             lblUser.AutoSize = true;
             lblUser.BackColor = Color.White;
             lblUser.Font = new Font("Segoe UI Variable Text", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblUser.ForeColor = Color.Gray;
-            lblUser.Location = new Point(19, 168);
+            lblUser.ForeColor = Color.DimGray;
+            lblUser.Location = new Point(29, 168);
             lblUser.Name = "lblUser";
             lblUser.Size = new Size(17, 27);
             lblUser.TabIndex = 14;
@@ -292,8 +292,8 @@
             lblPerfil.AutoSize = true;
             lblPerfil.BackColor = Color.White;
             lblPerfil.Font = new Font("Segoe UI Variable Text", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPerfil.ForeColor = Color.Gray;
-            lblPerfil.Location = new Point(17, 237);
+            lblPerfil.ForeColor = Color.DimGray;
+            lblPerfil.Location = new Point(27, 237);
             lblPerfil.Name = "lblPerfil";
             lblPerfil.Size = new Size(17, 27);
             lblPerfil.TabIndex = 14;
@@ -324,9 +324,9 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(panel2);
             tabPage1.Controls.Add(pbrResumen);
             tabPage1.Controls.Add(panel3);
-            tabPage1.Controls.Add(panel2);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -337,13 +337,14 @@
             // 
             // pbrResumen
             // 
-            pbrResumen.Location = new Point(28, 103);
+            pbrResumen.Location = new Point(29, 103);
             pbrResumen.Name = "pbrResumen";
             pbrResumen.Size = new Size(665, 31);
             pbrResumen.TabIndex = 8;
             // 
             // panel3
             // 
+            panel3.BackColor = Color.White;
             panel3.Location = new Point(23, 140);
             panel3.Name = "panel3";
             panel3.Size = new Size(680, 303);
@@ -351,6 +352,7 @@
             // 
             // panel2
             // 
+            panel2.BackColor = Color.White;
             panel2.Controls.Add(lblsaldo);
             panel2.Controls.Add(lblttgastos);
             panel2.Controls.Add(lblttingresos);
@@ -359,10 +361,35 @@
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
-            panel2.Location = new Point(18, 25);
+            panel2.ForeColor = SystemColors.ActiveCaptionText;
+            panel2.Location = new Point(18, 19);
             panel2.Name = "panel2";
             panel2.Size = new Size(685, 78);
             panel2.TabIndex = 6;
+            // 
+            // lblsaldo
+            // 
+            lblsaldo.AutoSize = true;
+            lblsaldo.Location = new Point(458, 49);
+            lblsaldo.Name = "lblsaldo";
+            lblsaldo.Size = new Size(0, 20);
+            lblsaldo.TabIndex = 7;
+            // 
+            // lblttgastos
+            // 
+            lblttgastos.AutoSize = true;
+            lblttgastos.Location = new Point(231, 49);
+            lblttgastos.Name = "lblttgastos";
+            lblttgastos.Size = new Size(0, 20);
+            lblttgastos.TabIndex = 6;
+            // 
+            // lblttingresos
+            // 
+            lblttingresos.AutoSize = true;
+            lblttingresos.Location = new Point(11, 49);
+            lblttingresos.Name = "lblttingresos";
+            lblttingresos.Size = new Size(0, 20);
+            lblttingresos.TabIndex = 5;
             // 
             // lblTotalGastos
             // 
@@ -430,7 +457,7 @@
             // 
             btnEliminarIngreso.BackColor = Color.DimGray;
             btnEliminarIngreso.ForeColor = Color.White;
-            btnEliminarIngreso.Location = new Point(541, 401);
+            btnEliminarIngreso.Location = new Point(541, 427);
             btnEliminarIngreso.Name = "btnEliminarIngreso";
             btnEliminarIngreso.Size = new Size(112, 46);
             btnEliminarIngreso.TabIndex = 17;
@@ -498,15 +525,15 @@
             // panel4
             // 
             panel4.Controls.Add(label8);
-            panel4.Location = new Point(463, 26);
+            panel4.Location = new Point(485, 26);
             panel4.Name = "panel4";
-            panel4.Size = new Size(258, 84);
+            panel4.Size = new Size(236, 70);
             panel4.TabIndex = 1;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(46, 31);
+            label8.Location = new Point(37, 25);
             label8.Name = "label8";
             label8.Size = new Size(165, 20);
             label8.TabIndex = 4;
@@ -653,15 +680,15 @@
             // panel5
             // 
             panel5.Controls.Add(label4);
-            panel5.Location = new Point(501, 35);
+            panel5.Location = new Point(517, 38);
             panel5.Name = "panel5";
-            panel5.Size = new Size(258, 84);
+            panel5.Size = new Size(226, 72);
             panel5.TabIndex = 2;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(54, 33);
+            label4.Location = new Point(41, 27);
             label4.Name = "label4";
             label4.Size = new Size(150, 20);
             label4.TabIndex = 0;
@@ -710,7 +737,7 @@
             btnCerrarPanel.Size = new Size(25, 28);
             btnCerrarPanel.TabIndex = 4;
             btnCerrarPanel.Text = "X";
-            btnCerrarPanel.Click += btnCerrarPanel_Click;
+            btnCerrarPanel.Visible = false;
             // 
             // label7
             // 
@@ -749,7 +776,7 @@
             // 
             lblAdministrarUsuarios.AutoSize = true;
             lblAdministrarUsuarios.Cursor = Cursors.Hand;
-            lblAdministrarUsuarios.Location = new Point(44, 19);
+            lblAdministrarUsuarios.Location = new Point(47, 17);
             lblAdministrarUsuarios.Name = "lblAdministrarUsuarios";
             lblAdministrarUsuarios.Size = new Size(144, 20);
             lblAdministrarUsuarios.TabIndex = 26;
@@ -766,30 +793,6 @@
             panelAdmin.Name = "panelAdmin";
             panelAdmin.Size = new Size(202, 83);
             panelAdmin.TabIndex = 29;
-            // 
-            // lblttingresos
-            // 
-            lblttingresos.AutoSize = true;
-            lblttingresos.Location = new Point(11, 49);
-            lblttingresos.Name = "lblttingresos";
-            lblttingresos.Size = new Size(0, 20);
-            lblttingresos.TabIndex = 5;
-            // 
-            // lblttgastos
-            // 
-            lblttgastos.AutoSize = true;
-            lblttgastos.Location = new Point(231, 49);
-            lblttgastos.Name = "lblttgastos";
-            lblttgastos.Size = new Size(0, 20);
-            lblttgastos.TabIndex = 6;
-            // 
-            // lblsaldo
-            // 
-            lblsaldo.AutoSize = true;
-            lblsaldo.Location = new Point(458, 49);
-            lblsaldo.Name = "lblsaldo";
-            lblsaldo.Size = new Size(0, 20);
-            lblsaldo.TabIndex = 7;
             // 
             // PanelPresupuesto
             // 
