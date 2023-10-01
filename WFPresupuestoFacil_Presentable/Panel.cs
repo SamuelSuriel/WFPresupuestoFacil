@@ -209,33 +209,50 @@ namespace LoginSistem.Forms
 
         private void ObtenerTotalesResumen()
         {
-           
-            {
-                    SqlCommand cmd = new SqlCommand("MostrarTotales", conexion.Conexion);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    conexion.AbrirConexion();
-                    SqlDataReader dr = cmd.ExecuteReader();
 
-                    while (dr.Read())
+            {
+                int Usuario_Id = Global.GlobalVarId;
+                SqlCommand cmd = new SqlCommand("MostrarTotales", conexion.Conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idUsuario", Usuario_Id);
+                conexion.AbrirConexion();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                int saldo = 0;
+                int ttingresos = 0;
+                int ttgastos = 0;
+
+                lblTotalGastos.Text = "";
+                lblTotalIngresos.Text = "";
+                lblsaldo.Text = "";
+                lblsaldo.BackColor = Color.White;
+
+                while (dr.Read())
+                {
+                     ttgastos = Convert.ToInt32(dr["TotalGastos"]);
+                     ttingresos = Convert.ToInt32(dr["TotalIngresos"]);
+
+                    if (ttgastos > 0 && ttingresos > 0)
                     {
-                    int ttgastos = Convert.ToInt32(dr["TotalGastos"]);
-                    int ttingresos = Convert.ToInt32(dr["TotalIngresos"]);
-                    int saldo = ttingresos - ttgastos;
+                        saldo = ttingresos - ttgastos;
+                    }
+
+                    lblTotalGastos.Text = "$ " + Convert.ToString(dr["TotalGastos"].ToString());
+                    lblTotalIngresos.Text = "$ " + Convert.ToString(dr["TotalIngresos"].ToString());
+                    lblsaldo.Text = "$ " + Convert.ToString(saldo);
+
                     if (saldo < 0)
                     {
                         lblsaldo.BackColor = Color.Red;
                     }
                     else
                     {
-                        lblsaldo.BackColor = Color.DimGray;
+                        lblsaldo.BackColor = Color.White;
                     }
-                        lblTotalGastos.Text = "$ " + Convert.ToString(dr["TotalGastos"].ToString());
-                        lblTotalIngresos.Text = "$ " + Convert.ToString(dr["TotalIngresos"].ToString());
-                        lblsaldo.Text = "$ " + Convert.ToString(saldo);
-                    }
-                    dr.Close();
                 }
-                           
+                dr.Close();
+            }
+
         }
 
         private void MostrarGastos()
@@ -399,13 +416,14 @@ namespace LoginSistem.Forms
                 int articulo = (int)cbArticuloIngreso.SelectedValue;
                 string importe = txtImporteIngreso.Text;
                 bool activo = true;
+                int Usuario_Id = Global.GlobalVarId;
 
                 if (EsEditar == false)
                 {
                     try
                     {
 
-                        objetoIngresoCN.InsertarPRod(Convert.ToInt32(articulo), Convert.ToInt32(importe), activo);
+                        objetoIngresoCN.InsertarPRod(Convert.ToInt32(articulo), Convert.ToInt32(importe), activo, Convert.ToInt32(Usuario_Id));
 
                         MessageBox.Show("SE INSERTÓ CORRECTAMENTE!");
                         LimpiarCamposIngresos();
@@ -421,7 +439,7 @@ namespace LoginSistem.Forms
                 {
                     try
                     {
-                        objetoIngresoCN.EditarProd(Convert.ToInt32(idIngreso), Convert.ToInt32(articulo), Convert.ToInt32(importe), activo);
+                        objetoIngresoCN.EditarProd(Convert.ToInt32(idIngreso), Convert.ToInt32(articulo), Convert.ToInt32(importe), activo, Convert.ToInt32(Usuario_Id));
 
                         MessageBox.Show("Se editó correctamente!");
                         LimpiarCamposIngresos();
@@ -444,7 +462,8 @@ namespace LoginSistem.Forms
         private void MostrarIngresos()
         {
             CN_Ingresos objetoIngreso = new CN_Ingresos();
-            dgvIngresos.DataSource = objetoIngreso.MostrarProd();
+            int Usuario_Id = Global.GlobalVarId;
+            dgvIngresos.DataSource = objetoIngreso.MostrarProd(Usuario_Id);
         }
 
         private bool EsValidoIngresos()
@@ -479,7 +498,9 @@ namespace LoginSistem.Forms
                 if (result == DialogResult.Yes)
                 {
                     idIngreso = dgvIngresos.CurrentRow.Cells["Ingreso_Id"].Value.ToString();
-                    objetoIngresoCN.EliminarPRod(idIngreso);
+                    int Usuario_Id = Global.GlobalVarId;
+
+                    objetoIngresoCN.EliminarPRod(idIngreso, Convert.ToInt32(Usuario_Id));
                     MessageBox.Show("Se eliminó correctamente!");
                     MostrarIngresos();
                     ObtenerTotalesResumen();

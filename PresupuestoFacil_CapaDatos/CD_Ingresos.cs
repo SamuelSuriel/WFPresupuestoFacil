@@ -13,12 +13,13 @@ namespace PresupuestoFacil_CapaDatos
         SqlCommand comando = new SqlCommand();
 
 
-        public DataTable Mostrar()
+        public DataTable Mostrar(int id)
         {
 
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "MostrarIngresos";
             comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idUsuario", id);
             leer = comando.ExecuteReader();
             tabla.Load(leer);
             conexion.CerrarConexion();
@@ -26,7 +27,7 @@ namespace PresupuestoFacil_CapaDatos
 
         }
 
-        public void Insertar(int Articulo_Id, decimal Ingreso_Importe, bool activo)
+        public void Insertar(int Articulo_Id, decimal Ingreso_Importe, bool activo, int Usuario_Id)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "InsertarIngreso";
@@ -34,6 +35,7 @@ namespace PresupuestoFacil_CapaDatos
             comando.Parameters.AddWithValue("@Articulo_Id", Articulo_Id);
             comando.Parameters.AddWithValue("@Ingreso_Importe", Ingreso_Importe);
             comando.Parameters.AddWithValue("@activo", activo);
+            comando.Parameters.AddWithValue("@idUsuario", Usuario_Id);
             comando.ExecuteNonQuery();
 
             comando.Parameters.Clear();
@@ -41,7 +43,7 @@ namespace PresupuestoFacil_CapaDatos
 
         }
 
-        public void Editar(int idIngreso, int Articulo_Id, decimal Ingreso_Importe, bool activo)
+        public void Editar(int idIngreso, int Articulo_Id, decimal Ingreso_Importe, bool activo, int Usuario_Id)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "EditarIngreso";
@@ -51,18 +53,20 @@ namespace PresupuestoFacil_CapaDatos
             comando.Parameters.AddWithValue("@Ingreso_Importe", Ingreso_Importe);
             comando.Parameters.AddWithValue("@fechaModificacion", DateTime.Now);
             comando.Parameters.AddWithValue("@activo", activo);
+            comando.Parameters.AddWithValue("@idUsuario", Usuario_Id);
             comando.ExecuteNonQuery();
 
             comando.Parameters.Clear();
             conexion.CerrarConexion();
         }
 
-        public void Eliminar(int id)
+        public void Eliminar(int id, int Usuario_Id)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "EliminarIngreso";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@idIngreso", id);
+            comando.Parameters.AddWithValue("@idUsuario", Usuario_Id);
             comando.ExecuteNonQuery();
 
             comando.Parameters.Clear();

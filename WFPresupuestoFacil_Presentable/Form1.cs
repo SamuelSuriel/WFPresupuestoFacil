@@ -88,7 +88,7 @@ namespace WFPresupuestoFacil_Presentable
 
             txtNombreUsuario.Clear();
             txtClaveAdmin.Clear();
-            cbPerfilesAdmin.ValueMember = "";
+            cbPerfilesAdmin.SelectedValue = 0;
         }
 
         private void btnEditarUsuario_Click(object sender, EventArgs e)
