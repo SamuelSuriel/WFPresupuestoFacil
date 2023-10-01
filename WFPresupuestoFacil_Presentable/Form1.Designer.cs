@@ -42,7 +42,7 @@
             label11 = new Label();
             cbPerfilesAdmin = new ComboBox();
             btnEditarUsuario = new Label();
-            //btnEliminarUsuario = new Label();
+            btnEliminarUsuario = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -50,7 +50,6 @@
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = SystemColors.ActiveCaption;
-            dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = Color.MidnightBlue;
             dataGridView1.Location = new Point(12, 147);
@@ -64,8 +63,8 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(999, 264);
+            label1.ForeColor = Color.MediumBlue;
+            label1.Location = new Point(985, 149);
             label1.Name = "label1";
             label1.Size = new Size(87, 28);
             label1.TabIndex = 1;
@@ -73,9 +72,9 @@
             // 
             // txtNombreUsuario
             // 
-            txtNombreUsuario.BackColor = Color.MidnightBlue;
-            txtNombreUsuario.ForeColor = Color.White;
-            txtNombreUsuario.Location = new Point(1087, 264);
+            txtNombreUsuario.BackColor = Color.White;
+            txtNombreUsuario.ForeColor = Color.DimGray;
+            txtNombreUsuario.Location = new Point(1073, 149);
             txtNombreUsuario.Name = "txtNombreUsuario";
             txtNombreUsuario.Size = new Size(280, 27);
             txtNombreUsuario.TabIndex = 2;
@@ -83,10 +82,11 @@
             // btnGuardarUsuario
             // 
             btnGuardarUsuario.BackColor = Color.DeepSkyBlue;
+            btnGuardarUsuario.Cursor = Cursors.Hand;
             btnGuardarUsuario.FlatAppearance.BorderColor = Color.Magenta;
             btnGuardarUsuario.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnGuardarUsuario.ForeColor = Color.White;
-            btnGuardarUsuario.Location = new Point(999, 509);
+            btnGuardarUsuario.Location = new Point(985, 394);
             btnGuardarUsuario.Name = "btnGuardarUsuario";
             btnGuardarUsuario.Size = new Size(368, 55);
             btnGuardarUsuario.TabIndex = 13;
@@ -103,7 +103,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1392, 95);
+            panel1.Size = new Size(1377, 95);
             panel1.TabIndex = 16;
             // 
             // btnAtrasCRUD
@@ -149,7 +149,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.ForeColor = Color.White;
+            label9.ForeColor = Color.MediumBlue;
             label9.Location = new Point(417, 116);
             label9.Name = "label9";
             label9.Size = new Size(188, 28);
@@ -158,9 +158,9 @@
             // 
             // txtClaveAdmin
             // 
-            txtClaveAdmin.BackColor = Color.MidnightBlue;
-            txtClaveAdmin.ForeColor = Color.White;
-            txtClaveAdmin.Location = new Point(1087, 342);
+            txtClaveAdmin.BackColor = Color.White;
+            txtClaveAdmin.ForeColor = Color.DimGray;
+            txtClaveAdmin.Location = new Point(1073, 227);
             txtClaveAdmin.Name = "txtClaveAdmin";
             txtClaveAdmin.Size = new Size(280, 27);
             txtClaveAdmin.TabIndex = 19;
@@ -169,8 +169,8 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(999, 345);
+            label10.ForeColor = Color.MediumBlue;
+            label10.Location = new Point(985, 230);
             label10.Name = "label10";
             label10.Size = new Size(60, 28);
             label10.TabIndex = 18;
@@ -180,8 +180,8 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(999, 421);
+            label11.ForeColor = Color.MediumBlue;
+            label11.Location = new Point(985, 306);
             label11.Name = "label11";
             label11.Size = new Size(58, 28);
             label11.TabIndex = 20;
@@ -189,10 +189,10 @@
             // 
             // cbPerfilesAdmin
             // 
-            cbPerfilesAdmin.BackColor = Color.MidnightBlue;
-            cbPerfilesAdmin.ForeColor = Color.White;
+            cbPerfilesAdmin.BackColor = Color.White;
+            cbPerfilesAdmin.ForeColor = Color.DimGray;
             cbPerfilesAdmin.FormattingEnabled = true;
-            cbPerfilesAdmin.Location = new Point(1087, 421);
+            cbPerfilesAdmin.Location = new Point(1073, 306);
             cbPerfilesAdmin.Name = "cbPerfilesAdmin";
             cbPerfilesAdmin.Size = new Size(280, 28);
             cbPerfilesAdmin.TabIndex = 22;
@@ -200,31 +200,35 @@
             // btnEditarUsuario
             // 
             btnEditarUsuario.AutoSize = true;
+            btnEditarUsuario.Cursor = Cursors.Hand;
             btnEditarUsuario.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            btnEditarUsuario.ForeColor = Color.MidnightBlue;
-            btnEditarUsuario.Location = new Point(999, 617);
+            btnEditarUsuario.ForeColor = Color.White;
+            btnEditarUsuario.Location = new Point(1010, 473);
             btnEditarUsuario.Name = "btnEditarUsuario";
             btnEditarUsuario.Size = new Size(77, 27);
             btnEditarUsuario.TabIndex = 23;
             btnEditarUsuario.Text = "EDITAR";
+            btnEditarUsuario.Click += btnEditarUsuario_Click_1;
             // 
             // btnEliminarUsuario
             // 
             btnEliminarUsuario.AutoSize = true;
+            btnEliminarUsuario.Cursor = Cursors.Hand;
             btnEliminarUsuario.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            btnEliminarUsuario.ForeColor = Color.MidnightBlue;
-            btnEliminarUsuario.Location = new Point(1265, 617);
+            btnEliminarUsuario.ForeColor = Color.White;
+            btnEliminarUsuario.Location = new Point(1222, 473);
             btnEliminarUsuario.Name = "btnEliminarUsuario";
             btnEliminarUsuario.Size = new Size(102, 27);
             btnEliminarUsuario.TabIndex = 24;
             btnEliminarUsuario.Text = "ELIMINAR";
+            btnEliminarUsuario.Click += btnEliminarUsuario_Click_1;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(1392, 738);
+            ClientSize = new Size(1377, 682);
             Controls.Add(btnEliminarUsuario);
             Controls.Add(btnEditarUsuario);
             Controls.Add(cbPerfilesAdmin);
@@ -255,7 +259,6 @@
         private Label label1;
         private TextBox txtNombreUsuario;
         private Button btnGuardarUsuario;
-        private Button btnEliminarUsuario;
         private Panel panel1;
         private Label label7;
         private Label label8;
@@ -269,5 +272,7 @@
         private Label btnEditarArticuloGasto;
         private Label label2;
         private Label btnEditarUsuario;
+        private Label label3;
+        private Label btnEliminarUsuario;
     }
 }

@@ -10,21 +10,17 @@ namespace LoginSistem.Forms
     public partial class mdlEditarUsuario : Form
     {
         CD_Conexion conexion = new CD_Conexion();
+        DataTable tabla = new DataTable();
+
         public mdlEditarUsuario()
         {
             InitializeComponent();
         }
-        SqlDataReader leer;
-        DataTable tabla = new DataTable();
-        SqlCommand comando = new SqlCommand();
+
 
         private void btAtras_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            PanelPresupuesto menuPrincipal = new PanelPresupuesto();
-            menuPrincipal.lblUser.Text = Global.GlobalVarNombre;
-            menuPrincipal.lblPerfil.Text = Global.GlobalVarPerfil;
-            menuPrincipal.ShowDialog();
+
         }
 
         private void mdlEditarUsuario_Load(object sender, EventArgs e)
@@ -114,5 +110,13 @@ namespace LoginSistem.Forms
 
         }
 
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PanelPresupuesto menuPrincipal = new PanelPresupuesto();
+            menuPrincipal.lblUser.Text = Global.GlobalVarNombre;
+            menuPrincipal.lblPerfil.Text = Global.GlobalVarPerfil;
+            menuPrincipal.ShowDialog();
+        }
     }
 }

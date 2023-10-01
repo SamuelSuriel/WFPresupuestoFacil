@@ -59,7 +59,7 @@
             label2 = new Label();
             label1 = new Label();
             pbrResumen = new ProgressBar();
-            panel3 = new Panel();
+            panelResumenSaldo = new Panel();
             tabIngresos = new TabPage();
             btnEliminarIngreso = new Label();
             btnEditarIngresos = new Label();
@@ -346,7 +346,7 @@
             // 
             tabPage1.Controls.Add(panel2);
             tabPage1.Controls.Add(pbrResumen);
-            tabPage1.Controls.Add(panel3);
+            tabPage1.Controls.Add(panelResumenSaldo);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
@@ -368,9 +368,9 @@
             panel2.Controls.Add(label1);
             panel2.Font = new Font("Segoe UI Variable Display", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             panel2.ForeColor = Color.White;
-            panel2.Location = new Point(18, 19);
+            panel2.Location = new Point(23, 19);
             panel2.Name = "panel2";
-            panel2.Size = new Size(685, 78);
+            panel2.Size = new Size(680, 78);
             panel2.TabIndex = 6;
             // 
             // lblsaldo
@@ -443,18 +443,18 @@
             // pbrResumen
             // 
             pbrResumen.ForeColor = Color.Transparent;
-            pbrResumen.Location = new Point(29, 103);
+            pbrResumen.Location = new Point(28, 118);
             pbrResumen.Name = "pbrResumen";
             pbrResumen.Size = new Size(665, 31);
             pbrResumen.TabIndex = 8;
             // 
-            // panel3
+            // panelResumenSaldo
             // 
-            panel3.BackColor = Color.White;
-            panel3.Location = new Point(23, 140);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(680, 303);
-            panel3.TabIndex = 7;
+            panelResumenSaldo.BackColor = Color.White;
+            panelResumenSaldo.Location = new Point(23, 155);
+            panelResumenSaldo.Name = "panelResumenSaldo";
+            panelResumenSaldo.Size = new Size(680, 324);
+            panelResumenSaldo.TabIndex = 7;
             // 
             // tabIngresos
             // 
@@ -478,31 +478,36 @@
             // btnEliminarIngreso
             // 
             btnEliminarIngreso.AutoSize = true;
-            btnEliminarIngreso.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            btnEliminarIngreso.ForeColor = Color.RoyalBlue;
-            btnEliminarIngreso.Location = new Point(642, 416);
+            btnEliminarIngreso.Cursor = Cursors.Hand;
+            btnEliminarIngreso.Font = new Font("Segoe UI Variable Display Semib", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            btnEliminarIngreso.ForeColor = Color.White;
+            btnEliminarIngreso.Location = new Point(643, 379);
             btnEliminarIngreso.Name = "btnEliminarIngreso";
-            btnEliminarIngreso.Size = new Size(106, 27);
+            btnEliminarIngreso.Size = new Size(102, 27);
             btnEliminarIngreso.TabIndex = 44;
             btnEliminarIngreso.Text = "ELIMINAR";
+            btnEliminarIngreso.Click += btnEliminarIngreso_Click_1;
             // 
             // btnEditarIngresos
             // 
             btnEditarIngresos.AutoSize = true;
-            btnEditarIngresos.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            btnEditarIngresos.ForeColor = Color.RoyalBlue;
-            btnEditarIngresos.Location = new Point(485, 416);
+            btnEditarIngresos.Cursor = Cursors.Hand;
+            btnEditarIngresos.Font = new Font("Segoe UI Variable Display Semib", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            btnEditarIngresos.ForeColor = Color.White;
+            btnEditarIngresos.Location = new Point(482, 379);
             btnEditarIngresos.Name = "btnEditarIngresos";
-            btnEditarIngresos.Size = new Size(81, 27);
+            btnEditarIngresos.Size = new Size(77, 27);
             btnEditarIngresos.TabIndex = 43;
             btnEditarIngresos.Text = "EDITAR";
+            btnEditarIngresos.Click += btnEditarIngresos_Click_1;
             // 
             // btnGuardarIngreso
             // 
             btnGuardarIngreso.BackColor = Color.DeepSkyBlue;
+            btnGuardarIngreso.Cursor = Cursors.Hand;
             btnGuardarIngreso.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnGuardarIngreso.ForeColor = Color.White;
-            btnGuardarIngreso.Location = new Point(485, 331);
+            btnGuardarIngreso.Location = new Point(482, 309);
             btnGuardarIngreso.Name = "btnGuardarIngreso";
             btnGuardarIngreso.Size = new Size(263, 46);
             btnGuardarIngreso.TabIndex = 15;
@@ -535,6 +540,7 @@
             // cbArticuloIngreso
             // 
             cbArticuloIngreso.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            cbArticuloIngreso.ForeColor = Color.DimGray;
             cbArticuloIngreso.FormattingEnabled = true;
             cbArticuloIngreso.Location = new Point(485, 157);
             cbArticuloIngreso.Name = "cbArticuloIngreso";
@@ -544,6 +550,7 @@
             // txtImporteIngreso
             // 
             txtImporteIngreso.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtImporteIngreso.ForeColor = Color.DimGray;
             txtImporteIngreso.Location = new Point(485, 233);
             txtImporteIngreso.Name = "txtImporteIngreso";
             txtImporteIngreso.Size = new Size(263, 34);
@@ -608,13 +615,14 @@
             // btnEliminarGasto
             // 
             btnEliminarGasto.AutoSize = true;
-            btnEliminarGasto.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            btnEliminarGasto.ForeColor = Color.RoyalBlue;
-            btnEliminarGasto.Location = new Point(626, 434);
+            btnEliminarGasto.Font = new Font("Segoe UI Variable Display Semib", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            btnEliminarGasto.ForeColor = Color.White;
+            btnEliminarGasto.Location = new Point(626, 423);
             btnEliminarGasto.Name = "btnEliminarGasto";
-            btnEliminarGasto.Size = new Size(106, 27);
+            btnEliminarGasto.Size = new Size(102, 27);
             btnEliminarGasto.TabIndex = 42;
             btnEliminarGasto.Text = "ELIMINAR";
+            btnEliminarGasto.Click += btnEliminarGasto_Click_1;
             // 
             // label16
             // 
@@ -630,19 +638,21 @@
             // btnEditarGasto
             // 
             btnEditarGasto.AutoSize = true;
-            btnEditarGasto.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            btnEditarGasto.ForeColor = Color.RoyalBlue;
-            btnEditarGasto.Location = new Point(524, 434);
+            btnEditarGasto.Font = new Font("Segoe UI Variable Display Semib", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            btnEditarGasto.ForeColor = Color.White;
+            btnEditarGasto.Location = new Point(524, 423);
             btnEditarGasto.Name = "btnEditarGasto";
-            btnEditarGasto.Size = new Size(81, 27);
+            btnEditarGasto.Size = new Size(77, 27);
             btnEditarGasto.TabIndex = 41;
             btnEditarGasto.Text = "EDITAR";
+            btnEditarGasto.Click += btnEditarGasto_Click_1;
             // 
             // cbArticuloGasto
             // 
-            cbArticuloGasto.BackColor = SystemColors.ActiveCaption;
+            cbArticuloGasto.BackColor = Color.White;
+            cbArticuloGasto.Cursor = Cursors.WaitCursor;
             cbArticuloGasto.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            cbArticuloGasto.ForeColor = Color.White;
+            cbArticuloGasto.ForeColor = Color.DimGray;
             cbArticuloGasto.FormattingEnabled = true;
             cbArticuloGasto.Location = new Point(524, 146);
             cbArticuloGasto.Name = "cbArticuloGasto";
@@ -652,6 +662,7 @@
             // btnGuardarGasto
             // 
             btnGuardarGasto.BackColor = Color.DeepSkyBlue;
+            btnGuardarGasto.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnGuardarGasto.ForeColor = Color.White;
             btnGuardarGasto.Location = new Point(524, 374);
             btnGuardarGasto.Name = "btnGuardarGasto";
@@ -685,9 +696,10 @@
             // 
             // cbCategoriaGastos
             // 
-            cbCategoriaGastos.BackColor = SystemColors.ActiveCaption;
+            cbCategoriaGastos.BackColor = Color.White;
+            cbCategoriaGastos.Cursor = Cursors.WaitCursor;
             cbCategoriaGastos.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            cbCategoriaGastos.ForeColor = Color.White;
+            cbCategoriaGastos.ForeColor = Color.DimGray;
             cbCategoriaGastos.FormattingEnabled = true;
             cbCategoriaGastos.Location = new Point(524, 204);
             cbCategoriaGastos.Name = "cbCategoriaGastos";
@@ -696,9 +708,10 @@
             // 
             // txtImporte
             // 
-            txtImporte.BackColor = SystemColors.ActiveCaption;
+            txtImporte.BackColor = Color.White;
+            txtImporte.Cursor = Cursors.WaitCursor;
             txtImporte.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            txtImporte.ForeColor = Color.White;
+            txtImporte.ForeColor = Color.DimGray;
             txtImporte.Location = new Point(524, 269);
             txtImporte.Name = "txtImporte";
             txtImporte.Size = new Size(208, 30);
@@ -717,9 +730,10 @@
             // 
             // cbEstatusGasto
             // 
-            cbEstatusGasto.BackColor = SystemColors.ActiveCaption;
+            cbEstatusGasto.BackColor = Color.White;
+            cbEstatusGasto.Cursor = Cursors.WaitCursor;
             cbEstatusGasto.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            cbEstatusGasto.ForeColor = Color.White;
+            cbEstatusGasto.ForeColor = Color.DimGray;
             cbEstatusGasto.FormattingEnabled = true;
             cbEstatusGasto.Location = new Point(524, 330);
             cbEstatusGasto.Name = "cbEstatusGasto";
@@ -906,7 +920,6 @@
         private DataGridView dgvIngresos;
         private DataGridView dgvGastos;
         private Panel panel2;
-        private Panel panel3;
         private Panel panel4;
         private Panel panel5;
         private Label label4;
@@ -924,7 +937,6 @@
         private Label label10;
         private TextBox txtImporte;
         private Label label9;
-        private ProgressBar pbrResumen;
         private Button btnGuardarIngreso;
         private Label label12;
         private Label label13;
@@ -956,5 +968,7 @@
         private Label btnEditarGasto;
         private Label btnEliminarIngreso;
         private Label btnEditarIngresos;
+        public Panel panelResumenSaldo;
+        public ProgressBar pbrResumen;
     }
 }

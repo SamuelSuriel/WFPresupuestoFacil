@@ -19,7 +19,7 @@ namespace WFPresupuestoFacil_Presentable
             this.Close();
         }
 
-        private void btlCancelarLogin_Click(object sender, EventArgs e)
+        private void btnCancelarLogin_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -100,5 +100,6 @@ namespace WFPresupuestoFacil_Presentable
                 e.Cancel = true; // Cancelar el cierre del formulario
             }
         }
+
     }
 }

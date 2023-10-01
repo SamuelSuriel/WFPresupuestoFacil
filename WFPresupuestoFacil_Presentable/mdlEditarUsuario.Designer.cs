@@ -40,7 +40,7 @@
             perfilesBindingSource = new BindingSource(components);
             chkVerContraseña = new CheckBox();
             panel1 = new Panel();
-            btAtras = new Label();
+            btnAtras = new Label();
             ((System.ComponentModel.ISupportInitialize)perfilesBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             // txtEditUsuarioClave
             // 
             txtEditUsuarioClave.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtEditUsuarioClave.ForeColor = Color.RoyalBlue;
+            txtEditUsuarioClave.ForeColor = Color.DimGray;
             txtEditUsuarioClave.Location = new Point(437, 205);
             txtEditUsuarioClave.MaxLength = 20;
             txtEditUsuarioClave.Name = "txtEditUsuarioClave";
@@ -69,7 +69,7 @@
             // txtEditUsuarioNombre
             // 
             txtEditUsuarioNombre.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            txtEditUsuarioNombre.ForeColor = Color.RoyalBlue;
+            txtEditUsuarioNombre.ForeColor = Color.DimGray;
             txtEditUsuarioNombre.Location = new Point(437, 118);
             txtEditUsuarioNombre.MaxLength = 50;
             txtEditUsuarioNombre.Name = "txtEditUsuarioNombre";
@@ -101,6 +101,7 @@
             // btnActualizar
             // 
             btnActualizar.BackColor = Color.DeepSkyBlue;
+            btnActualizar.Cursor = Cursors.Hand;
             btnActualizar.Font = new Font("Segoe UI Variable Text", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnActualizar.ForeColor = Color.White;
             btnActualizar.Location = new Point(437, 443);
@@ -124,11 +125,12 @@
             // 
             // cbPerfiles
             // 
-            cbPerfiles.ForeColor = Color.RoyalBlue;
+            cbPerfiles.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            cbPerfiles.ForeColor = Color.DimGray;
             cbPerfiles.FormattingEnabled = true;
             cbPerfiles.Location = new Point(437, 326);
             cbPerfiles.Name = "cbPerfiles";
-            cbPerfiles.Size = new Size(331, 28);
+            cbPerfiles.Size = new Size(331, 36);
             cbPerfiles.TabIndex = 18;
             // 
             // chkVerContraseña
@@ -152,16 +154,18 @@
             panel1.Size = new Size(379, 635);
             panel1.TabIndex = 20;
             // 
-            // btAtras
+            // btnAtras
             // 
-            btAtras.AutoSize = true;
-            btAtras.Font = new Font("Segoe UI Variable Text Semibold", 10.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            btAtras.ForeColor = Color.DimGray;
-            btAtras.Location = new Point(560, 508);
-            btAtras.Name = "btAtras";
-            btAtras.Size = new Size(64, 24);
-            btAtras.TabIndex = 21;
-            btAtras.Text = "ATRÁS";
+            btnAtras.AutoSize = true;
+            btnAtras.Cursor = Cursors.Hand;
+            btnAtras.Font = new Font("Segoe UI Variable Text Semibold", 10.8F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            btnAtras.ForeColor = Color.DimGray;
+            btnAtras.Location = new Point(560, 508);
+            btnAtras.Name = "btnAtras";
+            btnAtras.Size = new Size(64, 24);
+            btnAtras.TabIndex = 21;
+            btnAtras.Text = "ATRÁS";
+            btnAtras.Click += btnAtras_Click;
             // 
             // mdlEditarUsuario
             // 
@@ -169,7 +173,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(834, 635);
-            Controls.Add(btAtras);
+            Controls.Add(btnAtras);
             Controls.Add(panel1);
             Controls.Add(chkVerContraseña);
             Controls.Add(cbPerfiles);
@@ -202,6 +206,6 @@
         private CheckBox chkVerContraseña;
         public Label label4;
         private Panel panel1;
-        private Label btAtras;
+        private Label btnAtras;
     }
 }

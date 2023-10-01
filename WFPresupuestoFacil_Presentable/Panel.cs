@@ -32,7 +32,7 @@ namespace LoginSistem.Forms
 
         private void picClose_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             //Limpiamos los datos en las variables globales
             Global.GlobalVarId = 0;
             Global.GlobalVarNombre = "";
@@ -225,7 +225,8 @@ namespace LoginSistem.Forms
                 lblTotalGastos.Text = "";
                 lblTotalIngresos.Text = "";
                 lblsaldo.Text = "";
-                lblsaldo.BackColor = Color.White;
+                lblsaldo.BackColor = Color.RoyalBlue;
+                pbrResumen.BackColor = Color.DarkGreen;
 
                 while (dr.Read())
                 {
@@ -244,10 +245,11 @@ namespace LoginSistem.Forms
                     if (saldo < 0)
                     {
                         lblsaldo.BackColor = Color.Red;
+                        pbrResumen.BackColor = Color.DarkRed;
                     }
                     else
                     {
-                        lblsaldo.BackColor = Color.White;
+                        lblsaldo.BackColor = Color.RoyalBlue;
                     }
                 }
                 dr.Close();
@@ -346,7 +348,7 @@ namespace LoginSistem.Forms
             txtImporte.Clear();
         }
 
-        private void btnEditarGasto_Click(object sender, EventArgs e)
+        private void btnEditarGasto_Click_1(object sender, EventArgs e)
         {
             if (dgvGastos.SelectedCells.Count > 0)
             {
@@ -367,7 +369,7 @@ namespace LoginSistem.Forms
             form1.ShowDialog();
         }
 
-        private void btnEliminarGasto_Click(object sender, EventArgs e)
+        private void btnEliminarGasto_Click_1(object sender, EventArgs e)
         {
             if (dgvGastos.SelectedCells.Count > 0)
             {
@@ -396,7 +398,7 @@ namespace LoginSistem.Forms
 
         #region Ingresos
 
-        private void btnEditarIngresos_Click(object sender, EventArgs e)
+        private void btnEditarIngresos_Click_1(object sender, EventArgs e)
         {
             if (dgvIngresos.SelectedCells.Count > 0)
             {
@@ -484,9 +486,8 @@ namespace LoginSistem.Forms
             txtImporteIngreso.Clear();
         }
 
-        private void btnEliminarIngreso_Click(object sender, EventArgs e)
+        private void btnEliminarIngreso_Click_1(object sender, EventArgs e)
         {
-
             if (dgvIngresos.SelectedCells.Count > 0)
             {
 
@@ -512,6 +513,10 @@ namespace LoginSistem.Forms
 
 
         #endregion Ingresos
+
+
+
+
 
     }
 }

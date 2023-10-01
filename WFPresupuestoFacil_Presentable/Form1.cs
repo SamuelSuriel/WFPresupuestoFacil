@@ -91,7 +91,7 @@ namespace WFPresupuestoFacil_Presentable
             cbPerfilesAdmin.SelectedValue = 0;
         }
 
-        private void btnEditarUsuario_Click(object sender, EventArgs e)
+        private void btnEditarUsuario_Click_1(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedCells.Count > 0)
             {
@@ -103,7 +103,6 @@ namespace WFPresupuestoFacil_Presentable
             }
             else
                 MessageBox.Show("Seleccione una celda para editar!");
-
         }
 
         private bool EsValido()
@@ -119,7 +118,7 @@ namespace WFPresupuestoFacil_Presentable
 
         }
 
-        private void btnEliminarUsuario_Click(object sender, EventArgs e)
+        private void btnEliminarUsuario_Click_1(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedCells.Count > 0)
             {
@@ -145,7 +144,7 @@ namespace WFPresupuestoFacil_Presentable
 
         private void label8_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void btnAtrasCRUD_Click(object sender, EventArgs e)
@@ -165,5 +164,7 @@ namespace WFPresupuestoFacil_Presentable
             combo.DisplayMember = desc;
             combo.DataSource = tabla;
         }
+
+
     }
 }

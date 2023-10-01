@@ -25,9 +25,24 @@ namespace WFPresupuestoFacil_Presentable
 
         private void btnAtrasSetup_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Hide();
             PanelPresupuesto panel = new();
             panel.ShowDialog();
+
+        }
+
+        private void btnEditarArticuloGasto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminarArticuloGasto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardarArticuloGasto_Click(object sender, EventArgs e)
+        {
 
         }
     }
