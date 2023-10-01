@@ -34,7 +34,6 @@
             panel5 = new Panel();
             label4 = new Label();
             btnAtrasSetup = new Label();
-            label8 = new Label();
             btnGuardarArticuloGasto = new Button();
             txtArticulo = new TextBox();
             lblArticulo = new Label();
@@ -92,7 +91,6 @@
             panel1.BackColor = Color.MidnightBlue;
             panel1.Controls.Add(panel5);
             panel1.Controls.Add(btnAtrasSetup);
-            panel1.Controls.Add(label8);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -133,18 +131,6 @@
             btnAtrasSetup.TabIndex = 2;
             btnAtrasSetup.Text = "<";
             btnAtrasSetup.Click += btnAtrasSetup_Click;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Cursor = Cursors.Hand;
-            label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(1502, 18);
-            label8.Name = "label8";
-            label8.Size = new Size(25, 28);
-            label8.TabIndex = 1;
-            label8.Text = "X";
             // 
             // btnGuardarArticuloGasto
             // 
@@ -272,11 +258,11 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Variable Text", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(87, 97);
+            label3.Location = new Point(50, 97);
             label3.Name = "label3";
-            label3.Size = new Size(90, 31);
+            label3.Size = new Size(167, 31);
             label3.TabIndex = 48;
-            label3.Text = "Estatus";
+            label3.Text = "Estatus Gastos";
             // 
             // dgvEstatus
             // 
@@ -462,7 +448,6 @@
         private Label label9;
         private Panel panel1;
         private Label btnAtrasSetup;
-        private Label label8;
         private Button btnGuardarArticuloGasto;
         private TextBox txtArticulo;
         private Label lblArticulo;

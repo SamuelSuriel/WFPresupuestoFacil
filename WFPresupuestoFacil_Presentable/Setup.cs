@@ -58,13 +58,15 @@ namespace WFPresupuestoFacil_Presentable
                 string? EsIngresostr;
                 EsEditar = true;
                 txtArticulo.Text = dgvArticulos.CurrentRow.Cells["Articulo"].Value.ToString();
-                idArticulo = dgvArticulos.CurrentRow.Cells["Articulo_Id"].Value.ToString();                
+                idArticulo = dgvArticulos.CurrentRow.Cells["Articulo_Id"].Value.ToString();
                 EsIngresostr = dgvArticulos.CurrentRow.Cells["EsIngreso"].Value.ToString();
 
                 if (EsIngresostr == "True")
                 {
                     checkEsIngreso.Checked = true;
-                } else {
+                }
+                else
+                {
                     checkEsIngreso.Checked = false;
                 }
             }

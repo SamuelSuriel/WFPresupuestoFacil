@@ -28,6 +28,7 @@ namespace WFPresupuestoFacil_Presentable
         {
             CN_Usuarios objetoUsuario = new CN_Usuarios();
             dataGridView1.DataSource = objetoUsuario.MostrarProd();
+            this.dataGridView1.Columns["Usuario_Id"].Visible = false;
         }
 
         private void btnGuardarUsuario_Click(object sender, EventArgs e)

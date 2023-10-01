@@ -262,6 +262,7 @@ namespace LoginSistem.Forms
             CN_Gastos objetoGastos = new CN_Gastos();
             int Usuario_Id = Global.GlobalVarId;
             dgvGastos.DataSource = objetoGastos.MostrarProd(Usuario_Id);
+            this.dgvGastos.Columns["Gasto_Id"].Visible = false;
         }
 
         private void txtImporte_KeyPress(object sender, KeyPressEventArgs e)
@@ -466,6 +467,7 @@ namespace LoginSistem.Forms
             CN_Ingresos objetoIngreso = new CN_Ingresos();
             int Usuario_Id = Global.GlobalVarId;
             dgvIngresos.DataSource = objetoIngreso.MostrarProd(Usuario_Id);
+            this.dgvIngresos.Columns["Ingreso_Id"].Visible = false;
         }
 
         private bool EsValidoIngresos()
