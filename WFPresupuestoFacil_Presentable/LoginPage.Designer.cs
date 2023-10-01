@@ -91,6 +91,7 @@
             // btnEntrarLogin
             // 
             btnEntrarLogin.BackColor = Color.DeepSkyBlue;
+            btnEntrarLogin.Cursor = Cursors.Hand;
             btnEntrarLogin.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnEntrarLogin.ForeColor = Color.Transparent;
             btnEntrarLogin.Location = new Point(527, 318);
@@ -129,6 +130,7 @@
             // 
             btnCancelarLogin.AutoSize = true;
             btnCancelarLogin.BackColor = Color.Transparent;
+            btnCancelarLogin.Cursor = Cursors.Hand;
             btnCancelarLogin.Font = new Font("Segoe UI Variable Small", 10.2F, FontStyle.Underline, GraphicsUnit.Point);
             btnCancelarLogin.ForeColor = Color.White;
             btnCancelarLogin.Location = new Point(597, 377);
@@ -142,6 +144,7 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
+            label5.Cursor = Cursors.Hand;
             label5.Font = new Font("Segoe UI Variable Small", 7.8F, FontStyle.Underline, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
             label5.Location = new Point(532, 264);

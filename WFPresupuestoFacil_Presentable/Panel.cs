@@ -32,7 +32,7 @@ namespace LoginSistem.Forms
 
         private void picClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             //Limpiamos los datos en las variables globales
             Global.GlobalVarId = 0;
             Global.GlobalVarNombre = "";
