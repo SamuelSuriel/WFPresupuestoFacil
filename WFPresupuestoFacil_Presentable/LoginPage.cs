@@ -65,7 +65,7 @@ namespace WFPresupuestoFacil_Presentable
                             Global.GlobalVarClave = usuario.Clave;
                             Global.GlobalVarIdPerfil = (int)usuario.IdPerfil;
                             Global.GlobalVarPerfil = usuario.Perfil;
-                           
+
                             //Llenamos el textbox del modal Menú principal
                             menuPrincipal.lblUser.Text = Global.GlobalVarNombre;
                             menuPrincipal.lblPerfil.Text = Global.GlobalVarPerfil;

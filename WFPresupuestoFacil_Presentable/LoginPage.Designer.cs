@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnCancelarLogin = new Button();
             label1 = new Label();
             txtUsuarioLogin = new TextBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -37,35 +36,24 @@
             btnEntrarLogin = new Button();
             label3 = new Label();
             label4 = new Label();
+            btnCancelarLogin = new Label();
             SuspendLayout();
-            // 
-            // btnCancelarLogin
-            // 
-            btnCancelarLogin.BackColor = Color.DimGray;
-            btnCancelarLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancelarLogin.ForeColor = Color.White;
-            btnCancelarLogin.Location = new Point(408, 361);
-            btnCancelarLogin.Name = "btnCancelarLogin";
-            btnCancelarLogin.Size = new Size(175, 55);
-            btnCancelarLogin.TabIndex = 0;
-            btnCancelarLogin.Text = "CANCELAR";
-            btnCancelarLogin.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.Gray;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(408, 250);
+            label1.Location = new Point(408, 206);
             label1.Name = "label1";
-            label1.Size = new Size(84, 28);
+            label1.Size = new Size(83, 27);
             label1.TabIndex = 1;
             label1.Text = "Usuario";
             // 
             // txtUsuarioLogin
             // 
-            txtUsuarioLogin.Location = new Point(532, 251);
+            txtUsuarioLogin.Location = new Point(532, 207);
             txtUsuarioLogin.Name = "txtUsuarioLogin";
             txtUsuarioLogin.Size = new Size(242, 27);
             txtUsuarioLogin.TabIndex = 2;
@@ -81,7 +69,7 @@
             // 
             // txtContraseñaLogin
             // 
-            txtContraseñaLogin.Location = new Point(532, 300);
+            txtContraseñaLogin.Location = new Point(532, 256);
             txtContraseñaLogin.Name = "txtContraseñaLogin";
             txtContraseñaLogin.PasswordChar = '*';
             txtContraseñaLogin.Size = new Size(242, 27);
@@ -90,23 +78,23 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.Gray;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(408, 299);
+            label2.Location = new Point(408, 255);
             label2.Name = "label2";
-            label2.Size = new Size(118, 28);
+            label2.Size = new Size(120, 27);
             label2.TabIndex = 4;
             label2.Text = "Contraseña";
             // 
             // btnEntrarLogin
             // 
-            btnEntrarLogin.BackColor = Color.DimGray;
-            btnEntrarLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEntrarLogin.ForeColor = Color.White;
-            btnEntrarLogin.Location = new Point(612, 361);
+            btnEntrarLogin.BackColor = Color.DeepSkyBlue;
+            btnEntrarLogin.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnEntrarLogin.ForeColor = Color.Transparent;
+            btnEntrarLogin.Location = new Point(408, 316);
             btnEntrarLogin.Name = "btnEntrarLogin";
-            btnEntrarLogin.Size = new Size(175, 55);
+            btnEntrarLogin.Size = new Size(366, 55);
             btnEntrarLogin.TabIndex = 6;
             btnEntrarLogin.Text = "ENTRAR";
             btnEntrarLogin.UseVisualStyleBackColor = false;
@@ -115,12 +103,12 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.Gray;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(532, 144);
+            label3.Location = new Point(532, 100);
             label3.Name = "label3";
-            label3.Size = new Size(161, 28);
+            label3.Size = new Size(163, 27);
             label3.TabIndex = 7;
             label3.Text = "INICIAR SESIÓN";
             // 
@@ -136,12 +124,25 @@
             label4.Text = "X";
             label4.Click += label4_Click;
             // 
+            // btnCancelarLogin
+            // 
+            btnCancelarLogin.AutoSize = true;
+            btnCancelarLogin.BackColor = Color.Transparent;
+            btnCancelarLogin.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancelarLogin.ForeColor = Color.White;
+            btnCancelarLogin.Location = new Point(532, 388);
+            btnCancelarLogin.Name = "btnCancelarLogin";
+            btnCancelarLogin.Size = new Size(118, 27);
+            btnCancelarLogin.TabIndex = 9;
+            btnCancelarLogin.Text = "CANCELAR";
+            // 
             // LoginPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gray;
+            BackColor = Color.MidnightBlue;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnCancelarLogin);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(btnEntrarLogin);
@@ -150,7 +151,6 @@
             Controls.Add(flowLayoutPanel1);
             Controls.Add(txtUsuarioLogin);
             Controls.Add(label1);
-            Controls.Add(btnCancelarLogin);
             FormBorderStyle = FormBorderStyle.None;
             Name = "LoginPage";
             StartPosition = FormStartPosition.CenterScreen;
@@ -160,8 +160,6 @@
         }
 
         #endregion
-
-        private Button btnCancelarLogin;
         private Label label1;
         private TextBox txtUsuarioLogin;
         private FlowLayoutPanel flowLayoutPanel1;
@@ -170,5 +168,6 @@
         private Button btnEntrarLogin;
         private Label label3;
         private Label label4;
+        private Label btnCancelarLogin;
     }
 }

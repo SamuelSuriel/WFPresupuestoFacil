@@ -37,27 +37,27 @@
             btnAtrasSetup = new Label();
             label8 = new Label();
             label7 = new Label();
-            btnEliminarArticuloGasto = new Button();
-            btnEditarArticuloGasto = new Button();
             btnGuardarArticuloGasto = new Button();
             txtArticulo = new TextBox();
             lblArticulo = new Label();
             dataGridView1 = new DataGridView();
-            btnEliminarCategoria = new Button();
-            btnEditarCategoria = new Button();
             btnGuardarCategoria = new Button();
             txtCategoria = new TextBox();
             label2 = new Label();
             dataGridView2 = new DataGridView();
-            btnEliminarEstatus = new Button();
-            btnEditarEstatus = new Button();
             btnGuardarEstatus = new Button();
             txtEstatus = new TextBox();
             label3 = new Label();
             dataGridView3 = new DataGridView();
             panel2 = new Panel();
+            btnEliminarArticuloGasto = new Label();
+            btnEditarArticuloGasto = new Label();
             panel3 = new Panel();
+            btnEliminarCategoria = new Label();
+            btnEditarCategoria = new Label();
             panel4 = new Panel();
+            btnEliminarEstatus = new Label();
+            btnEditarEstatus = new Label();
             panel1.SuspendLayout();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -90,7 +90,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.RoyalBlue;
             panel1.Controls.Add(panel5);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(btnAtrasSetup);
@@ -104,7 +104,7 @@
             // 
             // panel5
             // 
-            panel5.BackColor = Color.White;
+            panel5.BackColor = Color.RoyalBlue;
             panel5.Controls.Add(label4);
             panel5.Location = new Point(479, 1);
             panel5.Name = "panel5";
@@ -114,9 +114,9 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.White;
+            label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI Variable Text Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.ForeColor = Color.DimGray;
+            label4.ForeColor = Color.White;
             label4.Location = new Point(185, 45);
             label4.Name = "label4";
             label4.Size = new Size(378, 37);
@@ -126,9 +126,9 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.BackColor = Color.White;
+            label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI Variable Text Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.DimGray;
+            label5.ForeColor = Color.White;
             label5.Location = new Point(1238, 46);
             label5.Name = "label5";
             label5.Size = new Size(332, 37);
@@ -138,10 +138,10 @@
             // btnAtrasSetup
             // 
             btnAtrasSetup.AutoSize = true;
-            btnAtrasSetup.BackColor = Color.White;
+            btnAtrasSetup.BackColor = Color.Transparent;
             btnAtrasSetup.Cursor = Cursors.Hand;
             btnAtrasSetup.Font = new Font("Segoe Fluent Icons", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAtrasSetup.ForeColor = Color.DimGray;
+            btnAtrasSetup.ForeColor = Color.White;
             btnAtrasSetup.Location = new Point(12, 39);
             btnAtrasSetup.Name = "btnAtrasSetup";
             btnAtrasSetup.Size = new Size(25, 28);
@@ -155,7 +155,7 @@
             label8.Cursor = Cursors.Hand;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label8.ForeColor = Color.White;
-            label8.Location = new Point(1342, 18);
+            label8.Location = new Point(1650, 18);
             label8.Name = "label8";
             label8.Size = new Size(25, 28);
             label8.TabIndex = 1;
@@ -164,77 +164,52 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.BackColor = Color.White;
+            label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI Variable Text Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = Color.DimGray;
+            label7.ForeColor = Color.White;
             label7.Location = new Point(97, 46);
             label7.Name = "label7";
             label7.Size = new Size(355, 37);
             label7.TabIndex = 0;
             label7.Text = "Configuración de Artículos";
             // 
-            // btnEliminarArticuloGasto
-            // 
-            btnEliminarArticuloGasto.BackColor = Color.DimGray;
-            btnEliminarArticuloGasto.FlatAppearance.BorderColor = Color.White;
-            btnEliminarArticuloGasto.FlatAppearance.BorderSize = 5;
-            btnEliminarArticuloGasto.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEliminarArticuloGasto.ForeColor = Color.White;
-            btnEliminarArticuloGasto.Location = new Point(4, 405);
-            btnEliminarArticuloGasto.Name = "btnEliminarArticuloGasto";
-            btnEliminarArticuloGasto.Size = new Size(244, 55);
-            btnEliminarArticuloGasto.TabIndex = 38;
-            btnEliminarArticuloGasto.Text = "Eliminar";
-            btnEliminarArticuloGasto.UseVisualStyleBackColor = false;
-            // 
-            // btnEditarArticuloGasto
-            // 
-            btnEditarArticuloGasto.BackColor = Color.DimGray;
-            btnEditarArticuloGasto.FlatAppearance.BorderColor = Color.White;
-            btnEditarArticuloGasto.FlatAppearance.BorderSize = 5;
-            btnEditarArticuloGasto.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEditarArticuloGasto.ForeColor = Color.White;
-            btnEditarArticuloGasto.Location = new Point(4, 303);
-            btnEditarArticuloGasto.Name = "btnEditarArticuloGasto";
-            btnEditarArticuloGasto.Size = new Size(244, 55);
-            btnEditarArticuloGasto.TabIndex = 37;
-            btnEditarArticuloGasto.Text = "Editar";
-            btnEditarArticuloGasto.UseVisualStyleBackColor = false;
-            // 
             // btnGuardarArticuloGasto
             // 
-            btnGuardarArticuloGasto.BackColor = Color.DimGray;
+            btnGuardarArticuloGasto.BackColor = Color.DeepSkyBlue;
             btnGuardarArticuloGasto.FlatAppearance.BorderColor = Color.Magenta;
-            btnGuardarArticuloGasto.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGuardarArticuloGasto.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnGuardarArticuloGasto.ForeColor = Color.White;
-            btnGuardarArticuloGasto.Location = new Point(4, 199);
+            btnGuardarArticuloGasto.Location = new Point(14, 213);
             btnGuardarArticuloGasto.Name = "btnGuardarArticuloGasto";
-            btnGuardarArticuloGasto.Size = new Size(244, 55);
+            btnGuardarArticuloGasto.Size = new Size(233, 42);
             btnGuardarArticuloGasto.TabIndex = 36;
             btnGuardarArticuloGasto.Text = "Guardar";
             btnGuardarArticuloGasto.UseVisualStyleBackColor = false;
             // 
             // txtArticulo
             // 
-            txtArticulo.Location = new Point(4, 104);
+            txtArticulo.BackColor = Color.RoyalBlue;
+            txtArticulo.Font = new Font("Segoe UI Variable Display Semib", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            txtArticulo.ForeColor = Color.White;
+            txtArticulo.Location = new Point(4, 159);
             txtArticulo.Name = "txtArticulo";
-            txtArticulo.Size = new Size(244, 27);
+            txtArticulo.Size = new Size(244, 31);
             txtArticulo.TabIndex = 25;
             // 
             // lblArticulo
             // 
             lblArticulo.AutoSize = true;
-            lblArticulo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblArticulo.Font = new Font("Segoe UI Variable Text", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             lblArticulo.ForeColor = Color.White;
-            lblArticulo.Location = new Point(87, 47);
+            lblArticulo.Location = new Point(75, 97);
             lblArticulo.Name = "lblArticulo";
-            lblArticulo.Size = new Size(83, 28);
+            lblArticulo.Size = new Size(102, 31);
             lblArticulo.TabIndex = 24;
             lblArticulo.Text = "Artículo";
             // 
             // dataGridView1
             // 
-            dataGridView1.BackgroundColor = Color.Gray;
+            dataGridView1.BackgroundColor = Color.RoyalBlue;
             dataGridView1.BorderStyle = BorderStyle.None;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(16, 155);
@@ -245,68 +220,43 @@
             dataGridView1.TabIndex = 23;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // btnEliminarCategoria
-            // 
-            btnEliminarCategoria.BackColor = Color.DimGray;
-            btnEliminarCategoria.FlatAppearance.BorderColor = Color.White;
-            btnEliminarCategoria.FlatAppearance.BorderSize = 5;
-            btnEliminarCategoria.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEliminarCategoria.ForeColor = Color.White;
-            btnEliminarCategoria.Location = new Point(20, 406);
-            btnEliminarCategoria.Name = "btnEliminarCategoria";
-            btnEliminarCategoria.Size = new Size(244, 55);
-            btnEliminarCategoria.TabIndex = 46;
-            btnEliminarCategoria.Text = "Eliminar";
-            btnEliminarCategoria.UseVisualStyleBackColor = false;
-            // 
-            // btnEditarCategoria
-            // 
-            btnEditarCategoria.BackColor = Color.DimGray;
-            btnEditarCategoria.FlatAppearance.BorderColor = Color.White;
-            btnEditarCategoria.FlatAppearance.BorderSize = 5;
-            btnEditarCategoria.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEditarCategoria.ForeColor = Color.White;
-            btnEditarCategoria.Location = new Point(20, 304);
-            btnEditarCategoria.Name = "btnEditarCategoria";
-            btnEditarCategoria.Size = new Size(244, 55);
-            btnEditarCategoria.TabIndex = 45;
-            btnEditarCategoria.Text = "Editar";
-            btnEditarCategoria.UseVisualStyleBackColor = false;
-            // 
             // btnGuardarCategoria
             // 
-            btnGuardarCategoria.BackColor = Color.DimGray;
+            btnGuardarCategoria.BackColor = Color.DeepSkyBlue;
             btnGuardarCategoria.FlatAppearance.BorderColor = Color.Magenta;
-            btnGuardarCategoria.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGuardarCategoria.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnGuardarCategoria.ForeColor = Color.White;
-            btnGuardarCategoria.Location = new Point(20, 200);
+            btnGuardarCategoria.Location = new Point(5, 213);
             btnGuardarCategoria.Name = "btnGuardarCategoria";
-            btnGuardarCategoria.Size = new Size(244, 55);
+            btnGuardarCategoria.Size = new Size(269, 42);
             btnGuardarCategoria.TabIndex = 44;
             btnGuardarCategoria.Text = "Guardar";
             btnGuardarCategoria.UseVisualStyleBackColor = false;
             // 
             // txtCategoria
             // 
-            txtCategoria.Location = new Point(20, 105);
+            txtCategoria.BackColor = Color.RoyalBlue;
+            txtCategoria.Font = new Font("Segoe UI Variable Display Semib", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            txtCategoria.ForeColor = Color.White;
+            txtCategoria.Location = new Point(20, 160);
             txtCategoria.Name = "txtCategoria";
-            txtCategoria.Size = new Size(244, 27);
+            txtCategoria.Size = new Size(244, 31);
             txtCategoria.TabIndex = 43;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI Variable Text", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(85, 48);
+            label2.Location = new Point(85, 97);
             label2.Name = "label2";
-            label2.Size = new Size(107, 28);
+            label2.Size = new Size(127, 31);
             label2.TabIndex = 42;
             label2.Text = "Categorías";
             // 
             // dataGridView2
             // 
-            dataGridView2.BackgroundColor = Color.Gray;
+            dataGridView2.BackgroundColor = Color.RoyalBlue;
             dataGridView2.BorderStyle = BorderStyle.None;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(566, 155);
@@ -316,68 +266,43 @@
             dataGridView2.Size = new Size(265, 542);
             dataGridView2.TabIndex = 41;
             // 
-            // btnEliminarEstatus
-            // 
-            btnEliminarEstatus.BackColor = Color.DimGray;
-            btnEliminarEstatus.FlatAppearance.BorderColor = Color.White;
-            btnEliminarEstatus.FlatAppearance.BorderSize = 5;
-            btnEliminarEstatus.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEliminarEstatus.ForeColor = Color.White;
-            btnEliminarEstatus.Location = new Point(16, 406);
-            btnEliminarEstatus.Name = "btnEliminarEstatus";
-            btnEliminarEstatus.Size = new Size(244, 55);
-            btnEliminarEstatus.TabIndex = 52;
-            btnEliminarEstatus.Text = "Eliminar";
-            btnEliminarEstatus.UseVisualStyleBackColor = false;
-            // 
-            // btnEditarEstatus
-            // 
-            btnEditarEstatus.BackColor = Color.DimGray;
-            btnEditarEstatus.FlatAppearance.BorderColor = Color.White;
-            btnEditarEstatus.FlatAppearance.BorderSize = 5;
-            btnEditarEstatus.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnEditarEstatus.ForeColor = Color.White;
-            btnEditarEstatus.Location = new Point(16, 304);
-            btnEditarEstatus.Name = "btnEditarEstatus";
-            btnEditarEstatus.Size = new Size(244, 55);
-            btnEditarEstatus.TabIndex = 51;
-            btnEditarEstatus.Text = "Editar";
-            btnEditarEstatus.UseVisualStyleBackColor = false;
-            // 
             // btnGuardarEstatus
             // 
-            btnGuardarEstatus.BackColor = Color.DimGray;
+            btnGuardarEstatus.BackColor = Color.DeepSkyBlue;
             btnGuardarEstatus.FlatAppearance.BorderColor = Color.Magenta;
-            btnGuardarEstatus.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnGuardarEstatus.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnGuardarEstatus.ForeColor = Color.White;
-            btnGuardarEstatus.Location = new Point(16, 200);
+            btnGuardarEstatus.Location = new Point(1, 213);
             btnGuardarEstatus.Name = "btnGuardarEstatus";
-            btnGuardarEstatus.Size = new Size(244, 55);
+            btnGuardarEstatus.Size = new Size(269, 42);
             btnGuardarEstatus.TabIndex = 50;
             btnGuardarEstatus.Text = "Guardar";
             btnGuardarEstatus.UseVisualStyleBackColor = false;
             // 
             // txtEstatus
             // 
-            txtEstatus.Location = new Point(16, 105);
+            txtEstatus.BackColor = Color.RoyalBlue;
+            txtEstatus.Font = new Font("Segoe UI Variable Display Semib", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            txtEstatus.ForeColor = Color.White;
+            txtEstatus.Location = new Point(16, 160);
             txtEstatus.Name = "txtEstatus";
-            txtEstatus.Size = new Size(244, 27);
+            txtEstatus.Size = new Size(244, 31);
             txtEstatus.TabIndex = 49;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI Variable Text", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(112, 48);
+            label3.Location = new Point(112, 97);
             label3.Name = "label3";
-            label3.Size = new Size(76, 28);
+            label3.Size = new Size(90, 31);
             label3.TabIndex = 48;
             label3.Text = "Estatus";
             // 
             // dataGridView3
             // 
-            dataGridView3.BackgroundColor = Color.Gray;
+            dataGridView3.BackgroundColor = Color.RoyalBlue;
             dataGridView3.BorderStyle = BorderStyle.None;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView3.Location = new Point(1132, 155);
@@ -399,6 +324,28 @@
             panel2.Size = new Size(257, 543);
             panel2.TabIndex = 53;
             // 
+            // btnEliminarArticuloGasto
+            // 
+            btnEliminarArticuloGasto.AutoSize = true;
+            btnEliminarArticuloGasto.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            btnEliminarArticuloGasto.ForeColor = Color.White;
+            btnEliminarArticuloGasto.Location = new Point(131, 318);
+            btnEliminarArticuloGasto.Name = "btnEliminarArticuloGasto";
+            btnEliminarArticuloGasto.Size = new Size(102, 27);
+            btnEliminarArticuloGasto.TabIndex = 40;
+            btnEliminarArticuloGasto.Text = "ELIMINAR";
+            // 
+            // btnEditarArticuloGasto
+            // 
+            btnEditarArticuloGasto.AutoSize = true;
+            btnEditarArticuloGasto.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            btnEditarArticuloGasto.ForeColor = Color.White;
+            btnEditarArticuloGasto.Location = new Point(29, 318);
+            btnEditarArticuloGasto.Name = "btnEditarArticuloGasto";
+            btnEditarArticuloGasto.Size = new Size(77, 27);
+            btnEditarArticuloGasto.TabIndex = 39;
+            btnEditarArticuloGasto.Text = "EDITAR";
+            // 
             // panel3
             // 
             panel3.Controls.Add(btnEliminarCategoria);
@@ -410,6 +357,28 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(280, 540);
             panel3.TabIndex = 54;
+            // 
+            // btnEliminarCategoria
+            // 
+            btnEliminarCategoria.AutoSize = true;
+            btnEliminarCategoria.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            btnEliminarCategoria.ForeColor = Color.White;
+            btnEliminarCategoria.Location = new Point(158, 318);
+            btnEliminarCategoria.Name = "btnEliminarCategoria";
+            btnEliminarCategoria.Size = new Size(102, 27);
+            btnEliminarCategoria.TabIndex = 42;
+            btnEliminarCategoria.Text = "ELIMINAR";
+            // 
+            // btnEditarCategoria
+            // 
+            btnEditarCategoria.AutoSize = true;
+            btnEditarCategoria.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            btnEditarCategoria.ForeColor = Color.White;
+            btnEditarCategoria.Location = new Point(20, 318);
+            btnEditarCategoria.Name = "btnEditarCategoria";
+            btnEditarCategoria.Size = new Size(77, 27);
+            btnEditarCategoria.TabIndex = 41;
+            btnEditarCategoria.Text = "EDITAR";
             // 
             // panel4
             // 
@@ -423,11 +392,33 @@
             panel4.Size = new Size(278, 541);
             panel4.TabIndex = 55;
             // 
+            // btnEliminarEstatus
+            // 
+            btnEliminarEstatus.AutoSize = true;
+            btnEliminarEstatus.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            btnEliminarEstatus.ForeColor = Color.White;
+            btnEliminarEstatus.Location = new Point(154, 318);
+            btnEliminarEstatus.Name = "btnEliminarEstatus";
+            btnEliminarEstatus.Size = new Size(102, 27);
+            btnEliminarEstatus.TabIndex = 48;
+            btnEliminarEstatus.Text = "ELIMINAR";
+            // 
+            // btnEditarEstatus
+            // 
+            btnEditarEstatus.AutoSize = true;
+            btnEditarEstatus.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            btnEditarEstatus.ForeColor = Color.White;
+            btnEditarEstatus.Location = new Point(16, 318);
+            btnEditarEstatus.Name = "btnEditarEstatus";
+            btnEditarEstatus.Size = new Size(77, 27);
+            btnEditarEstatus.TabIndex = 47;
+            btnEditarEstatus.Text = "EDITAR";
+            // 
             // Setup
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DimGray;
+            BackColor = Color.MediumBlue;
             ClientSize = new Size(1700, 727);
             Controls.Add(panel4);
             Controls.Add(panel3);
@@ -467,22 +458,16 @@
         private Label btnAtrasSetup;
         private Label label8;
         private Label label7;
-        private Button btnEliminarArticuloGasto;
-        private Button btnEditarArticuloGasto;
         private Button btnGuardarArticuloGasto;
         private TextBox txtArticulo;
         private Label lblArticulo;
         private DataGridView dataGridView1;
         private Label label5;
         private Label label4;
-        private Button btnEliminarCategoria;
-        private Button btnEditarCategoria;
         private Button btnGuardarCategoria;
         private TextBox txtCategoria;
         private Label label2;
         private DataGridView dataGridView2;
-        private Button btnEliminarEstatus;
-        private Button btnEditarEstatus;
         private Button btnGuardarEstatus;
         private TextBox txtEstatus;
         private Label label3;
@@ -491,5 +476,11 @@
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
+        private Label btnEliminarArticuloGasto;
+        private Label btnEditarArticuloGasto;
+        private Label btnEliminarCategoria;
+        private Label btnEditarCategoria;
+        private Label btnEliminarEstatus;
+        private Label btnEditarEstatus;
     }
 }

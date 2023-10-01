@@ -49,8 +49,6 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             tabResumen = new TabControl();
             tabPage1 = new TabPage();
-            pbrResumen = new ProgressBar();
-            panel3 = new Panel();
             panel2 = new Panel();
             lblsaldo = new Label();
             lblttgastos = new Label();
@@ -60,9 +58,11 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            pbrResumen = new ProgressBar();
+            panel3 = new Panel();
             tabIngresos = new TabPage();
-            btnEliminarIngreso = new Button();
-            btnEditarIngresos = new Button();
+            btnEliminarIngreso = new Label();
+            btnEditarIngresos = new Label();
             btnGuardarIngreso = new Button();
             label12 = new Label();
             label13 = new Label();
@@ -72,9 +72,9 @@
             label8 = new Label();
             dgvIngresos = new DataGridView();
             tabGastos = new TabPage();
-            btnEliminarGasto = new Button();
-            btnEditarGasto = new Button();
+            btnEliminarGasto = new Label();
             label16 = new Label();
+            btnEditarGasto = new Label();
             cbArticuloGasto = new ComboBox();
             btnGuardarGasto = new Button();
             label11 = new Label();
@@ -90,7 +90,6 @@
             panel6 = new Panel();
             btnCerrarPanel = new Label();
             label7 = new Label();
-            label17 = new Label();
             btnAdministrarUsuarios = new PictureBox();
             lblAdministrarUsuarios = new Label();
             panelAdmin = new Panel();
@@ -115,7 +114,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.MidnightBlue;
             panel1.Controls.Add(label15);
             panel1.Controls.Add(label14);
             panel1.Controls.Add(lblDivisor);
@@ -140,38 +139,42 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.ForeColor = Color.Gray;
+            label15.BackColor = Color.Transparent;
+            label15.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.ForeColor = Color.White;
             label15.Location = new Point(48, 543);
             label15.Name = "label15";
-            label15.Size = new Size(147, 20);
+            label15.Size = new Size(196, 27);
             label15.TabIndex = 26;
             label15.Text = "-----------------------";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label14.ForeColor = Color.Gray;
+            label14.BackColor = Color.Transparent;
+            label14.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.ForeColor = Color.White;
             label14.Location = new Point(48, 474);
             label14.Name = "label14";
-            label14.Size = new Size(147, 20);
+            label14.Size = new Size(196, 27);
             label14.TabIndex = 25;
             label14.Text = "-----------------------";
             // 
             // lblDivisor
             // 
             lblDivisor.AutoSize = true;
-            lblDivisor.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDivisor.ForeColor = Color.Gray;
+            lblDivisor.BackColor = Color.Transparent;
+            lblDivisor.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDivisor.ForeColor = Color.White;
             lblDivisor.Location = new Point(53, 410);
             lblDivisor.Name = "lblDivisor";
-            lblDivisor.Size = new Size(147, 20);
+            lblDivisor.Size = new Size(196, 27);
             lblDivisor.TabIndex = 24;
             lblDivisor.Text = "-----------------------";
             // 
             // picClose
             // 
+            picClose.BackColor = Color.White;
             picClose.Cursor = Cursors.Hand;
             picClose.Image = (Image)resources.GetObject("picClose.Image");
             picClose.Location = new Point(53, 573);
@@ -184,6 +187,7 @@
             // 
             // picSetup
             // 
+            picSetup.BackColor = Color.White;
             picSetup.Cursor = Cursors.Hand;
             picSetup.Image = (Image)resources.GetObject("picSetup.Image");
             picSetup.Location = new Point(55, 504);
@@ -196,6 +200,7 @@
             // 
             // picModifyUser
             // 
+            picModifyUser.BackColor = Color.White;
             picModifyUser.Cursor = Cursors.Hand;
             picModifyUser.Image = (Image)resources.GetObject("picModifyUser.Image");
             picModifyUser.Location = new Point(56, 442);
@@ -208,6 +213,7 @@
             // 
             // picAbout
             // 
+            picAbout.BackColor = Color.White;
             picAbout.Cursor = Cursors.Hand;
             picAbout.Image = (Image)resources.GetObject("picAbout.Image");
             picAbout.Location = new Point(55, 367);
@@ -220,67 +226,81 @@
             // lblCloseSession
             // 
             lblCloseSession.AutoSize = true;
+            lblCloseSession.BackColor = Color.Transparent;
+            lblCloseSession.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCloseSession.ForeColor = Color.White;
             lblCloseSession.Location = new Point(89, 580);
             lblCloseSession.Name = "lblCloseSession";
-            lblCloseSession.Size = new Size(98, 20);
+            lblCloseSession.Size = new Size(138, 27);
             lblCloseSession.TabIndex = 19;
             lblCloseSession.Text = "Close Session";
             // 
             // lblSetup
             // 
             lblSetup.AutoSize = true;
+            lblSetup.BackColor = Color.Transparent;
+            lblSetup.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblSetup.ForeColor = Color.White;
             lblSetup.Location = new Point(89, 510);
             lblSetup.Name = "lblSetup";
-            lblSetup.Size = new Size(47, 20);
+            lblSetup.Size = new Size(67, 27);
             lblSetup.TabIndex = 18;
             lblSetup.Text = "Setup";
             // 
             // lblModifyUser
             // 
             lblModifyUser.AutoSize = true;
+            lblModifyUser.BackColor = Color.Transparent;
+            lblModifyUser.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblModifyUser.ForeColor = Color.White;
             lblModifyUser.Location = new Point(91, 445);
             lblModifyUser.Name = "lblModifyUser";
-            lblModifyUser.Size = new Size(87, 20);
+            lblModifyUser.Size = new Size(124, 27);
             lblModifyUser.TabIndex = 17;
             lblModifyUser.Text = "Modify user";
             // 
             // lblAbout
             // 
             lblAbout.AutoSize = true;
+            lblAbout.BackColor = Color.Transparent;
+            lblAbout.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblAbout.ForeColor = Color.White;
             lblAbout.Location = new Point(90, 373);
             lblAbout.Name = "lblAbout";
-            lblAbout.Size = new Size(50, 20);
+            lblAbout.Size = new Size(70, 27);
             lblAbout.TabIndex = 4;
             lblAbout.Text = "About";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = Color.Gray;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
             label6.Location = new Point(27, 129);
             label6.Name = "label6";
-            label6.Size = new Size(160, 27);
+            label6.Size = new Size(166, 27);
             label6.TabIndex = 16;
             label6.Text = "Bienvenido Sr/a:";
             // 
             // label04
             // 
             label04.AutoSize = true;
-            label04.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label04.ForeColor = Color.Gray;
+            label04.BackColor = Color.Transparent;
+            label04.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label04.ForeColor = Color.White;
             label04.Location = new Point(29, 205);
             label04.Name = "label04";
-            label04.Size = new Size(63, 27);
+            label04.Size = new Size(65, 27);
             label04.TabIndex = 15;
             label04.Text = "Perfil:";
             // 
             // lblUser
             // 
             lblUser.AutoSize = true;
-            lblUser.BackColor = Color.White;
-            lblUser.Font = new Font("Segoe UI Variable Text", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblUser.ForeColor = Color.DimGray;
+            lblUser.BackColor = Color.Transparent;
+            lblUser.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUser.ForeColor = Color.White;
             lblUser.Location = new Point(29, 168);
             lblUser.Name = "lblUser";
             lblUser.Size = new Size(17, 27);
@@ -290,9 +310,9 @@
             // lblPerfil
             // 
             lblPerfil.AutoSize = true;
-            lblPerfil.BackColor = Color.White;
-            lblPerfil.Font = new Font("Segoe UI Variable Text", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPerfil.ForeColor = Color.DimGray;
+            lblPerfil.BackColor = Color.Transparent;
+            lblPerfil.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPerfil.ForeColor = Color.White;
             lblPerfil.Location = new Point(27, 237);
             lblPerfil.Name = "lblPerfil";
             lblPerfil.Size = new Size(17, 27);
@@ -302,12 +322,12 @@
             // lblFecha
             // 
             lblFecha.AutoSize = true;
-            lblFecha.BackColor = Color.DimGray;
-            lblFecha.Font = new Font("Segoe UI Variable Small", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblFecha.BackColor = Color.Transparent;
+            lblFecha.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblFecha.ForeColor = Color.White;
-            lblFecha.Location = new Point(273, 176);
+            lblFecha.Location = new Point(269, 168);
             lblFecha.Name = "lblFecha";
-            lblFecha.Size = new Size(12, 17);
+            lblFecha.Size = new Size(17, 27);
             lblFecha.TabIndex = 27;
             lblFecha.Text = " ";
             // 
@@ -335,8 +355,94 @@
             tabPage1.Text = "Resumen";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.RoyalBlue;
+            panel2.Controls.Add(lblsaldo);
+            panel2.Controls.Add(lblttgastos);
+            panel2.Controls.Add(lblttingresos);
+            panel2.Controls.Add(lblTotalGastos);
+            panel2.Controls.Add(lblTotalIngresos);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(label1);
+            panel2.Font = new Font("Segoe UI Variable Display", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            panel2.ForeColor = Color.White;
+            panel2.Location = new Point(18, 19);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(685, 78);
+            panel2.TabIndex = 6;
+            // 
+            // lblsaldo
+            // 
+            lblsaldo.AutoSize = true;
+            lblsaldo.Location = new Point(458, 49);
+            lblsaldo.Name = "lblsaldo";
+            lblsaldo.Size = new Size(0, 22);
+            lblsaldo.TabIndex = 7;
+            // 
+            // lblttgastos
+            // 
+            lblttgastos.AutoSize = true;
+            lblttgastos.Location = new Point(231, 49);
+            lblttgastos.Name = "lblttgastos";
+            lblttgastos.Size = new Size(0, 22);
+            lblttgastos.TabIndex = 6;
+            // 
+            // lblttingresos
+            // 
+            lblttingresos.AutoSize = true;
+            lblttingresos.Location = new Point(11, 49);
+            lblttingresos.Name = "lblttingresos";
+            lblttingresos.Size = new Size(0, 22);
+            lblttingresos.TabIndex = 5;
+            // 
+            // lblTotalGastos
+            // 
+            lblTotalGastos.AutoSize = true;
+            lblTotalGastos.Location = new Point(231, 49);
+            lblTotalGastos.Name = "lblTotalGastos";
+            lblTotalGastos.Size = new Size(0, 22);
+            lblTotalGastos.TabIndex = 4;
+            // 
+            // lblTotalIngresos
+            // 
+            lblTotalIngresos.AutoSize = true;
+            lblTotalIngresos.Location = new Point(5, 49);
+            lblTotalIngresos.Name = "lblTotalIngresos";
+            lblTotalIngresos.Size = new Size(0, 22);
+            lblTotalIngresos.TabIndex = 3;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(495, 15);
+            label3.Name = "label3";
+            label3.Size = new Size(54, 22);
+            label3.TabIndex = 2;
+            label3.Text = "Saldo";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(259, 15);
+            label2.Name = "label2";
+            label2.Size = new Size(215, 22);
+            label2.TabIndex = 1;
+            label2.Text = "Total de gastos mensuales";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(5, 15);
+            label1.Name = "label1";
+            label1.Size = new Size(230, 22);
+            label1.TabIndex = 0;
+            label1.Text = "Total de ingresos mensuales";
+            // 
             // pbrResumen
             // 
+            pbrResumen.ForeColor = Color.Transparent;
             pbrResumen.Location = new Point(29, 103);
             pbrResumen.Name = "pbrResumen";
             pbrResumen.Size = new Size(665, 31);
@@ -350,92 +456,9 @@
             panel3.Size = new Size(680, 303);
             panel3.TabIndex = 7;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(lblsaldo);
-            panel2.Controls.Add(lblttgastos);
-            panel2.Controls.Add(lblttingresos);
-            panel2.Controls.Add(lblTotalGastos);
-            panel2.Controls.Add(lblTotalIngresos);
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(label1);
-            panel2.ForeColor = SystemColors.ActiveCaptionText;
-            panel2.Location = new Point(18, 19);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(685, 78);
-            panel2.TabIndex = 6;
-            // 
-            // lblsaldo
-            // 
-            lblsaldo.AutoSize = true;
-            lblsaldo.Location = new Point(458, 49);
-            lblsaldo.Name = "lblsaldo";
-            lblsaldo.Size = new Size(0, 20);
-            lblsaldo.TabIndex = 7;
-            // 
-            // lblttgastos
-            // 
-            lblttgastos.AutoSize = true;
-            lblttgastos.Location = new Point(231, 49);
-            lblttgastos.Name = "lblttgastos";
-            lblttgastos.Size = new Size(0, 20);
-            lblttgastos.TabIndex = 6;
-            // 
-            // lblttingresos
-            // 
-            lblttingresos.AutoSize = true;
-            lblttingresos.Location = new Point(11, 49);
-            lblttingresos.Name = "lblttingresos";
-            lblttingresos.Size = new Size(0, 20);
-            lblttingresos.TabIndex = 5;
-            // 
-            // lblTotalGastos
-            // 
-            lblTotalGastos.AutoSize = true;
-            lblTotalGastos.Location = new Point(231, 49);
-            lblTotalGastos.Name = "lblTotalGastos";
-            lblTotalGastos.Size = new Size(0, 20);
-            lblTotalGastos.TabIndex = 4;
-            // 
-            // lblTotalIngresos
-            // 
-            lblTotalIngresos.AutoSize = true;
-            lblTotalIngresos.Location = new Point(5, 49);
-            lblTotalIngresos.Name = "lblTotalIngresos";
-            lblTotalIngresos.Size = new Size(0, 20);
-            lblTotalIngresos.TabIndex = 3;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(458, 15);
-            label3.Name = "label3";
-            label3.Size = new Size(47, 20);
-            label3.TabIndex = 2;
-            label3.Text = "Saldo";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(231, 15);
-            label2.Name = "label2";
-            label2.Size = new Size(183, 20);
-            label2.TabIndex = 1;
-            label2.Text = "Total de gastos mensuales";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(5, 15);
-            label1.Name = "label1";
-            label1.Size = new Size(195, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Total de ingresos mensuales";
-            // 
             // tabIngresos
             // 
+            tabIngresos.BackColor = SystemColors.ActiveCaption;
             tabIngresos.Controls.Add(btnEliminarIngreso);
             tabIngresos.Controls.Add(btnEditarIngresos);
             tabIngresos.Controls.Add(btnGuardarIngreso);
@@ -451,39 +474,37 @@
             tabIngresos.Size = new Size(793, 496);
             tabIngresos.TabIndex = 1;
             tabIngresos.Text = "Ingresos";
-            tabIngresos.UseVisualStyleBackColor = true;
             // 
             // btnEliminarIngreso
             // 
-            btnEliminarIngreso.BackColor = Color.DimGray;
-            btnEliminarIngreso.ForeColor = Color.White;
-            btnEliminarIngreso.Location = new Point(541, 427);
+            btnEliminarIngreso.AutoSize = true;
+            btnEliminarIngreso.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            btnEliminarIngreso.ForeColor = Color.RoyalBlue;
+            btnEliminarIngreso.Location = new Point(642, 416);
             btnEliminarIngreso.Name = "btnEliminarIngreso";
-            btnEliminarIngreso.Size = new Size(112, 46);
-            btnEliminarIngreso.TabIndex = 17;
-            btnEliminarIngreso.Text = "Eliminar";
-            btnEliminarIngreso.UseVisualStyleBackColor = false;
-            btnEliminarIngreso.Click += btnEliminarIngreso_Click;
+            btnEliminarIngreso.Size = new Size(106, 27);
+            btnEliminarIngreso.TabIndex = 44;
+            btnEliminarIngreso.Text = "ELIMINAR";
             // 
             // btnEditarIngresos
             // 
-            btnEditarIngresos.BackColor = Color.DimGray;
-            btnEditarIngresos.ForeColor = Color.White;
-            btnEditarIngresos.Location = new Point(463, 339);
+            btnEditarIngresos.AutoSize = true;
+            btnEditarIngresos.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            btnEditarIngresos.ForeColor = Color.RoyalBlue;
+            btnEditarIngresos.Location = new Point(485, 416);
             btnEditarIngresos.Name = "btnEditarIngresos";
-            btnEditarIngresos.Size = new Size(112, 46);
-            btnEditarIngresos.TabIndex = 16;
-            btnEditarIngresos.Text = "Editar";
-            btnEditarIngresos.UseVisualStyleBackColor = false;
-            btnEditarIngresos.Click += btnEditarIngresos_Click;
+            btnEditarIngresos.Size = new Size(81, 27);
+            btnEditarIngresos.TabIndex = 43;
+            btnEditarIngresos.Text = "EDITAR";
             // 
             // btnGuardarIngreso
             // 
-            btnGuardarIngreso.BackColor = Color.DimGray;
+            btnGuardarIngreso.BackColor = Color.DeepSkyBlue;
+            btnGuardarIngreso.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnGuardarIngreso.ForeColor = Color.White;
-            btnGuardarIngreso.Location = new Point(603, 339);
+            btnGuardarIngreso.Location = new Point(485, 331);
             btnGuardarIngreso.Name = "btnGuardarIngreso";
-            btnGuardarIngreso.Size = new Size(118, 46);
+            btnGuardarIngreso.Size = new Size(263, 46);
             btnGuardarIngreso.TabIndex = 15;
             btnGuardarIngreso.Text = "Guardar";
             btnGuardarIngreso.UseVisualStyleBackColor = false;
@@ -492,56 +513,66 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(497, 202);
+            label12.Font = new Font("Segoe UI Variable Text Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.ForeColor = Color.White;
+            label12.Location = new Point(485, 200);
             label12.Name = "label12";
-            label12.Size = new Size(62, 20);
+            label12.Size = new Size(78, 24);
             label12.TabIndex = 14;
             label12.Text = "Importe";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(497, 134);
+            label13.Font = new Font("Segoe UI Variable Text Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label13.ForeColor = Color.White;
+            label13.Location = new Point(485, 118);
             label13.Name = "label13";
-            label13.Size = new Size(61, 20);
+            label13.Size = new Size(77, 24);
             label13.TabIndex = 12;
             label13.Text = "Artículo";
             // 
             // cbArticuloIngreso
             // 
+            cbArticuloIngreso.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             cbArticuloIngreso.FormattingEnabled = true;
-            cbArticuloIngreso.Location = new Point(497, 157);
+            cbArticuloIngreso.Location = new Point(485, 157);
             cbArticuloIngreso.Name = "cbArticuloIngreso";
-            cbArticuloIngreso.Size = new Size(205, 28);
+            cbArticuloIngreso.Size = new Size(263, 35);
             cbArticuloIngreso.TabIndex = 13;
             // 
             // txtImporteIngreso
             // 
-            txtImporteIngreso.Location = new Point(497, 225);
+            txtImporteIngreso.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            txtImporteIngreso.Location = new Point(485, 233);
             txtImporteIngreso.Name = "txtImporteIngreso";
-            txtImporteIngreso.Size = new Size(208, 27);
+            txtImporteIngreso.Size = new Size(263, 34);
             txtImporteIngreso.TabIndex = 11;
             // 
             // panel4
             // 
+            panel4.BackColor = Color.RoyalBlue;
             panel4.Controls.Add(label8);
+            panel4.ForeColor = Color.White;
             panel4.Location = new Point(485, 26);
             panel4.Name = "panel4";
-            panel4.Size = new Size(236, 70);
+            panel4.Size = new Size(263, 70);
             panel4.TabIndex = 1;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(37, 25);
+            label8.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(22, 22);
             label8.Name = "label8";
-            label8.Size = new Size(165, 20);
+            label8.Size = new Size(223, 27);
             label8.TabIndex = 4;
             label8.Text = "INGRESOS MENSUALES";
             // 
             // dgvIngresos
             // 
-            dgvIngresos.BackgroundColor = Color.White;
+            dgvIngresos.BackgroundColor = SystemColors.ActiveCaption;
+            dgvIngresos.BorderStyle = BorderStyle.None;
             dgvIngresos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvIngresos.GridColor = Color.White;
             dgvIngresos.Location = new Point(8, 26);
@@ -553,9 +584,10 @@
             // 
             // tabGastos
             // 
+            tabGastos.BackColor = SystemColors.ActiveCaption;
             tabGastos.Controls.Add(btnEliminarGasto);
-            tabGastos.Controls.Add(btnEditarGasto);
             tabGastos.Controls.Add(label16);
+            tabGastos.Controls.Add(btnEditarGasto);
             tabGastos.Controls.Add(cbArticuloGasto);
             tabGastos.Controls.Add(btnGuardarGasto);
             tabGastos.Controls.Add(label11);
@@ -572,56 +604,58 @@
             tabGastos.Size = new Size(793, 496);
             tabGastos.TabIndex = 2;
             tabGastos.Text = "Gastos";
-            tabGastos.UseVisualStyleBackColor = true;
             // 
             // btnEliminarGasto
             // 
-            btnEliminarGasto.BackColor = Color.DimGray;
-            btnEliminarGasto.ForeColor = Color.White;
-            btnEliminarGasto.Location = new Point(583, 444);
+            btnEliminarGasto.AutoSize = true;
+            btnEliminarGasto.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            btnEliminarGasto.ForeColor = Color.RoyalBlue;
+            btnEliminarGasto.Location = new Point(626, 434);
             btnEliminarGasto.Name = "btnEliminarGasto";
-            btnEliminarGasto.Size = new Size(112, 46);
-            btnEliminarGasto.TabIndex = 18;
-            btnEliminarGasto.Text = "Eliminar";
-            btnEliminarGasto.UseVisualStyleBackColor = false;
-            btnEliminarGasto.Click += btnEliminarGasto_Click;
-            // 
-            // btnEditarGasto
-            // 
-            btnEditarGasto.BackColor = Color.DimGray;
-            btnEditarGasto.ForeColor = Color.White;
-            btnEditarGasto.Location = new Point(501, 394);
-            btnEditarGasto.Name = "btnEditarGasto";
-            btnEditarGasto.Size = new Size(112, 46);
-            btnEditarGasto.TabIndex = 11;
-            btnEditarGasto.Text = "Editar";
-            btnEditarGasto.UseVisualStyleBackColor = false;
-            btnEditarGasto.Click += btnEditarGasto_Click;
+            btnEliminarGasto.Size = new Size(106, 27);
+            btnEliminarGasto.TabIndex = 42;
+            btnEliminarGasto.Text = "ELIMINAR";
             // 
             // label16
             // 
             label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.ForeColor = Color.White;
             label16.Location = new Point(524, 123);
             label16.Name = "label16";
-            label16.Size = new Size(61, 20);
+            label16.Size = new Size(71, 22);
             label16.TabIndex = 9;
             label16.Text = "Artículo";
             // 
+            // btnEditarGasto
+            // 
+            btnEditarGasto.AutoSize = true;
+            btnEditarGasto.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            btnEditarGasto.ForeColor = Color.RoyalBlue;
+            btnEditarGasto.Location = new Point(524, 434);
+            btnEditarGasto.Name = "btnEditarGasto";
+            btnEditarGasto.Size = new Size(81, 27);
+            btnEditarGasto.TabIndex = 41;
+            btnEditarGasto.Text = "EDITAR";
+            // 
             // cbArticuloGasto
             // 
+            cbArticuloGasto.BackColor = SystemColors.ActiveCaption;
+            cbArticuloGasto.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            cbArticuloGasto.ForeColor = Color.White;
             cbArticuloGasto.FormattingEnabled = true;
             cbArticuloGasto.Location = new Point(524, 146);
             cbArticuloGasto.Name = "cbArticuloGasto";
-            cbArticuloGasto.Size = new Size(205, 28);
+            cbArticuloGasto.Size = new Size(205, 30);
             cbArticuloGasto.TabIndex = 10;
             // 
             // btnGuardarGasto
             // 
-            btnGuardarGasto.BackColor = Color.DimGray;
+            btnGuardarGasto.BackColor = Color.DeepSkyBlue;
             btnGuardarGasto.ForeColor = Color.White;
-            btnGuardarGasto.Location = new Point(647, 394);
+            btnGuardarGasto.Location = new Point(524, 374);
             btnGuardarGasto.Name = "btnGuardarGasto";
-            btnGuardarGasto.Size = new Size(112, 46);
+            btnGuardarGasto.Size = new Size(205, 46);
             btnGuardarGasto.TabIndex = 8;
             btnGuardarGasto.Text = "Guardar";
             btnGuardarGasto.UseVisualStyleBackColor = false;
@@ -630,55 +664,71 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(524, 252);
+            label11.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.ForeColor = Color.White;
+            label11.Location = new Point(524, 242);
             label11.Name = "label11";
-            label11.Size = new Size(62, 20);
+            label11.Size = new Size(72, 22);
             label11.TabIndex = 7;
             label11.Text = "Importe";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(524, 188);
+            label10.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = Color.White;
+            label10.Location = new Point(524, 181);
             label10.Name = "label10";
-            label10.Size = new Size(69, 20);
+            label10.Size = new Size(80, 22);
             label10.TabIndex = 5;
             label10.Text = "Categiría";
             // 
             // cbCategoriaGastos
             // 
+            cbCategoriaGastos.BackColor = SystemColors.ActiveCaption;
+            cbCategoriaGastos.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            cbCategoriaGastos.ForeColor = Color.White;
             cbCategoriaGastos.FormattingEnabled = true;
-            cbCategoriaGastos.Location = new Point(524, 211);
+            cbCategoriaGastos.Location = new Point(524, 204);
             cbCategoriaGastos.Name = "cbCategoriaGastos";
-            cbCategoriaGastos.Size = new Size(205, 28);
+            cbCategoriaGastos.Size = new Size(205, 30);
             cbCategoriaGastos.TabIndex = 6;
             // 
             // txtImporte
             // 
-            txtImporte.Location = new Point(524, 279);
+            txtImporte.BackColor = SystemColors.ActiveCaption;
+            txtImporte.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            txtImporte.ForeColor = Color.White;
+            txtImporte.Location = new Point(524, 269);
             txtImporte.Name = "txtImporte";
-            txtImporte.Size = new Size(208, 27);
+            txtImporte.Size = new Size(208, 30);
             txtImporte.TabIndex = 4;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(524, 323);
+            label9.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.White;
+            label9.Location = new Point(524, 307);
             label9.Name = "label9";
-            label9.Size = new Size(55, 20);
+            label9.Size = new Size(66, 22);
             label9.TabIndex = 1;
             label9.Text = "Estatus";
             // 
             // cbEstatusGasto
             // 
+            cbEstatusGasto.BackColor = SystemColors.ActiveCaption;
+            cbEstatusGasto.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            cbEstatusGasto.ForeColor = Color.White;
             cbEstatusGasto.FormattingEnabled = true;
-            cbEstatusGasto.Location = new Point(524, 346);
+            cbEstatusGasto.Location = new Point(524, 330);
             cbEstatusGasto.Name = "cbEstatusGasto";
-            cbEstatusGasto.Size = new Size(205, 28);
+            cbEstatusGasto.Size = new Size(205, 30);
             cbEstatusGasto.TabIndex = 3;
             // 
             // panel5
             // 
+            panel5.BackColor = Color.RoyalBlue;
             panel5.Controls.Add(label4);
             panel5.Location = new Point(517, 38);
             panel5.Name = "panel5";
@@ -688,15 +738,18 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(41, 27);
+            label4.Font = new Font("Segoe UI Variable Text Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(26, 25);
             label4.Name = "label4";
-            label4.Size = new Size(150, 20);
+            label4.Size = new Size(186, 24);
             label4.TabIndex = 0;
             label4.Text = "GASTOS MENSUALES";
             // 
             // dgvGastos
             // 
-            dgvGastos.BackgroundColor = Color.White;
+            dgvGastos.BackgroundColor = SystemColors.ActiveCaption;
+            dgvGastos.BorderStyle = BorderStyle.None;
             dgvGastos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvGastos.Location = new Point(10, 38);
             dgvGastos.Name = "dgvGastos";
@@ -708,16 +761,18 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
             label5.Location = new Point(492, 119);
             label5.Name = "label5";
-            label5.Size = new Size(227, 20);
+            label5.Size = new Size(321, 27);
             label5.TabIndex = 2;
             label5.Text = "PRESUPUESTO MENSUAL SIMPLE";
             // 
             // panel6
             // 
-            panel6.BackColor = Color.White;
+            panel6.BackColor = Color.MidnightBlue;
             panel6.Controls.Add(btnCerrarPanel);
             panel6.Controls.Add(label7);
             panel6.Dock = DockStyle.Top;
@@ -729,12 +784,13 @@
             // btnCerrarPanel
             // 
             btnCerrarPanel.AutoSize = true;
+            btnCerrarPanel.BackColor = Color.Transparent;
             btnCerrarPanel.Cursor = Cursors.Hand;
-            btnCerrarPanel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCerrarPanel.ForeColor = Color.DimGray;
+            btnCerrarPanel.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCerrarPanel.ForeColor = Color.White;
             btnCerrarPanel.Location = new Point(770, 11);
             btnCerrarPanel.Name = "btnCerrarPanel";
-            btnCerrarPanel.Size = new Size(25, 28);
+            btnCerrarPanel.Size = new Size(25, 27);
             btnCerrarPanel.TabIndex = 4;
             btnCerrarPanel.Text = "X";
             btnCerrarPanel.Visible = false;
@@ -742,30 +798,21 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Variable Text Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = Color.DimGray;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = Color.White;
             label7.Location = new Point(287, 9);
             label7.Name = "label7";
-            label7.Size = new Size(229, 31);
+            label7.Size = new Size(205, 27);
             label7.TabIndex = 17;
             label7.Text = "PRESUPUESTO FÁCIL";
             // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label17.ForeColor = Color.Gray;
-            label17.Location = new Point(30, 51);
-            label17.Name = "label17";
-            label17.Size = new Size(147, 20);
-            label17.TabIndex = 28;
-            label17.Text = "-----------------------";
-            // 
             // btnAdministrarUsuarios
             // 
+            btnAdministrarUsuarios.BackColor = Color.White;
             btnAdministrarUsuarios.Cursor = Cursors.Hand;
             btnAdministrarUsuarios.Image = (Image)resources.GetObject("btnAdministrarUsuarios.Image");
-            btnAdministrarUsuarios.Location = new Point(9, 16);
+            btnAdministrarUsuarios.Location = new Point(8, 21);
             btnAdministrarUsuarios.Name = "btnAdministrarUsuarios";
             btnAdministrarUsuarios.Size = new Size(32, 21);
             btnAdministrarUsuarios.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -775,30 +822,32 @@
             // lblAdministrarUsuarios
             // 
             lblAdministrarUsuarios.AutoSize = true;
+            lblAdministrarUsuarios.BackColor = Color.Transparent;
             lblAdministrarUsuarios.Cursor = Cursors.Hand;
-            lblAdministrarUsuarios.Location = new Point(47, 17);
+            lblAdministrarUsuarios.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblAdministrarUsuarios.ForeColor = Color.White;
+            lblAdministrarUsuarios.Location = new Point(42, 22);
             lblAdministrarUsuarios.Name = "lblAdministrarUsuarios";
-            lblAdministrarUsuarios.Size = new Size(144, 20);
+            lblAdministrarUsuarios.Size = new Size(155, 20);
             lblAdministrarUsuarios.TabIndex = 26;
             lblAdministrarUsuarios.Text = "Administrar usuarios";
             lblAdministrarUsuarios.Click += lblAdministrarUsuarios_Click;
             // 
             // panelAdmin
             // 
-            panelAdmin.BackColor = Color.White;
+            panelAdmin.BackColor = Color.DeepSkyBlue;
             panelAdmin.Controls.Add(btnAdministrarUsuarios);
-            panelAdmin.Controls.Add(label17);
             panelAdmin.Controls.Add(lblAdministrarUsuarios);
             panelAdmin.Location = new Point(856, 80);
             panelAdmin.Name = "panelAdmin";
-            panelAdmin.Size = new Size(202, 83);
+            panelAdmin.Size = new Size(202, 66);
             panelAdmin.TabIndex = 29;
             // 
             // PanelPresupuesto
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DimGray;
+            BackColor = Color.RoyalBlue;
             ClientSize = new Size(1070, 734);
             Controls.Add(panelAdmin);
             Controls.Add(lblFecha);
@@ -894,19 +943,18 @@
         private Label lblDivisor;
         public Label lblFecha;
         private Label label16;
-        private Button btnEditarGasto;
         private ComboBox cbCategoriaGastos;
         private ComboBox cbEstatusGasto;
         private ComboBox cbArticuloGasto;
-        private Label label17;
         private PictureBox btnAdministrarUsuarios;
         private Label lblAdministrarUsuarios;
         private Panel panelAdmin;
-        private Button btnEditarIngresos;
-        private Button btnEliminarIngreso;
-        private Button btnEliminarGasto;
         private Label lblsaldo;
         private Label lblttgastos;
         private Label lblttingresos;
+        private Label btnEliminarGasto;
+        private Label btnEditarGasto;
+        private Label btnEliminarIngreso;
+        private Label btnEditarIngresos;
     }
 }
