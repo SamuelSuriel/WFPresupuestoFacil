@@ -1,7 +1,5 @@
-﻿using LoginSistem.Clases;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 using PresupuestoFacil_CapaDatos;
-using PresupuestoFacil_CapaNegocio;
 using System.Data;
 using WFPresupuestoFacil_Presentable.Clases;
 
@@ -10,7 +8,6 @@ namespace LoginSistem.Forms
     public partial class mdlEditarUsuario : Form
     {
         CD_Conexion conexion = new CD_Conexion();
-        //CN_Usuarios objetoUsuarioCN = new CN_Usuarios();
         public mdlEditarUsuario()
         {
             InitializeComponent();
@@ -32,10 +29,6 @@ namespace LoginSistem.Forms
         {
             txtEditUsuarioNombre.Text = Global.GlobalVarNombre;
             txtEditUsuarioClave.Text = Global.GlobalVarClave;
-            //txtCorreoEdit.Text = Global.GlobalVarCorreo;
-            //txtEdadEdit.Text = Global.GlobalVarEdad.ToString();
-            //txtPosicionEdit.Text = Global.GlobalVarPosicion;
-            //txtTelefonoEdit.Text = Global.GlobalVarTelefono;
 
             if (Global.GlobalVarIdPerfil == 1)
             {
@@ -66,13 +59,9 @@ namespace LoginSistem.Forms
                 {
                     string id = Global.GlobalVarId.ToString();
                     string name = txtEditUsuarioNombre.Text;
-                    string correo = txtCorreoEdit.Text;
-                    string tel = txtTelefonoEdit.Text;
-                    string edad = txtEdadEdit.Text;
-                    string posicion = txtPosicionEdit.Text;
                     string passw = txtEditUsuarioClave.Text;
                     int id_perfil = (int)cbPerfiles.SelectedValue;
-                    
+
                     MessageBox.Show("Se editó correctamente!");
                     Global.GlobalVarIdPerfil = (int)id_perfil;
                 }
@@ -86,7 +75,7 @@ namespace LoginSistem.Forms
             {
                 MessageBox.Show("no se pudo realizar la operación: " + ex);
             }
-           
+
         }
 
         public void LlenarComboBox(ComboBox combo, string strSql, string id, string desc)
@@ -102,27 +91,15 @@ namespace LoginSistem.Forms
         {
 
             bool nombre = txtEditUsuarioNombre.Text != "";
-            bool correo = txtCorreoEdit.Text != "";
-            bool telefono = txtTelefonoEdit.Text != "";
-            bool edad = txtEdadEdit.Text != "";
-            bool posicion = txtPosicionEdit.Text != "";
+            bool clave = txtEditUsuarioClave.Text != "";
             bool idPerfil = (int)cbPerfiles.SelectedValue > 0;
 
-            if (nombre && correo && telefono && edad && posicion && idPerfil)
+            if (nombre && clave && idPerfil)
                 return true;
             else
                 return false;
 
         }
 
-        private void txtEdadEdit_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            System.Text.RegularExpressions.Regex.IsMatch(txtEdadEdit.Text, "[ ^ 0-9]");
-
-            //if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            //{
-            //    e.Handled = true;
-            //}
-        }
     }
 }

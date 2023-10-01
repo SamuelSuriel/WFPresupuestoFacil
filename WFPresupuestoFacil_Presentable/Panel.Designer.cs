@@ -52,13 +52,13 @@
             pbrResumen = new ProgressBar();
             panel3 = new Panel();
             panel2 = new Panel();
-            lblSaldo = new Label();
             lblTotalGastos = new Label();
             lblTotalIngresos = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             tabIngresos = new TabPage();
+            btnEliminarIngreso = new Button();
             btnEditarIngresos = new Button();
             btnGuardarIngreso = new Button();
             label12 = new Label();
@@ -69,6 +69,7 @@
             label8 = new Label();
             dgvIngresos = new DataGridView();
             tabGastos = new TabPage();
+            btnEliminarGasto = new Button();
             btnEditarGasto = new Button();
             label16 = new Label();
             cbArticuloGasto = new ComboBox();
@@ -90,8 +91,9 @@
             btnAdministrarUsuarios = new PictureBox();
             lblAdministrarUsuarios = new Label();
             panelAdmin = new Panel();
-            btnEliminarIngreso = new Button();
-            btnEliminarGasto = new Button();
+            lblttingresos = new Label();
+            lblttgastos = new Label();
+            lblsaldo = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picSetup).BeginInit();
@@ -342,14 +344,16 @@
             // 
             // panel3
             // 
-            panel3.Location = new Point(23, 133);
+            panel3.Location = new Point(23, 140);
             panel3.Name = "panel3";
-            panel3.Size = new Size(677, 310);
+            panel3.Size = new Size(680, 303);
             panel3.TabIndex = 7;
             // 
             // panel2
             // 
-            panel2.Controls.Add(lblSaldo);
+            panel2.Controls.Add(lblsaldo);
+            panel2.Controls.Add(lblttgastos);
+            panel2.Controls.Add(lblttingresos);
             panel2.Controls.Add(lblTotalGastos);
             panel2.Controls.Add(lblTotalIngresos);
             panel2.Controls.Add(label3);
@@ -359,15 +363,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(685, 78);
             panel2.TabIndex = 6;
-            // 
-            // lblSaldo
-            // 
-            lblSaldo.AutoSize = true;
-            lblSaldo.Location = new Point(458, 49);
-            lblSaldo.Name = "lblSaldo";
-            lblSaldo.Size = new Size(17, 20);
-            lblSaldo.TabIndex = 5;
-            lblSaldo.Text = "0";
             // 
             // lblTotalGastos
             // 
@@ -430,6 +425,18 @@
             tabIngresos.TabIndex = 1;
             tabIngresos.Text = "Ingresos";
             tabIngresos.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarIngreso
+            // 
+            btnEliminarIngreso.BackColor = Color.DimGray;
+            btnEliminarIngreso.ForeColor = Color.White;
+            btnEliminarIngreso.Location = new Point(541, 401);
+            btnEliminarIngreso.Name = "btnEliminarIngreso";
+            btnEliminarIngreso.Size = new Size(112, 46);
+            btnEliminarIngreso.TabIndex = 17;
+            btnEliminarIngreso.Text = "Eliminar";
+            btnEliminarIngreso.UseVisualStyleBackColor = false;
+            btnEliminarIngreso.Click += btnEliminarIngreso_Click;
             // 
             // btnEditarIngresos
             // 
@@ -539,6 +546,18 @@
             tabGastos.TabIndex = 2;
             tabGastos.Text = "Gastos";
             tabGastos.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarGasto
+            // 
+            btnEliminarGasto.BackColor = Color.DimGray;
+            btnEliminarGasto.ForeColor = Color.White;
+            btnEliminarGasto.Location = new Point(583, 444);
+            btnEliminarGasto.Name = "btnEliminarGasto";
+            btnEliminarGasto.Size = new Size(112, 46);
+            btnEliminarGasto.TabIndex = 18;
+            btnEliminarGasto.Text = "Eliminar";
+            btnEliminarGasto.UseVisualStyleBackColor = false;
+            btnEliminarGasto.Click += btnEliminarGasto_Click;
             // 
             // btnEditarGasto
             // 
@@ -748,29 +767,29 @@
             panelAdmin.Size = new Size(202, 83);
             panelAdmin.TabIndex = 29;
             // 
-            // btnEliminarIngreso
+            // lblttingresos
             // 
-            btnEliminarIngreso.BackColor = Color.DimGray;
-            btnEliminarIngreso.ForeColor = Color.White;
-            btnEliminarIngreso.Location = new Point(541, 401);
-            btnEliminarIngreso.Name = "btnEliminarIngreso";
-            btnEliminarIngreso.Size = new Size(112, 46);
-            btnEliminarIngreso.TabIndex = 17;
-            btnEliminarIngreso.Text = "Eliminar";
-            btnEliminarIngreso.UseVisualStyleBackColor = false;
-            btnEliminarIngreso.Click += btnEliminarIngreso_Click;
+            lblttingresos.AutoSize = true;
+            lblttingresos.Location = new Point(11, 49);
+            lblttingresos.Name = "lblttingresos";
+            lblttingresos.Size = new Size(0, 20);
+            lblttingresos.TabIndex = 5;
             // 
-            // btnEliminarGasto
+            // lblttgastos
             // 
-            btnEliminarGasto.BackColor = Color.DimGray;
-            btnEliminarGasto.ForeColor = Color.White;
-            btnEliminarGasto.Location = new Point(583, 444);
-            btnEliminarGasto.Name = "btnEliminarGasto";
-            btnEliminarGasto.Size = new Size(112, 46);
-            btnEliminarGasto.TabIndex = 18;
-            btnEliminarGasto.Text = "Eliminar";
-            btnEliminarGasto.UseVisualStyleBackColor = false;
-            btnEliminarGasto.Click += btnEliminarGasto_Click;
+            lblttgastos.AutoSize = true;
+            lblttgastos.Location = new Point(231, 49);
+            lblttgastos.Name = "lblttgastos";
+            lblttgastos.Size = new Size(0, 20);
+            lblttgastos.TabIndex = 6;
+            // 
+            // lblsaldo
+            // 
+            lblsaldo.AutoSize = true;
+            lblsaldo.Location = new Point(458, 49);
+            lblsaldo.Name = "lblsaldo";
+            lblsaldo.Size = new Size(0, 20);
+            lblsaldo.TabIndex = 7;
             // 
             // PanelPresupuesto
             // 
@@ -827,7 +846,6 @@
         private TabPage tabPage1;
         private TabPage tabIngresos;
         private TabPage tabGastos;
-        private Label lblSaldo;
         private Label lblTotalGastos;
         private Label lblTotalIngresos;
         private Label label3;
@@ -884,5 +902,8 @@
         private Button btnEditarIngresos;
         private Button btnEliminarIngreso;
         private Button btnEliminarGasto;
+        private Label lblsaldo;
+        private Label lblttgastos;
+        private Label lblttingresos;
     }
 }

@@ -44,9 +44,9 @@
             btnCancelarLogin.BackColor = Color.DimGray;
             btnCancelarLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnCancelarLogin.ForeColor = Color.White;
-            btnCancelarLogin.Location = new Point(408, 370);
+            btnCancelarLogin.Location = new Point(408, 361);
             btnCancelarLogin.Name = "btnCancelarLogin";
-            btnCancelarLogin.Size = new Size(162, 57);
+            btnCancelarLogin.Size = new Size(175, 55);
             btnCancelarLogin.TabIndex = 0;
             btnCancelarLogin.Text = "CANCELAR";
             btnCancelarLogin.UseVisualStyleBackColor = false;
@@ -83,6 +83,7 @@
             // 
             txtContraseñaLogin.Location = new Point(532, 300);
             txtContraseñaLogin.Name = "txtContraseñaLogin";
+            txtContraseñaLogin.PasswordChar = '*';
             txtContraseñaLogin.Size = new Size(242, 27);
             txtContraseñaLogin.TabIndex = 5;
             // 
@@ -103,9 +104,9 @@
             btnEntrarLogin.BackColor = Color.DimGray;
             btnEntrarLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnEntrarLogin.ForeColor = Color.White;
-            btnEntrarLogin.Location = new Point(612, 370);
+            btnEntrarLogin.Location = new Point(612, 361);
             btnEntrarLogin.Name = "btnEntrarLogin";
-            btnEntrarLogin.Size = new Size(162, 57);
+            btnEntrarLogin.Size = new Size(175, 55);
             btnEntrarLogin.TabIndex = 6;
             btnEntrarLogin.Text = "ENTRAR";
             btnEntrarLogin.UseVisualStyleBackColor = false;

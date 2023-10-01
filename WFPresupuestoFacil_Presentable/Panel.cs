@@ -39,11 +39,7 @@ namespace LoginSistem.Forms
             Global.GlobalVarNombre = "";
             Global.GlobalVarClave = "";
             Global.GlobalVarIdPerfil = 0;
-            Global.GlobalVarEdad = 0;
             Global.GlobalVarPerfil = "";
-            Global.GlobalVarCorreo = "";
-            Global.GlobalVarTelefono = "";
-            Global.GlobalVarPosicion = "";
 
             //volvemos al formulario de login
             LoginPage login = new LoginPage();
@@ -54,7 +50,7 @@ namespace LoginSistem.Forms
         {
             string date = DateTime.UtcNow.ToString("D");
             lblFecha.Text = date;
-
+                       
             System.Text.RegularExpressions.Regex.IsMatch(txtImporte.Text, "[ ^ 0-9]");
 
             if (Global.GlobalVarIdPerfil == 1)
@@ -65,6 +61,16 @@ namespace LoginSistem.Forms
             {
                 panelAdmin.Visible = false;
             }
+
+            //Control Chart
+            //void FrmChartExample_Load(object sender, EventArgs e)
+            //{
+            //    BarExample(); //Show bar chart
+            //                  //SplineChartExample();
+            //}
+
+            //Resumen
+            ObtenerTotalesResumen();
 
             //Llenar DataGridView
             MostrarGastos();
@@ -84,7 +90,6 @@ namespace LoginSistem.Forms
             cbEstatusGasto.DisplayMember = "Estatu";
             cbEstatusGasto.ValueMember = "Estatus_Id";
 
-
             MostrarIngresos();
             //Llenar combo Articulos Ingresos
             cbArticuloIngreso.DataSource = ObtenerArticulos("prcGetArticulosIngresos");
@@ -92,20 +97,36 @@ namespace LoginSistem.Forms
             cbArticuloIngreso.ValueMember = "Articulo_Id";
         }
 
+        //public void BarExample()
+        //{
+        //this.chartControl.Series.Clear();
+
+        //// Data arrays
+        //string[] seriesArray = { "Cat", "Dog", "Bird", "Monkey" };
+        //int[] pointsArray = { 2, 1, 7, 5 };
+
+        //// Set palette
+        //this.chartControl.Palette = ChartColorPalette.EarthTones;
+
+        //// Set title
+        //this.chartControl.Titles.Add("Animals");
+
+        //// Add series.
+        //for (int i = 0; i < seriesArray.Length; i++)
+        //{
+        //    Series series = this.chartControl.Series.Add(seriesArray[i]);
+        //    series.Points.Add(pointsArray[i]);
+        //}
+        //}
 
         private void picModifyUser_Click(object sender, EventArgs e)
         {
             mdlEditarUsuario mdlEditarUsuario = new mdlEditarUsuario();
             mdlEditarUsuario.txtEditUsuarioNombre.Text = Global.GlobalVarNombre;
             mdlEditarUsuario.txtEditUsuarioClave.Text = Global.GlobalVarClave;
-            mdlEditarUsuario.txtCorreoEdit.Text = Global.GlobalVarCorreo;
-            mdlEditarUsuario.txtEdadEdit.Text = Global.GlobalVarEdad.ToString();
-            mdlEditarUsuario.txtTelefonoEdit.Text = Global.GlobalVarTelefono;
-            mdlEditarUsuario.txtPosicionEdit.Text = Global.GlobalVarPosicion;
             mdlEditarUsuario.ShowDialog();
 
         }
-
 
         public List<Articulos> ObtenerArticulos(string proc)
         {
@@ -187,6 +208,37 @@ namespace LoginSistem.Forms
             setupForm.ShowDialog();
         }
 
+        private void ObtenerTotalesResumen()
+        {
+           
+            {
+                    SqlCommand cmd = new SqlCommand("MostrarTotales", conexion.Conexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    conexion.AbrirConexion();
+                    SqlDataReader dr = cmd.ExecuteReader();
+
+                    while (dr.Read())
+                    {
+                    int ttgastos = Convert.ToInt32(dr["TotalGastos"]);
+                    int ttingresos = Convert.ToInt32(dr["TotalIngresos"]);
+                    int saldo = ttingresos - ttgastos;
+                    if (saldo < 0)
+                    {
+                        lblsaldo.BackColor = Color.Red;
+                    }
+                    else
+                    {
+                        lblsaldo.BackColor = Color.DimGray;
+                    }
+                        lblTotalGastos.Text = "$ " + Convert.ToString(dr["TotalGastos"].ToString());
+                        lblTotalIngresos.Text = "$ " + Convert.ToString(dr["TotalIngresos"].ToString());
+                        lblsaldo.Text = "$ " + Convert.ToString(saldo);
+                    }
+                    dr.Close();
+                }
+                           
+        }
+
         private void MostrarGastos()
         {
             CN_Gastos objetoGastos = new CN_Gastos();
@@ -223,6 +275,7 @@ namespace LoginSistem.Forms
                         MessageBox.Show("SE INSERTÓ CORRECTAMENTE!");
                         LimpiarCampos();
                         MostrarGastos();
+                        ObtenerTotalesResumen();
                     }
                     catch (Exception ex)
                     {
@@ -238,6 +291,7 @@ namespace LoginSistem.Forms
                         MessageBox.Show("Se editó correctamente!");
                         LimpiarCampos();
                         MostrarGastos();
+                        ObtenerTotalesResumen();
                         EsEditar = false;
                     }
                     catch (Exception ex)
@@ -265,6 +319,7 @@ namespace LoginSistem.Forms
                 return false;
 
         }
+
         private void LimpiarCampos()
         {
             cbArticuloGasto.SelectedValue = 0;
@@ -294,7 +349,6 @@ namespace LoginSistem.Forms
             form1.ShowDialog();
         }
 
-
         private void btnEliminarGasto_Click(object sender, EventArgs e)
         {
             if (dgvGastos.SelectedCells.Count > 0)
@@ -311,6 +365,7 @@ namespace LoginSistem.Forms
                     objetoGastosCN.EliminarPRod(idGasto);
                     MessageBox.Show("Se eliminó correctamente!");
                     MostrarGastos();
+                    ObtenerTotalesResumen();
                 }
             }
             else
@@ -319,7 +374,7 @@ namespace LoginSistem.Forms
 
         #endregion Gastos
 
-        #region M Ingresos
+        #region Ingresos
 
         private void btnEditarIngresos_Click(object sender, EventArgs e)
         {
@@ -352,6 +407,7 @@ namespace LoginSistem.Forms
                         MessageBox.Show("SE INSERTÓ CORRECTAMENTE!");
                         LimpiarCamposIngresos();
                         MostrarIngresos();
+                        ObtenerTotalesResumen();
                     }
                     catch (Exception ex)
                     {
@@ -367,6 +423,7 @@ namespace LoginSistem.Forms
                         MessageBox.Show("Se editó correctamente!");
                         LimpiarCamposIngresos();
                         MostrarIngresos();
+                        ObtenerTotalesResumen();
                         EsEditar = false;
                     }
                     catch (Exception ex)
@@ -398,7 +455,7 @@ namespace LoginSistem.Forms
                 return false;
 
         }
-        
+
         private void LimpiarCamposIngresos()
         {
             cbArticuloIngreso.SelectedValue = 0;
@@ -407,10 +464,10 @@ namespace LoginSistem.Forms
 
         private void btnEliminarIngreso_Click(object sender, EventArgs e)
         {
-          
+
             if (dgvIngresos.SelectedCells.Count > 0)
             {
-                
+
                 string message = "¿Estás seguro de que quieres eliminar a este registro?";
                 string title = "Eliminar registro";
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -422,6 +479,7 @@ namespace LoginSistem.Forms
                     objetoIngresoCN.EliminarPRod(idIngreso);
                     MessageBox.Show("Se eliminó correctamente!");
                     MostrarIngresos();
+                    ObtenerTotalesResumen();
                 }
             }
             else
@@ -429,7 +487,7 @@ namespace LoginSistem.Forms
         }
 
 
-# endregion Ingresos
+        #endregion Ingresos
 
     }
 }
