@@ -1,6 +1,8 @@
 ﻿using Microsoft.Data.SqlClient;
 using PresupuestoFacil_CapaDatos;
+using PresupuestoFacil_CapaNegocio;
 using System.Data;
+using WFPresupuestoFacil_Presentable;
 using WFPresupuestoFacil_Presentable.Clases;
 
 namespace LoginSistem.Forms
@@ -53,28 +55,39 @@ namespace LoginSistem.Forms
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            try
+
+            if (EsValido())
             {
-                if (EsValido())
+                CN_Usuarios objetoUsuarioCN = new CN_Usuarios();
+                string id = Global.GlobalVarId.ToString();
+                string name = txtEditUsuarioNombre.Text;
+                string passw = txtEditUsuarioClave.Text;
+                int id_perfil = (int)cbPerfiles.SelectedValue;
+                try
                 {
-                    string id = Global.GlobalVarId.ToString();
-                    string name = txtEditUsuarioNombre.Text;
-                    string passw = txtEditUsuarioClave.Text;
-                    int id_perfil = (int)cbPerfiles.SelectedValue;
+                    objetoUsuarioCN.EditarProd(
+                        name,
+                        true,
+                        id,
+                        passw,
+                        id_perfil);
 
                     MessageBox.Show("Se editó correctamente!");
                     Global.GlobalVarIdPerfil = (int)id_perfil;
+                    Global.GlobalVarNombre = name;
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("no se pudo realizar la operación!");
+                    MessageBox.Show("no se pudo realizar la operación: " + ex);
                 }
 
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("no se pudo realizar la operación: " + ex);
+                MessageBox.Show("no se pudo realizar la operación!");
             }
+
 
         }
 

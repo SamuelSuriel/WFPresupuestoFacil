@@ -15,15 +15,15 @@ namespace PresupuestoFacil_CapaNegocio
             tabla = objetoCD.Mostrar();
             return tabla;
         }
-        public void InsertarPRod(string nombre, string apellido, string correo, string telefono, string edad, string posicion, bool activo)
+        public void InsertarPRod(string nombre, string clave, bool activo, int idPerfil)
         {
 
-            objetoCD.Insertar(nombre, apellido, correo, telefono, Convert.ToInt32(edad), posicion, activo);
+            objetoCD.Insertar(nombre, clave, activo, Convert.ToInt32(idPerfil));
         }
 
-        public void EditarProd(string nombre, string apellido, string correo, string telefono, string edad, string posicion, bool activo, string id, string passw, int idPerfil)
+        public void EditarProd(string nombre, bool activo, string id, string passw, int idPerfil)
         {
-            objetoCD.Editar(nombre, apellido, correo, telefono, Convert.ToInt32(edad), posicion, activo, Convert.ToInt32(id), passw, Convert.ToInt32(idPerfil));
+            objetoCD.Editar(nombre, activo, Convert.ToInt32(id), passw, Convert.ToInt32(idPerfil));
         }
 
         public void EliminarPRod(string id)

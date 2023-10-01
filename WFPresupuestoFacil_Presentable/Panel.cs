@@ -16,7 +16,6 @@ namespace LoginSistem.Forms
         CN_Gastos objetoGastosCN = new CN_Gastos();
         CN_Ingresos objetoIngresoCN = new CN_Ingresos();
         CD_Conexion conexion = new CD_Conexion();
-        DataTable tabla = new DataTable();
 
         private string? idGasto = null;
         private string? idIngreso = null;
@@ -242,7 +241,8 @@ namespace LoginSistem.Forms
         private void MostrarGastos()
         {
             CN_Gastos objetoGastos = new CN_Gastos();
-            dgvGastos.DataSource = objetoGastos.MostrarProd();
+            int Usuario_Id = Global.GlobalVarId;
+            dgvGastos.DataSource = objetoGastos.MostrarProd(Usuario_Id);
         }
 
         private void txtImporte_KeyPress(object sender, KeyPressEventArgs e)
@@ -264,13 +264,14 @@ namespace LoginSistem.Forms
                 int categoria = (int)cbCategoriaGastos.SelectedValue;
                 bool activo = true;
                 int articulo = (int)cbArticuloGasto.SelectedValue;
+                int Usuario_Id = Global.GlobalVarId;
 
                 if (EsEditar == false)
                 {
                     try
                     {
 
-                        objetoGastosCN.InsertarPRod(Convert.ToInt32(importe), estatus, categoria, activo, articulo);
+                        objetoGastosCN.InsertarPRod(Convert.ToInt32(importe), estatus, categoria, activo, articulo, Usuario_Id);
 
                         MessageBox.Show("SE INSERTÓ CORRECTAMENTE!");
                         LimpiarCampos();
@@ -286,7 +287,7 @@ namespace LoginSistem.Forms
                 {
                     try
                     {
-                        objetoGastosCN.EditarProd(Convert.ToInt32(idGasto), Convert.ToInt32(importe), estatus, categoria, true, articulo);
+                        objetoGastosCN.EditarProd(Convert.ToInt32(idGasto), Convert.ToInt32(importe), estatus, categoria, activo, articulo, Usuario_Id);
 
                         MessageBox.Show("Se editó correctamente!");
                         LimpiarCampos();
@@ -362,7 +363,9 @@ namespace LoginSistem.Forms
                 if (result == DialogResult.Yes)
                 {
                     idGasto = dgvGastos.CurrentRow.Cells["Gasto_Id"].Value.ToString();
-                    objetoGastosCN.EliminarPRod(idGasto);
+                    int Usuario_Id = Global.GlobalVarId;
+
+                    objetoGastosCN.EliminarPRod(idGasto, Usuario_Id);
                     MessageBox.Show("Se eliminó correctamente!");
                     MostrarGastos();
                     ObtenerTotalesResumen();

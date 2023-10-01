@@ -25,19 +25,15 @@ namespace PresupuestoFacil_CapaDatos
 
         }
 
-        public void Insertar(string nombre, string apellido, string correo, string telefono, int edad, string posicion, bool activo)
+        public void Insertar(string nombre, string clave, bool activo, int idPerfil)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "InsetarUsuarios";
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@nombre", nombre);
-            comando.Parameters.AddWithValue("@apellido", apellido);
-            comando.Parameters.AddWithValue("@correo", correo);
-            comando.Parameters.AddWithValue("@telefono", telefono);
-            comando.Parameters.AddWithValue("@edad", edad);
-            comando.Parameters.AddWithValue("@posicion", posicion);
-            comando.Parameters.AddWithValue("@fechacreacion", DateTime.Now);
+            comando.Parameters.AddWithValue("@clave", clave);
             comando.Parameters.AddWithValue("@activo", activo);
+            comando.Parameters.AddWithValue("@idPerfil", idPerfil);
             
             comando.ExecuteNonQuery();
 
@@ -46,17 +42,12 @@ namespace PresupuestoFacil_CapaDatos
 
         }
 
-        public void Editar(string nombre, string apellido, string correo, string telefono, int edad, string posicion, bool activo, int id, string passw, int idPerfil)
+        public void Editar(string nombre, bool activo, int id, string passw, int idPerfil)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "EditarUsuarios";
             comando.CommandType = CommandType.StoredProcedure;
-            comando.Parameters.AddWithValue("@nombre", nombre);
-            comando.Parameters.AddWithValue("@apellido", apellido);
-            comando.Parameters.AddWithValue("@correo", correo);
-            comando.Parameters.AddWithValue("@telefono", telefono);
-            comando.Parameters.AddWithValue("@edad", edad);
-            comando.Parameters.AddWithValue("@posicion", posicion);
+            comando.Parameters.AddWithValue("@nombre", nombre);     
             comando.Parameters.AddWithValue("@fechaModificacion", DateTime.Now);
             comando.Parameters.AddWithValue("@activo", activo);
             comando.Parameters.AddWithValue("@id", id);

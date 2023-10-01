@@ -1,5 +1,9 @@
 using LoginSistem.Forms;
+using Microsoft.Data.SqlClient;
+using PresupuestoFacil_CapaDatos;
 using PresupuestoFacil_CapaNegocio;
+using System.Data;
+using System.Windows.Forms;
 
 namespace WFPresupuestoFacil_Presentable
 {
@@ -16,6 +20,8 @@ namespace WFPresupuestoFacil_Presentable
         private void Form1_Load(object sender, EventArgs e)
         {
             MostrarUsuarios();
+            LlenarComboBox(cbPerfilesAdmin, "Select * From Perfiles", "IdPerfil", "Perfil");
+
         }
 
         private void MostrarUsuarios()
@@ -32,14 +38,12 @@ namespace WFPresupuestoFacil_Presentable
                 {
                     try
                     {
+                        int idPerfil = (int)cbPerfilesAdmin.SelectedValue;
                         objetoUsuarioCN.InsertarPRod(
                             txtNombreUsuario.Text,
-                            txtApellidosUsuario.Text,
-                            txtCorreoUsuario.Text,
-                            txtTelefonoUsuario.Text,
-                            txtEdadUsuario.Text,
-                            txtPosicionUsuario.Text,
-                            true);
+                            txtClaveAdmin.Text,
+                            true,
+                            idPerfil);
 
                         MessageBox.Show("Se insertó correctamente!");
                         LimpiarCamposUsuario();
@@ -56,15 +60,10 @@ namespace WFPresupuestoFacil_Presentable
                     {
                         objetoUsuarioCN.EditarProd(
                             txtNombreUsuario.Text,
-                            txtApellidosUsuario.Text,
-                            txtCorreoUsuario.Text,
-                            txtTelefonoUsuario.Text,
-                            txtEdadUsuario.Text,
-                            txtPosicionUsuario.Text,
                             true,
                             idUsuario,
-                            txtClaveEdit.Text,
-                            (int)cbPerfiles.SelectedValue);
+                            txtClaveAdmin.Text,
+                            (int)cbPerfilesAdmin.SelectedValue);
 
                         MessageBox.Show("Se editó correctamente!");
                         LimpiarCamposUsuario();
@@ -88,11 +87,8 @@ namespace WFPresupuestoFacil_Presentable
         {
 
             txtNombreUsuario.Clear();
-            txtApellidosUsuario.Clear();
-            txtCorreoUsuario.Clear();
-            txtTelefonoUsuario.Clear();
-            txtEdadUsuario.Clear();
-            txtPosicionUsuario.Clear();
+            txtClaveAdmin.Clear();
+            cbPerfilesAdmin.ValueMember = "";
         }
 
         private void btnEditarUsuario_Click(object sender, EventArgs e)
@@ -101,11 +97,8 @@ namespace WFPresupuestoFacil_Presentable
             {
                 EsEditar = true;
                 txtNombreUsuario.Text = dataGridView1.CurrentRow.Cells["Usuario_Nombre"].Value.ToString();
-                txtApellidosUsuario.Text = dataGridView1.CurrentRow.Cells["Usuario_Apellidos"].Value.ToString();
-                txtCorreoUsuario.Text = dataGridView1.CurrentRow.Cells["Usuario_Correo"].Value.ToString();
-                txtTelefonoUsuario.Text = dataGridView1.CurrentRow.Cells["Usuario_Telefono"].Value.ToString();
-                txtEdadUsuario.Text = dataGridView1.CurrentRow.Cells["Usuario_Edad"].Value.ToString();
-                txtPosicionUsuario.Text = dataGridView1.CurrentRow.Cells["Usuario_Posicion"].Value.ToString();
+                txtClaveAdmin.Text = dataGridView1.CurrentRow.Cells["Clave"].Value.ToString();
+                cbPerfilesAdmin.Text = dataGridView1.CurrentRow.Cells["IdPerfil"].Value.ToString();
                 idUsuario = dataGridView1.CurrentRow.Cells["Usuario_Id"].Value.ToString();
             }
             else
@@ -116,13 +109,10 @@ namespace WFPresupuestoFacil_Presentable
         private bool EsValido()
         {
             bool nombre = txtNombreUsuario.Text != "";
-            bool apellidos = txtApellidosUsuario.Text != "";
-            bool correo = txtCorreoUsuario.Text != "";
-            bool telefono = txtTelefonoUsuario.Text != "";
-            bool edad = txtEdadUsuario.Text != "";
-            bool posicion = txtPosicionUsuario.Text != "";
+            bool clave = txtClaveAdmin.Text != "";
+            bool perfil = cbPerfilesAdmin.Text != "";
 
-            if (nombre && apellidos && correo && telefono && edad && posicion)
+            if (nombre && clave && perfil)
                 return true;
             else
                 return false;
@@ -163,6 +153,17 @@ namespace WFPresupuestoFacil_Presentable
             this.Hide();
             PanelPresupuesto panelPresupuesto = new PanelPresupuesto();
             panelPresupuesto.ShowDialog();
+        }
+
+        public void LlenarComboBox(ComboBox combo, string strSql, string id, string desc)
+        {
+            DataTable tabla = new DataTable();
+            CD_Conexion conexion = new CD_Conexion();
+            SqlDataAdapter da = new SqlDataAdapter(strSql, conexion.Conexion);
+            da.Fill(tabla);
+            combo.ValueMember = id;
+            combo.DisplayMember = desc;
+            combo.DataSource = tabla;
         }
     }
 }
