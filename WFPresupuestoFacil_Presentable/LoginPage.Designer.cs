@@ -38,7 +38,7 @@
             label3 = new Label();
             label4 = new Label();
             btnCancelarLogin = new Label();
-            label5 = new Label();
+            btnRegistro = new Label();
             SuspendLayout();
             // 
             // label1
@@ -47,7 +47,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(478, 183);
+            label1.Location = new Point(502, 172);
             label1.Name = "label1";
             label1.Size = new Size(83, 27);
             label1.TabIndex = 1;
@@ -55,9 +55,9 @@
             // 
             // txtUsuarioLogin
             // 
-            txtUsuarioLogin.Location = new Point(602, 183);
+            txtUsuarioLogin.Location = new Point(502, 202);
             txtUsuarioLogin.Name = "txtUsuarioLogin";
-            txtUsuarioLogin.Size = new Size(242, 27);
+            txtUsuarioLogin.Size = new Size(342, 27);
             txtUsuarioLogin.TabIndex = 2;
             // 
             // flowLayoutPanel1
@@ -72,10 +72,10 @@
             // 
             // txtContraseñaLogin
             // 
-            txtContraseñaLogin.Location = new Point(602, 232);
+            txtContraseñaLogin.Location = new Point(502, 270);
             txtContraseñaLogin.Name = "txtContraseñaLogin";
             txtContraseñaLogin.PasswordChar = '*';
-            txtContraseñaLogin.Size = new Size(242, 27);
+            txtContraseñaLogin.Size = new Size(342, 27);
             txtContraseñaLogin.TabIndex = 5;
             // 
             // label2
@@ -84,7 +84,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(478, 231);
+            label2.Location = new Point(502, 240);
             label2.Name = "label2";
             label2.Size = new Size(120, 27);
             label2.TabIndex = 4;
@@ -96,9 +96,9 @@
             btnEntrarLogin.Cursor = Cursors.Hand;
             btnEntrarLogin.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnEntrarLogin.ForeColor = Color.Transparent;
-            btnEntrarLogin.Location = new Point(597, 326);
+            btnEntrarLogin.Location = new Point(502, 374);
             btnEntrarLogin.Name = "btnEntrarLogin";
-            btnEntrarLogin.Size = new Size(247, 46);
+            btnEntrarLogin.Size = new Size(342, 46);
             btnEntrarLogin.TabIndex = 6;
             btnEntrarLogin.Text = "ENTRAR";
             btnEntrarLogin.UseVisualStyleBackColor = false;
@@ -135,25 +135,26 @@
             btnCancelarLogin.Cursor = Cursors.Hand;
             btnCancelarLogin.Font = new Font("Segoe UI Variable Small", 10.2F, FontStyle.Underline, GraphicsUnit.Point);
             btnCancelarLogin.ForeColor = Color.White;
-            btnCancelarLogin.Location = new Point(667, 385);
+            btnCancelarLogin.Location = new Point(626, 445);
             btnCancelarLogin.Name = "btnCancelarLogin";
             btnCancelarLogin.Size = new Size(94, 22);
             btnCancelarLogin.TabIndex = 9;
             btnCancelarLogin.Text = "CANCELAR";
             btnCancelarLogin.Click += btnCancelarLogin_Click;
             // 
-            // label5
+            // btnRegistro
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Cursor = Cursors.Hand;
-            label5.Font = new Font("Segoe UI Variable Small", 7.8F, FontStyle.Underline, GraphicsUnit.Point);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(602, 272);
-            label5.Name = "label5";
-            label5.Size = new Size(139, 17);
-            label5.TabIndex = 10;
-            label5.Text = "Olvidé mi contraseña.";
+            btnRegistro.AutoSize = true;
+            btnRegistro.BackColor = Color.Transparent;
+            btnRegistro.Cursor = Cursors.Hand;
+            btnRegistro.Font = new Font("Segoe UI Variable Small", 10.2F, FontStyle.Underline, GraphicsUnit.Point);
+            btnRegistro.ForeColor = Color.White;
+            btnRegistro.Location = new Point(626, 314);
+            btnRegistro.Name = "btnRegistro";
+            btnRegistro.Size = new Size(95, 22);
+            btnRegistro.TabIndex = 10;
+            btnRegistro.Text = "Registrarse";
+            btnRegistro.Click += btnRegistro_Click;
             // 
             // LoginPage
             // 
@@ -161,7 +162,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MidnightBlue;
             ClientSize = new Size(856, 497);
-            Controls.Add(label5);
+            Controls.Add(btnRegistro);
             Controls.Add(btnCancelarLogin);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -189,6 +190,6 @@
         private Label label3;
         private Label label4;
         private Label btnCancelarLogin;
-        private Label label5;
+        private Label btnRegistro;
     }
 }

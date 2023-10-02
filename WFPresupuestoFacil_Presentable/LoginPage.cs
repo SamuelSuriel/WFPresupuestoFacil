@@ -91,7 +91,7 @@ namespace WFPresupuestoFacil_Presentable
                 MessageBox.Show("Ingrese los datos requeridos!");
             }
         }
-        
+
         private void LoginPage_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("¿Estás seguro de que quieres salir?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.No)
@@ -100,5 +100,11 @@ namespace WFPresupuestoFacil_Presentable
             }
         }
 
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Registro registro = new Registro();
+            registro.Show();
+        }
     }
 }
