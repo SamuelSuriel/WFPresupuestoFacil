@@ -236,61 +236,7 @@ namespace LoginSistem.Forms
                 MessageBox.Show("Error al obtener los totales: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        //private void ObtenerTotalesResumen()
-        //{
-
-        //    {
-        //        int Usuario_Id = Global.GlobalVarId;
-        //        SqlCommand cmd = new SqlCommand("MostrarTotales", conexion.Conexion);
-        //        cmd.CommandType = CommandType.StoredProcedure;
-        //        cmd.Parameters.AddWithValue("@idUsuario", Usuario_Id);
-        //        conexion.AbrirConexion();
-        //        SqlDataReader dr = cmd.ExecuteReader();
-
-        //        int? saldo = 0;
-        //        string? ttingresos = "";
-        //        string? ttgastos = "";
-
-        //        lblTotalGastos.Text = "";
-        //        lblTotalIngresos.Text = "";
-        //        lblsaldo.Text = "";
-        //        lblsaldo.BackColor = Color.RoyalBlue;
-        //        lblSaldoMain.Text = "";
-        //        lblSaldoMain.ForeColor = Color.MidnightBlue;
-
-
-        //        while (dr.Read())
-        //        {
-        //            ttgastos = dr["TotalGastos"].ToString();
-        //            ttingresos = dr["TotalIngresos"].ToString();
-
-        //            if (ttgastos != "" && ttingresos != "")
-        //            {
-        //                saldo = Convert.ToInt32(ttingresos) - Convert.ToInt32(ttgastos);
-        //            }
-
-        //            lblTotalGastos.Text = "$ " + Convert.ToString(dr["TotalGastos"].ToString());
-        //            lblTotalIngresos.Text = "$ " + Convert.ToString(dr["TotalIngresos"].ToString());
-        //            lblsaldo.Text = "$ " + Convert.ToString(saldo);
-        //            lblSaldoMain.Text = "$ " + Convert.ToString(saldo);
-
-        //            if (saldo < 0)
-        //            {
-        //                lblsaldo.BackColor = Color.Red;
-        //                lblSaldoMain.ForeColor = Color.DarkRed;
-        //            }
-        //            else
-        //            {
-        //                lblsaldo.BackColor = Color.RoyalBlue;
-        //                lblSaldoMain.ForeColor = Color.MidnightBlue;
-        //            }
-        //        }
-        //        dr.Close();
-        //    }
-
-        //}
-
+              
         private void MostrarGastos()
         {
             CN_Gastos objetoGastos = new CN_Gastos();
@@ -546,7 +492,6 @@ namespace LoginSistem.Forms
             else
                 MessageBox.Show("Seleccione una celda para eliminar!");
         }
-
 
         #endregion Ingresos
 

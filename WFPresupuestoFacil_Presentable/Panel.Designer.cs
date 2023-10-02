@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelPresupuesto));
             panel1 = new Panel();
+            panelAdmin = new Panel();
+            btnAdministrarUsuarios = new PictureBox();
+            lblAdministrarUsuarios = new Label();
             label15 = new Label();
             label14 = new Label();
             lblDivisor = new Label();
@@ -92,10 +95,10 @@
             panel6 = new Panel();
             btnCerrarPanel = new Label();
             label7 = new Label();
-            btnAdministrarUsuarios = new PictureBox();
-            lblAdministrarUsuarios = new Label();
-            panelAdmin = new Panel();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            panelAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnAdministrarUsuarios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picSetup).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picModifyUser).BeginInit();
@@ -111,13 +114,13 @@
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvGastos).BeginInit();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)btnAdministrarUsuarios).BeginInit();
-            panelAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.MidnightBlue;
+            panel1.Controls.Add(panelAdmin);
             panel1.Controls.Add(label15);
             panel1.Controls.Add(label14);
             panel1.Controls.Add(lblDivisor);
@@ -139,15 +142,51 @@
             panel1.Size = new Size(263, 734);
             panel1.TabIndex = 0;
             // 
+            // panelAdmin
+            // 
+            panelAdmin.BackColor = Color.RoyalBlue;
+            panelAdmin.Controls.Add(btnAdministrarUsuarios);
+            panelAdmin.Controls.Add(lblAdministrarUsuarios);
+            panelAdmin.Location = new Point(48, 638);
+            panelAdmin.Name = "panelAdmin";
+            panelAdmin.Size = new Size(196, 66);
+            panelAdmin.TabIndex = 29;
+            // 
+            // btnAdministrarUsuarios
+            // 
+            btnAdministrarUsuarios.BackColor = Color.White;
+            btnAdministrarUsuarios.Cursor = Cursors.Hand;
+            btnAdministrarUsuarios.Image = (Image)resources.GetObject("btnAdministrarUsuarios.Image");
+            btnAdministrarUsuarios.Location = new Point(8, 21);
+            btnAdministrarUsuarios.Name = "btnAdministrarUsuarios";
+            btnAdministrarUsuarios.Size = new Size(32, 21);
+            btnAdministrarUsuarios.SizeMode = PictureBoxSizeMode.AutoSize;
+            btnAdministrarUsuarios.TabIndex = 27;
+            btnAdministrarUsuarios.TabStop = false;
+            // 
+            // lblAdministrarUsuarios
+            // 
+            lblAdministrarUsuarios.AutoSize = true;
+            lblAdministrarUsuarios.BackColor = Color.Transparent;
+            lblAdministrarUsuarios.Cursor = Cursors.Hand;
+            lblAdministrarUsuarios.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblAdministrarUsuarios.ForeColor = Color.White;
+            lblAdministrarUsuarios.Location = new Point(57, 22);
+            lblAdministrarUsuarios.Name = "lblAdministrarUsuarios";
+            lblAdministrarUsuarios.Size = new Size(56, 20);
+            lblAdministrarUsuarios.TabIndex = 26;
+            lblAdministrarUsuarios.Text = "USERS";
+            lblAdministrarUsuarios.Click += lblAdministrarUsuarios_Click;
+            // 
             // label15
             // 
             label15.AutoSize = true;
             label15.BackColor = Color.Transparent;
-            label15.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label15.ForeColor = Color.White;
             label15.Location = new Point(48, 543);
             label15.Name = "label15";
-            label15.Size = new Size(196, 27);
+            label15.Size = new Size(196, 28);
             label15.TabIndex = 26;
             label15.Text = "-----------------------";
             // 
@@ -155,11 +194,11 @@
             // 
             label14.AutoSize = true;
             label14.BackColor = Color.Transparent;
-            label14.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label14.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label14.ForeColor = Color.White;
             label14.Location = new Point(48, 474);
             label14.Name = "label14";
-            label14.Size = new Size(196, 27);
+            label14.Size = new Size(196, 28);
             label14.TabIndex = 25;
             label14.Text = "-----------------------";
             // 
@@ -167,11 +206,11 @@
             // 
             lblDivisor.AutoSize = true;
             lblDivisor.BackColor = Color.Transparent;
-            lblDivisor.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDivisor.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblDivisor.ForeColor = Color.White;
             lblDivisor.Location = new Point(53, 410);
             lblDivisor.Name = "lblDivisor";
-            lblDivisor.Size = new Size(196, 27);
+            lblDivisor.Size = new Size(196, 28);
             lblDivisor.TabIndex = 24;
             lblDivisor.Text = "-----------------------";
             // 
@@ -231,11 +270,11 @@
             // 
             lblCloseSession.AutoSize = true;
             lblCloseSession.BackColor = Color.Transparent;
-            lblCloseSession.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCloseSession.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblCloseSession.ForeColor = Color.White;
             lblCloseSession.Location = new Point(89, 580);
             lblCloseSession.Name = "lblCloseSession";
-            lblCloseSession.Size = new Size(138, 27);
+            lblCloseSession.Size = new Size(129, 28);
             lblCloseSession.TabIndex = 19;
             lblCloseSession.Text = "Close Session";
             // 
@@ -243,11 +282,11 @@
             // 
             lblSetup.AutoSize = true;
             lblSetup.BackColor = Color.Transparent;
-            lblSetup.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblSetup.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblSetup.ForeColor = Color.White;
             lblSetup.Location = new Point(89, 510);
             lblSetup.Name = "lblSetup";
-            lblSetup.Size = new Size(67, 27);
+            lblSetup.Size = new Size(63, 28);
             lblSetup.TabIndex = 18;
             lblSetup.Text = "Setup";
             // 
@@ -255,11 +294,11 @@
             // 
             lblModifyUser.AutoSize = true;
             lblModifyUser.BackColor = Color.Transparent;
-            lblModifyUser.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblModifyUser.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblModifyUser.ForeColor = Color.White;
             lblModifyUser.Location = new Point(91, 445);
             lblModifyUser.Name = "lblModifyUser";
-            lblModifyUser.Size = new Size(124, 27);
+            lblModifyUser.Size = new Size(116, 28);
             lblModifyUser.TabIndex = 17;
             lblModifyUser.Text = "Modify user";
             // 
@@ -267,11 +306,11 @@
             // 
             lblAbout.AutoSize = true;
             lblAbout.BackColor = Color.Transparent;
-            lblAbout.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblAbout.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblAbout.ForeColor = Color.White;
             lblAbout.Location = new Point(90, 373);
             lblAbout.Name = "lblAbout";
-            lblAbout.Size = new Size(70, 27);
+            lblAbout.Size = new Size(67, 28);
             lblAbout.TabIndex = 4;
             lblAbout.Text = "About";
             // 
@@ -279,25 +318,25 @@
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(27, 129);
+            label6.Location = new Point(27, 56);
             label6.Name = "label6";
-            label6.Size = new Size(166, 27);
+            label6.Size = new Size(94, 23);
             label6.TabIndex = 16;
-            label6.Text = "Bienvenido Sr/a:";
+            label6.Text = "WELCOME:";
             // 
             // label04
             // 
             label04.AutoSize = true;
             label04.BackColor = Color.Transparent;
-            label04.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label04.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label04.ForeColor = Color.White;
-            label04.Location = new Point(29, 205);
+            label04.Location = new Point(27, 139);
             label04.Name = "label04";
-            label04.Size = new Size(65, 27);
+            label04.Size = new Size(77, 23);
             label04.TabIndex = 15;
-            label04.Text = "Perfil:";
+            label04.Text = "PROFILE:";
             // 
             // lblUser
             // 
@@ -305,7 +344,7 @@
             lblUser.BackColor = Color.Transparent;
             lblUser.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblUser.ForeColor = Color.White;
-            lblUser.Location = new Point(29, 168);
+            lblUser.Location = new Point(29, 92);
             lblUser.Name = "lblUser";
             lblUser.Size = new Size(17, 27);
             lblUser.TabIndex = 14;
@@ -317,7 +356,7 @@
             lblPerfil.BackColor = Color.Transparent;
             lblPerfil.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lblPerfil.ForeColor = Color.White;
-            lblPerfil.Location = new Point(27, 237);
+            lblPerfil.Location = new Point(29, 168);
             lblPerfil.Name = "lblPerfil";
             lblPerfil.Size = new Size(17, 27);
             lblPerfil.TabIndex = 14;
@@ -348,16 +387,18 @@
             // 
             // tabPage1
             // 
+            tabPage1.BackColor = Color.White;
             tabPage1.Controls.Add(panelMainColor);
             tabPage1.Controls.Add(panel2);
             tabPage1.Controls.Add(panelResumenSaldo);
+            tabPage1.Cursor = Cursors.Hand;
+            tabPage1.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(793, 496);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Resumen";
-            tabPage1.UseVisualStyleBackColor = true;
             // 
             // panelMainColor
             // 
@@ -429,27 +470,30 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(495, 15);
+            label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(487, 15);
             label3.Name = "label3";
-            label3.Size = new Size(54, 22);
+            label3.Size = new Size(52, 23);
             label3.TabIndex = 2;
             label3.Text = "Saldo";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(259, 15);
+            label2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(246, 15);
             label2.Name = "label2";
-            label2.Size = new Size(215, 22);
+            label2.Size = new Size(209, 23);
             label2.TabIndex = 1;
             label2.Text = "Total de gastos mensuales";
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(5, 15);
             label1.Name = "label1";
-            label1.Size = new Size(230, 22);
+            label1.Size = new Size(223, 23);
             label1.TabIndex = 0;
             label1.Text = "Total de ingresos mensuales";
             // 
@@ -478,15 +522,15 @@
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label17.ForeColor = Color.Gray;
-            label17.Location = new Point(231, 48);
+            label17.Location = new Point(196, 48);
             label17.Name = "label17";
-            label17.Size = new Size(224, 38);
+            label17.Size = new Size(232, 38);
             label17.TabIndex = 0;
-            label17.Text = "SALDO ACTUAL";
+            label17.Text = "SALDO ACTUAL:";
             // 
             // tabIngresos
             // 
-            tabIngresos.BackColor = SystemColors.ActiveCaption;
+            tabIngresos.BackColor = Color.White;
             tabIngresos.Controls.Add(btnEliminarIngreso);
             tabIngresos.Controls.Add(btnEditarIngresos);
             tabIngresos.Controls.Add(btnGuardarIngreso);
@@ -496,6 +540,7 @@
             tabIngresos.Controls.Add(txtImporteIngreso);
             tabIngresos.Controls.Add(panel4);
             tabIngresos.Controls.Add(dgvIngresos);
+            tabIngresos.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             tabIngresos.Location = new Point(4, 29);
             tabIngresos.Name = "tabIngresos";
             tabIngresos.Padding = new Padding(3);
@@ -508,7 +553,7 @@
             btnEliminarIngreso.AutoSize = true;
             btnEliminarIngreso.Cursor = Cursors.Hand;
             btnEliminarIngreso.Font = new Font("Segoe UI Variable Display Semib", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            btnEliminarIngreso.ForeColor = Color.White;
+            btnEliminarIngreso.ForeColor = Color.SlateGray;
             btnEliminarIngreso.Location = new Point(643, 379);
             btnEliminarIngreso.Name = "btnEliminarIngreso";
             btnEliminarIngreso.Size = new Size(102, 27);
@@ -521,7 +566,7 @@
             btnEditarIngresos.AutoSize = true;
             btnEditarIngresos.Cursor = Cursors.Hand;
             btnEditarIngresos.Font = new Font("Segoe UI Variable Display Semib", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            btnEditarIngresos.ForeColor = Color.White;
+            btnEditarIngresos.ForeColor = Color.SlateGray;
             btnEditarIngresos.Location = new Point(482, 379);
             btnEditarIngresos.Name = "btnEditarIngresos";
             btnEditarIngresos.Size = new Size(77, 27);
@@ -547,7 +592,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI Variable Text Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.ForeColor = Color.White;
+            label12.ForeColor = Color.MidnightBlue;
             label12.Location = new Point(485, 200);
             label12.Name = "label12";
             label12.Size = new Size(78, 24);
@@ -558,7 +603,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI Variable Text Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label13.ForeColor = Color.White;
+            label13.ForeColor = Color.MidnightBlue;
             label13.Location = new Point(485, 118);
             label13.Name = "label13";
             label13.Size = new Size(77, 24);
@@ -589,28 +634,28 @@
             panel4.BackColor = Color.RoyalBlue;
             panel4.Controls.Add(label8);
             panel4.ForeColor = Color.White;
-            panel4.Location = new Point(485, 26);
+            panel4.Location = new Point(490, 20);
             panel4.Name = "panel4";
-            panel4.Size = new Size(263, 70);
+            panel4.Size = new Size(243, 69);
             panel4.TabIndex = 1;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Variable Text Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(22, 22);
+            label8.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(26, 26);
             label8.Name = "label8";
-            label8.Size = new Size(223, 27);
+            label8.Size = new Size(195, 22);
             label8.TabIndex = 4;
             label8.Text = "INGRESOS MENSUALES";
             // 
             // dgvIngresos
             // 
-            dgvIngresos.BackgroundColor = SystemColors.ActiveCaption;
+            dgvIngresos.BackgroundColor = Color.White;
             dgvIngresos.BorderStyle = BorderStyle.None;
             dgvIngresos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvIngresos.GridColor = Color.White;
-            dgvIngresos.Location = new Point(8, 26);
+            dgvIngresos.Location = new Point(8, 25);
             dgvIngresos.Name = "dgvIngresos";
             dgvIngresos.RowHeadersWidth = 51;
             dgvIngresos.RowTemplate.Height = 29;
@@ -619,7 +664,7 @@
             // 
             // tabGastos
             // 
-            tabGastos.BackColor = SystemColors.ActiveCaption;
+            tabGastos.BackColor = Color.White;
             tabGastos.Controls.Add(btnEliminarGasto);
             tabGastos.Controls.Add(label16);
             tabGastos.Controls.Add(btnEditarGasto);
@@ -633,6 +678,7 @@
             tabGastos.Controls.Add(cbEstatusGasto);
             tabGastos.Controls.Add(panel5);
             tabGastos.Controls.Add(dgvGastos);
+            tabGastos.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             tabGastos.Location = new Point(4, 29);
             tabGastos.Name = "tabGastos";
             tabGastos.Padding = new Padding(3);
@@ -644,7 +690,7 @@
             // 
             btnEliminarGasto.AutoSize = true;
             btnEliminarGasto.Font = new Font("Segoe UI Variable Display Semib", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            btnEliminarGasto.ForeColor = Color.White;
+            btnEliminarGasto.ForeColor = Color.SlateGray;
             btnEliminarGasto.Location = new Point(626, 423);
             btnEliminarGasto.Name = "btnEliminarGasto";
             btnEliminarGasto.Size = new Size(102, 27);
@@ -656,7 +702,7 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.ForeColor = Color.White;
+            label16.ForeColor = Color.MidnightBlue;
             label16.Location = new Point(524, 123);
             label16.Name = "label16";
             label16.Size = new Size(71, 22);
@@ -667,7 +713,7 @@
             // 
             btnEditarGasto.AutoSize = true;
             btnEditarGasto.Font = new Font("Segoe UI Variable Display Semib", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            btnEditarGasto.ForeColor = Color.White;
+            btnEditarGasto.ForeColor = Color.SlateGray;
             btnEditarGasto.Location = new Point(524, 423);
             btnEditarGasto.Name = "btnEditarGasto";
             btnEditarGasto.Size = new Size(77, 27);
@@ -704,7 +750,7 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.ForeColor = Color.White;
+            label11.ForeColor = Color.MidnightBlue;
             label11.Location = new Point(524, 242);
             label11.Name = "label11";
             label11.Size = new Size(72, 22);
@@ -715,12 +761,12 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label10.ForeColor = Color.White;
+            label10.ForeColor = Color.MidnightBlue;
             label10.Location = new Point(524, 181);
             label10.Name = "label10";
-            label10.Size = new Size(80, 22);
+            label10.Size = new Size(86, 22);
             label10.TabIndex = 5;
-            label10.Text = "Categiría";
+            label10.Text = "Categoría";
             // 
             // cbCategoriaGastos
             // 
@@ -749,7 +795,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.ForeColor = Color.White;
+            label9.ForeColor = Color.MidnightBlue;
             label9.Location = new Point(524, 307);
             label9.Name = "label9";
             label9.Size = new Size(66, 22);
@@ -772,9 +818,9 @@
             // 
             panel5.BackColor = Color.RoyalBlue;
             panel5.Controls.Add(label4);
-            panel5.Location = new Point(517, 38);
+            panel5.Location = new Point(501, 27);
             panel5.Name = "panel5";
-            panel5.Size = new Size(226, 72);
+            panel5.Size = new Size(249, 72);
             panel5.TabIndex = 2;
             // 
             // label4
@@ -782,7 +828,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Variable Text Semibold", 10.8F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(26, 25);
+            label4.Location = new Point(37, 24);
             label4.Name = "label4";
             label4.Size = new Size(186, 24);
             label4.TabIndex = 0;
@@ -790,7 +836,7 @@
             // 
             // dgvGastos
             // 
-            dgvGastos.BackgroundColor = SystemColors.ActiveCaption;
+            dgvGastos.BackgroundColor = Color.White;
             dgvGastos.BorderStyle = BorderStyle.None;
             dgvGastos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvGastos.Location = new Point(10, 38);
@@ -804,11 +850,11 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(492, 119);
+            label5.Location = new Point(550, 129);
             label5.Name = "label5";
-            label5.Size = new Size(321, 27);
+            label5.Size = new Size(267, 23);
             label5.TabIndex = 2;
             label5.Text = "PRESUPUESTO MENSUAL SIMPLE";
             // 
@@ -849,41 +895,15 @@
             label7.TabIndex = 17;
             label7.Text = "PRESUPUESTO FÁCIL";
             // 
-            // btnAdministrarUsuarios
+            // pictureBox1
             // 
-            btnAdministrarUsuarios.BackColor = Color.White;
-            btnAdministrarUsuarios.Cursor = Cursors.Hand;
-            btnAdministrarUsuarios.Image = (Image)resources.GetObject("btnAdministrarUsuarios.Image");
-            btnAdministrarUsuarios.Location = new Point(8, 21);
-            btnAdministrarUsuarios.Name = "btnAdministrarUsuarios";
-            btnAdministrarUsuarios.Size = new Size(32, 21);
-            btnAdministrarUsuarios.SizeMode = PictureBoxSizeMode.AutoSize;
-            btnAdministrarUsuarios.TabIndex = 27;
-            btnAdministrarUsuarios.TabStop = false;
-            // 
-            // lblAdministrarUsuarios
-            // 
-            lblAdministrarUsuarios.AutoSize = true;
-            lblAdministrarUsuarios.BackColor = Color.Transparent;
-            lblAdministrarUsuarios.Cursor = Cursors.Hand;
-            lblAdministrarUsuarios.Font = new Font("Segoe UI Variable Display", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblAdministrarUsuarios.ForeColor = Color.White;
-            lblAdministrarUsuarios.Location = new Point(42, 22);
-            lblAdministrarUsuarios.Name = "lblAdministrarUsuarios";
-            lblAdministrarUsuarios.Size = new Size(155, 20);
-            lblAdministrarUsuarios.TabIndex = 26;
-            lblAdministrarUsuarios.Text = "Administrar usuarios";
-            lblAdministrarUsuarios.Click += lblAdministrarUsuarios_Click;
-            // 
-            // panelAdmin
-            // 
-            panelAdmin.BackColor = Color.DeepSkyBlue;
-            panelAdmin.Controls.Add(btnAdministrarUsuarios);
-            panelAdmin.Controls.Add(lblAdministrarUsuarios);
-            panelAdmin.Location = new Point(856, 80);
-            panelAdmin.Name = "panelAdmin";
-            panelAdmin.Size = new Size(202, 66);
-            panelAdmin.TabIndex = 29;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(954, 82);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(71, 70);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 28;
+            pictureBox1.TabStop = false;
             // 
             // PanelPresupuesto
             // 
@@ -891,7 +911,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
             ClientSize = new Size(1070, 734);
-            Controls.Add(panelAdmin);
+            Controls.Add(pictureBox1);
             Controls.Add(lblFecha);
             Controls.Add(panel6);
             Controls.Add(label5);
@@ -905,6 +925,9 @@
             Load += PanelPresupuesto_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panelAdmin.ResumeLayout(false);
+            panelAdmin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnAdministrarUsuarios).EndInit();
             ((System.ComponentModel.ISupportInitialize)picClose).EndInit();
             ((System.ComponentModel.ISupportInitialize)picSetup).EndInit();
             ((System.ComponentModel.ISupportInitialize)picModifyUser).EndInit();
@@ -927,9 +950,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvGastos).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)btnAdministrarUsuarios).EndInit();
-            panelAdmin.ResumeLayout(false);
-            panelAdmin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1005,5 +1026,6 @@
         private Label label17;
         private Panel panelMainColor;
         private Clases.RoundButton roundButton2;
+        private PictureBox pictureBox1;
     }
 }

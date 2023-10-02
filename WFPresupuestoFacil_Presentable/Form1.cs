@@ -102,7 +102,7 @@ namespace WFPresupuestoFacil_Presentable
                 EsEditar = true;
                 txtNombreUsuario.Text = dataGridView1.CurrentRow.Cells["Usuario_Nombre"].Value.ToString();
                 txtClaveAdmin.Text = dataGridView1.CurrentRow.Cells["Clave"].Value.ToString();
-                cbPerfilesAdmin.Text = dataGridView1.CurrentRow.Cells["IdPerfil"].Value.ToString();
+                cbPerfilesAdmin.SelectedValue = dataGridView1.CurrentRow.Cells["IdPerfil"];
                 idUsuario = dataGridView1.CurrentRow.Cells["Usuario_Id"].Value.ToString();
             }
             else
