@@ -158,7 +158,7 @@ namespace WFPresupuestoFacil_Presentable
             PanelPresupuesto panelPresupuesto = new PanelPresupuesto();
             panelPresupuesto.lblUser.Text = Global.GlobalVarNombre;
             panelPresupuesto.lblPerfil.Text = Global.GlobalVarPerfil;
-            panelPresupuesto.Show();
+            //panelPresupuesto.Show();
         }
 
         private void recargarUsuario()
