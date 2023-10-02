@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             btnRegistroAtras = new Label();
             chkRegistroVerContraseña = new CheckBox();
             btnRegistrarse = new Button();
@@ -159,6 +160,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Registro";
             Text = "Registro";
             Load += Registro_Load;

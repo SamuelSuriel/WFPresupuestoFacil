@@ -17,20 +17,22 @@ namespace PresupuestoFacil_CapaDatos
 
         #region Artículos
 
-        public DataTable MostrarArticulos()
+        public DataTable MostrarArticulos(int idUsuario1)
         {
-            DataTable tabla = new DataTable();
+            SqlCommand comando = new SqlCommand();
+            DataTable tablae = new DataTable();
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "prcMostrarArticulos";
             comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@idUsuario", idUsuario1);
             leer = comando.ExecuteReader();
-            tabla.Load(leer);
+            tablae.Load(leer);
             conexion.CerrarConexion();
-            return tabla;
+            return tablae;
 
         }
 
-        public void InsertarArticulo(string articulo, bool activo, bool esIngreso)
+        public void InsertarArticulo(string articulo, bool activo, bool esIngreso, int idUsuario2)
         {
             comando.Connection = conexion.AbrirConexion();
             comando.CommandText = "prcInsertarArticulos";
@@ -38,6 +40,8 @@ namespace PresupuestoFacil_CapaDatos
             comando.Parameters.AddWithValue("@Articulo", articulo);
             comando.Parameters.AddWithValue("@activo", activo);
             comando.Parameters.AddWithValue("@esIngreso", esIngreso);
+            comando.Parameters.AddWithValue("@idUsuario", idUsuario2);
+
             comando.ExecuteNonQuery();
 
             comando.Parameters.Clear();

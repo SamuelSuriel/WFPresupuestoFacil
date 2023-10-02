@@ -11,6 +11,7 @@ namespace LoginSistem.Forms
     {
         CD_Conexion conexion = new CD_Conexion();
         DataTable tabla = new DataTable();
+        PanelPresupuesto menuPrincipal = new PanelPresupuesto();
 
         public mdlEditarUsuario()
         {
@@ -21,10 +22,9 @@ namespace LoginSistem.Forms
         {
             this.Hide();
             
-            PanelPresupuesto menuPrincipal = new PanelPresupuesto();
             menuPrincipal.lblUser.Text = Global.GlobalVarNombre;
             menuPrincipal.lblPerfil.Text = Global.GlobalVarPerfil;
-            //menuPrincipal.ShowDialog();
+
         }
 
         private void mdlEditarUsuario_Load(object sender, EventArgs e)
@@ -75,7 +75,8 @@ namespace LoginSistem.Forms
                     MessageBox.Show("Se editó correctamente!");
                     Global.GlobalVarIdPerfil = (int)id_perfil;
                     Global.GlobalVarNombre = name;
-
+                    menuPrincipal.lblUser.Text = Global.GlobalVarNombre;
+                    menuPrincipal.lblPerfil.Text = Global.GlobalVarPerfil;
                 }
                 catch (Exception ex)
                 {

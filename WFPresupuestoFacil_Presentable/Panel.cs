@@ -56,13 +56,6 @@ namespace LoginSistem.Forms
                 panelAdmin.Visible = false;
             }
 
-            //Control Chart
-            //void FrmChartExample_Load(object sender, EventArgs e)
-            //{
-            //    BarExample(); //Show bar chart
-            //                  //SplineChartExample();
-            //}
-
             //Resumen
             ObtenerTotalesResumen();
 
@@ -106,6 +99,11 @@ namespace LoginSistem.Forms
             {
                 SqlCommand cmd = new SqlCommand(proc, conexion.Conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
+                if (proc == "prcGetArticulos")
+                {
+                    int idUsuario = Global.GlobalVarId;
+                    cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+                }
                 try
                 {
                     conexion.AbrirConexion();

@@ -13,17 +13,17 @@ namespace PresupuestoFacil_CapaNegocio
         private CD_Setup objetoCD = new CD_Setup();
 
         #region Articulos
-        public DataTable MostrarArticulosProc()
+        public DataTable MostrarArticulosProc(int idUsuario1)
         {
 
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.MostrarArticulos();
-            return tabla;
+            DataTable tablao = new DataTable();
+            tablao = objetoCD.MostrarArticulos(idUsuario1);
+            return tablao;
         }
-        public void InsertarArticuloPRod(string articulo, bool activo, bool esIngreso)
+        public void InsertarArticuloPRod(string articulo, bool activo, bool esIngreso, int idUsuario2)
         {
 
-            objetoCD.InsertarArticulo(articulo, activo, esIngreso);
+            objetoCD.InsertarArticulo(articulo, activo, esIngreso, idUsuario2);
         }
 
         public void EditarArticuloProd(int id, string articulo, bool activo, bool esIngreso)
@@ -42,9 +42,9 @@ namespace PresupuestoFacil_CapaNegocio
         public DataTable MostrarCategoriasProc()
         {
 
-            DataTable tabla = new DataTable();
-            tabla = objetoCD.MostrarCategoria();
-            return tabla;
+            DataTable tablas = new DataTable();
+            tablas = objetoCD.MostrarCategoria();
+            return tablas;
         }
         public void InsertarCategoriaPRod(string categoria, bool activo)
         {

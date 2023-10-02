@@ -1,17 +1,7 @@
 ﻿using LoginSistem.Forms;
 using Microsoft.IdentityModel.Tokens;
 using PresupuestoFacil_CapaNegocio;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using WFPresupuestoFacil_Presentable.Clases;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace WFPresupuestoFacil_Presentable
 {
@@ -23,6 +13,7 @@ namespace WFPresupuestoFacil_Presentable
         private string? idCategoria = null;
         private string? idEstatus = null;
         private bool EsEditar = false;
+        int idUsuario = Global.GlobalVarId;
         public Setup()
         {
             InitializeComponent();
@@ -41,7 +32,6 @@ namespace WFPresupuestoFacil_Presentable
             PanelPresupuesto menuPrincipal = new PanelPresupuesto();
             menuPrincipal.lblUser.Text = Global.GlobalVarNombre;
             menuPrincipal.lblPerfil.Text = Global.GlobalVarPerfil;
-            //menuPrincipal.ShowDialog();
 
         }
 
@@ -49,7 +39,7 @@ namespace WFPresupuestoFacil_Presentable
         private void MostrarArticulos()
         {
 
-            dgvArticulos.DataSource = objetoCNSetup.MostrarArticulosProc();
+            dgvArticulos.DataSource = objetoCNSetup.MostrarArticulosProc(idUsuario);
             this.dgvArticulos.Columns["Articulo_Id"].Visible = false;
         }
 
@@ -106,6 +96,7 @@ namespace WFPresupuestoFacil_Presentable
                 string articulo = txtArticulo.Text;
                 bool activo = true;
                 bool esIngreso = false;
+                
                 if (checkEsIngreso.Checked)
                     esIngreso = true;
 
@@ -113,7 +104,7 @@ namespace WFPresupuestoFacil_Presentable
                 {
                     try
                     {
-                        objetoCNSetup.InsertarArticuloPRod(articulo, activo, esIngreso);
+                        objetoCNSetup.InsertarArticuloPRod(articulo, activo, esIngreso, idUsuario);
                         MessageBox.Show("SE INSERTÓ CORRECTAMENTE!");
                         txtArticulo.Clear();
                         MostrarArticulos();

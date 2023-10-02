@@ -102,7 +102,7 @@ namespace WFPresupuestoFacil_Presentable
                 EsEditar = true;
                 txtNombreUsuario.Text = dataGridView1.CurrentRow.Cells["Usuario_Nombre"].Value.ToString();
                 txtClaveAdmin.Text = dataGridView1.CurrentRow.Cells["Clave"].Value.ToString();
-                cbPerfilesAdmin.SelectedValue = dataGridView1.CurrentRow.Cells["IdPerfil"];
+                cbPerfilesAdmin.Text = dataGridView1.CurrentRow.Cells["Perfil"].Value.ToString();
                 idUsuario = dataGridView1.CurrentRow.Cells["Usuario_Id"].Value.ToString();
             }
             else
@@ -158,51 +158,51 @@ namespace WFPresupuestoFacil_Presentable
             PanelPresupuesto panelPresupuesto = new PanelPresupuesto();
             panelPresupuesto.lblUser.Text = Global.GlobalVarNombre;
             panelPresupuesto.lblPerfil.Text = Global.GlobalVarPerfil;
-            //panelPresupuesto.Show();
+
         }
 
-        private void recargarUsuario()
-        {
-            int id = Convert.ToInt32(idUsuario);
-            try
-            {
-                CD_Conexion conexion = new CD_Conexion();
-                conexion.AbrirConexion();
-                SqlCommand comando = new SqlCommand(conexion.queryBuscarUsuario(id), conexion.Conexion);
-                SqlDataReader registro = comando.ExecuteReader();
+        //private void recargarUsuario()
+        //{
+        //    int id = Convert.ToInt32(idUsuario);
+        //    try
+        //    {
+        //        CD_Conexion conexion = new CD_Conexion();
+        //        conexion.AbrirConexion();
+        //        SqlCommand comando = new SqlCommand(conexion.queryBuscarUsuario(id), conexion.Conexion);
+        //        SqlDataReader registro = comando.ExecuteReader();
 
-                if (registro.Read())
-                {
-                    Usuarios usuario = new Usuarios();
-                    usuario.Usuario_Id = (int)registro["Usuario_Id"];
-                    usuario.Usuario_Nombre = (string)registro["Usuario_Nombre"];
-                    usuario.Clave = (string)registro["Clave"];
-                    usuario.IdPerfil = (int)registro["IdPerfil"];
-                    usuario.Perfil = (string)registro["Perfil"];
+        //        if (registro.Read())
+        //        {
+        //            Usuarios usuario = new Usuarios();
+        //            usuario.Usuario_Id = (int)registro["Usuario_Id"];
+        //            usuario.Usuario_Nombre = (string)registro["Usuario_Nombre"];
+        //            usuario.Clave = (string)registro["Clave"];
+        //            usuario.IdPerfil = (int)registro["IdPerfil"];
+        //            usuario.Perfil = (string)registro["Perfil"];
 
-                    PanelPresupuesto menuPrincipal = new PanelPresupuesto();
+        //            PanelPresupuesto menuPrincipal = new PanelPresupuesto();
 
-                    //Almacenamos los datos en las variables globales actualizado
-                    Global global = new Global();
-                    Global.GlobalVarId = usuario.Usuario_Id;
-                    Global.GlobalVarNombre = usuario.Usuario_Nombre;
-                    Global.GlobalVarClave = usuario.Clave;
-                    Global.GlobalVarIdPerfil = (int)usuario.IdPerfil;
-                    Global.GlobalVarPerfil = usuario.Perfil;
+        //            //Almacenamos los datos en las variables globales actualizado
+        //            Global global = new Global();
+        //            Global.GlobalVarId = usuario.Usuario_Id;
+        //            Global.GlobalVarNombre = usuario.Usuario_Nombre;
+        //            Global.GlobalVarClave = usuario.Clave;
+        //            Global.GlobalVarIdPerfil = (int)usuario.IdPerfil;
+        //            Global.GlobalVarPerfil = usuario.Perfil;
 
-                    //Llenamos el textbox del modal Menú principal
-                    menuPrincipal.lblUser.Text = Global.GlobalVarNombre;
-                    menuPrincipal.lblPerfil.Text = Global.GlobalVarPerfil;
-                    //menuPrincipal.Show();                    
+        //            //Llenamos el textbox del modal Menú principal
+        //            menuPrincipal.lblUser.Text = Global.GlobalVarNombre;
+        //            menuPrincipal.lblPerfil.Text = Global.GlobalVarPerfil;
+        //            //menuPrincipal.Show();                    
 
-                }
-                conexion.CerrarConexion();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("No se pudo realizar la operación: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        //        }
+        //        conexion.CerrarConexion();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("No se pudo realizar la operación: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
         public void LlenarComboBox(ComboBox combo, string strSql, string id, string desc)
         {

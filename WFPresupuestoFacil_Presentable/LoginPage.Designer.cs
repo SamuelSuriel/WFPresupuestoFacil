@@ -45,11 +45,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe UI Variable Small", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
             label1.Location = new Point(502, 172);
             label1.Name = "label1";
-            label1.Size = new Size(83, 27);
+            label1.Size = new Size(82, 27);
             label1.TabIndex = 1;
             label1.Text = "Usuario";
             // 
@@ -82,11 +82,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI Variable Small", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
             label2.Location = new Point(502, 240);
             label2.Name = "label2";
-            label2.Size = new Size(120, 27);
+            label2.Size = new Size(117, 27);
             label2.TabIndex = 4;
             label2.Text = "Contraseña";
             // 
@@ -173,6 +173,7 @@
             Controls.Add(txtUsuarioLogin);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "LoginPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginPage";
