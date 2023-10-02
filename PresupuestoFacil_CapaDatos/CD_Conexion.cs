@@ -30,5 +30,14 @@ namespace PresupuestoFacil_CapaDatos
                 query = "SELECT u.Usuario_Id, u.Usuario_Nombre, u.Clave, u.IdPerfil, p.Perfil FROM Usuarios u INNER JOIN Perfiles p on u.IdPerfil = p.IdPerfil WHERE Clave = " + clave;
             return query;
         }
+
+        public string queryBuscarUsuario(int idUsuario)
+        {
+            string query = "";
+            if (idUsuario > 0)
+                //Query que trae los datos desde la base de datos
+                query = "SELECT u.Usuario_Id, u.Usuario_Nombre, u.Clave, u.IdPerfil, p.Perfil FROM Usuarios u INNER JOIN Perfiles p on u.IdPerfil = p.IdPerfil WHERE u.Usuario_Id = " + idUsuario;
+            return query;
+        }
     }
 }

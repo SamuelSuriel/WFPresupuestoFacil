@@ -49,6 +49,7 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             tabResumen = new TabControl();
             tabPage1 = new TabPage();
+            panelMainColor = new Panel();
             panel2 = new Panel();
             lblsaldo = new Label();
             lblttgastos = new Label();
@@ -59,6 +60,8 @@
             label2 = new Label();
             label1 = new Label();
             panelResumenSaldo = new Panel();
+            lblSaldoMain = new Label();
+            label17 = new Label();
             tabIngresos = new TabPage();
             btnEliminarIngreso = new Label();
             btnEditarIngresos = new Label();
@@ -92,9 +95,6 @@
             btnAdministrarUsuarios = new PictureBox();
             lblAdministrarUsuarios = new Label();
             panelAdmin = new Panel();
-            panel3 = new Panel();
-            label17 = new Label();
-            lblSaldoMain = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picClose).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picSetup).BeginInit();
@@ -225,6 +225,7 @@
             picAbout.SizeMode = PictureBoxSizeMode.AutoSize;
             picAbout.TabIndex = 20;
             picAbout.TabStop = false;
+            picAbout.Click += picAbout_Click;
             // 
             // lblCloseSession
             // 
@@ -347,7 +348,7 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(panel3);
+            tabPage1.Controls.Add(panelMainColor);
             tabPage1.Controls.Add(panel2);
             tabPage1.Controls.Add(panelResumenSaldo);
             tabPage1.Location = new Point(4, 29);
@@ -357,6 +358,15 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Resumen";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panelMainColor
+            // 
+            panelMainColor.BackColor = Color.Green;
+            panelMainColor.ForeColor = Color.Transparent;
+            panelMainColor.Location = new Point(23, 100);
+            panelMainColor.Name = "panelMainColor";
+            panelMainColor.Size = new Size(676, 49);
+            panelMainColor.TabIndex = 30;
             // 
             // panel2
             // 
@@ -452,6 +462,27 @@
             panelResumenSaldo.Name = "panelResumenSaldo";
             panelResumenSaldo.Size = new Size(680, 324);
             panelResumenSaldo.TabIndex = 7;
+            // 
+            // lblSaldoMain
+            // 
+            lblSaldoMain.AutoSize = true;
+            lblSaldoMain.Font = new Font("Segoe UI", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblSaldoMain.ForeColor = Color.MidnightBlue;
+            lblSaldoMain.Location = new Point(166, 111);
+            lblSaldoMain.Name = "lblSaldoMain";
+            lblSaldoMain.Size = new Size(0, 81);
+            lblSaldoMain.TabIndex = 1;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label17.ForeColor = Color.Gray;
+            label17.Location = new Point(231, 48);
+            label17.Name = "label17";
+            label17.Size = new Size(224, 38);
+            label17.TabIndex = 0;
+            label17.Text = "SALDO ACTUAL";
             // 
             // tabIngresos
             // 
@@ -647,7 +678,7 @@
             // cbArticuloGasto
             // 
             cbArticuloGasto.BackColor = Color.White;
-            cbArticuloGasto.Cursor = Cursors.WaitCursor;
+            cbArticuloGasto.Cursor = Cursors.Hand;
             cbArticuloGasto.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             cbArticuloGasto.ForeColor = Color.DimGray;
             cbArticuloGasto.FormattingEnabled = true;
@@ -694,7 +725,7 @@
             // cbCategoriaGastos
             // 
             cbCategoriaGastos.BackColor = Color.White;
-            cbCategoriaGastos.Cursor = Cursors.WaitCursor;
+            cbCategoriaGastos.Cursor = Cursors.Hand;
             cbCategoriaGastos.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             cbCategoriaGastos.ForeColor = Color.DimGray;
             cbCategoriaGastos.FormattingEnabled = true;
@@ -706,7 +737,7 @@
             // txtImporte
             // 
             txtImporte.BackColor = Color.White;
-            txtImporte.Cursor = Cursors.WaitCursor;
+            txtImporte.Cursor = Cursors.Hand;
             txtImporte.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             txtImporte.ForeColor = Color.DimGray;
             txtImporte.Location = new Point(524, 269);
@@ -728,7 +759,7 @@
             // cbEstatusGasto
             // 
             cbEstatusGasto.BackColor = Color.White;
-            cbEstatusGasto.Cursor = Cursors.WaitCursor;
+            cbEstatusGasto.Cursor = Cursors.Hand;
             cbEstatusGasto.Font = new Font("Segoe UI Variable Display Semib", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             cbEstatusGasto.ForeColor = Color.DimGray;
             cbEstatusGasto.FormattingEnabled = true;
@@ -789,7 +820,7 @@
             panel6.Dock = DockStyle.Top;
             panel6.Location = new Point(263, 0);
             panel6.Name = "panel6";
-            panel6.Size = new Size(807, 63);
+            panel6.Size = new Size(807, 51);
             panel6.TabIndex = 3;
             // 
             // btnCerrarPanel
@@ -854,35 +885,6 @@
             panelAdmin.Size = new Size(202, 66);
             panelAdmin.TabIndex = 29;
             // 
-            // panel3
-            // 
-            panel3.BackColor = Color.LightGray;
-            panel3.Location = new Point(23, 100);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(676, 49);
-            panel3.TabIndex = 30;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label17.ForeColor = Color.Gray;
-            label17.Location = new Point(231, 48);
-            label17.Name = "label17";
-            label17.Size = new Size(224, 38);
-            label17.TabIndex = 0;
-            label17.Text = "SALDO ACTUAL";
-            // 
-            // lblSaldoMain
-            // 
-            lblSaldoMain.AutoSize = true;
-            lblSaldoMain.Font = new Font("Segoe UI", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            lblSaldoMain.ForeColor = Color.MidnightBlue;
-            lblSaldoMain.Location = new Point(166, 111);
-            lblSaldoMain.Name = "lblSaldoMain";
-            lblSaldoMain.Size = new Size(0, 81);
-            lblSaldoMain.TabIndex = 1;
-            // 
             // PanelPresupuesto
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -895,7 +897,8 @@
             Controls.Add(label5);
             Controls.Add(tabResumen);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.SizableToolWindow;
+            FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "PanelPresupuesto";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Panel";
@@ -1000,5 +1003,7 @@
         private Panel panel3;
         private Label lblSaldoMain;
         private Label label17;
+        private Panel panelMainColor;
+        private Clases.RoundButton roundButton2;
     }
 }

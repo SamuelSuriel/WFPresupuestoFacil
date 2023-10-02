@@ -278,6 +278,7 @@
             // 
             // panel2
             // 
+            panel2.BackColor = Color.MidnightBlue;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(checkEsIngreso);
             panel2.Controls.Add(btnEliminarArticuloGasto);
@@ -329,6 +330,7 @@
             // 
             // panel3
             // 
+            panel3.BackColor = Color.MidnightBlue;
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(btnEliminarCategoria);
             panel3.Controls.Add(btnEditarCategoria);
@@ -368,6 +370,7 @@
             // 
             // panel4
             // 
+            panel4.BackColor = Color.MidnightBlue;
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(btnEliminarEstatus);
             panel4.Controls.Add(btnEditarEstatus);
@@ -409,7 +412,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.MediumBlue;
+            BackColor = Color.White;
             ClientSize = new Size(1547, 615);
             Controls.Add(panel4);
             Controls.Add(panel3);

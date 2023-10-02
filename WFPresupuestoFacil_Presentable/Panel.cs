@@ -27,7 +27,7 @@ namespace LoginSistem.Forms
 
         private void picClose_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             //Limpiamos los datos en las variables globales
             Global.GlobalVarId = 0;
             Global.GlobalVarNombre = "";
@@ -91,34 +91,6 @@ namespace LoginSistem.Forms
             cbArticuloIngreso.ValueMember = "Articulo_Id";
         }
 
-
-        //private void btnCerrarPanel_Click(object sender, EventArgs e)
-        //{
-        //    this.Close();
-        //}
-
-        //public void BarExample()
-        //{
-        //this.chartControl.Series.Clear();
-
-        //// Data arrays
-        //string[] seriesArray = { "Cat", "Dog", "Bird", "Monkey" };
-        //int[] pointsArray = { 2, 1, 7, 5 };
-
-        //// Set palette
-        //this.chartControl.Palette = ChartColorPalette.EarthTones;
-
-        //// Set title
-        //this.chartControl.Titles.Add("Animals");
-
-        //// Add series.
-        //for (int i = 0; i < seriesArray.Length; i++)
-        //{
-        //    Series series = this.chartControl.Series.Add(seriesArray[i]);
-        //    series.Points.Add(pointsArray[i]);
-        //}
-        //}
-
         private void picModifyUser_Click(object sender, EventArgs e)
         {
             mdlEditarUsuario mdlEditarUsuario = new mdlEditarUsuario();
@@ -134,19 +106,27 @@ namespace LoginSistem.Forms
             {
                 SqlCommand cmd = new SqlCommand(proc, conexion.Conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
-                conexion.AbrirConexion();
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                while (dr.Read())
+                try
                 {
-                    oListaArticulos.Add(new Articulos
-                    {
-                        Articulo_Id = Convert.ToInt32(dr["Articulo_Id"]),
-                        Articulo = Convert.ToString(dr["Articulo"].ToString())
-                    });
+                    conexion.AbrirConexion();
+                    SqlDataReader dr = cmd.ExecuteReader();
 
+                    while (dr.Read())
+                    {
+                        oListaArticulos.Add(new Articulos
+                        {
+                            Articulo_Id = Convert.ToInt32(dr["Articulo_Id"]),
+                            Articulo = dr["Articulo"].ToString()
+                        });
+                    }
+                    dr.Close();
                 }
-                dr.Close();
+                catch (Exception ex)
+                {
+                    // Manejo de excepciones 
+                    throw new Exception("Error al obtener los artículos: " + ex.Message, ex);
+                }
+
             }
             return oListaArticulos;
 
@@ -210,57 +190,106 @@ namespace LoginSistem.Forms
 
         private void ObtenerTotalesResumen()
         {
-
+            try
             {
                 int Usuario_Id = Global.GlobalVarId;
-                SqlCommand cmd = new SqlCommand("MostrarTotales", conexion.Conexion);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@idUsuario", Usuario_Id);
-                conexion.AbrirConexion();
-                SqlDataReader dr = cmd.ExecuteReader();
-
-                int? saldo = 0;
-                string? ttingresos = "";
-                string? ttgastos = "";
-
-                lblTotalGastos.Text = "";
-                lblTotalIngresos.Text = "";
-                lblsaldo.Text = "";
-                lblsaldo.BackColor = Color.RoyalBlue;
-                lblSaldoMain.Text = "";
-                lblSaldoMain.ForeColor = Color.MidnightBlue;
-
-
-                while (dr.Read())
+                using (SqlCommand cmd = new SqlCommand("MostrarTotales", conexion.Conexion))
                 {
-                    ttgastos = dr["TotalGastos"].ToString();
-                    ttingresos = dr["TotalIngresos"].ToString();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idUsuario", Usuario_Id);
+                    conexion.AbrirConexion();
 
-                    if (ttgastos != "" && ttingresos != "")
+                    using (SqlDataReader dr = cmd.ExecuteReader())
                     {
-                        saldo = Convert.ToInt32(ttingresos) - Convert.ToInt32(ttgastos);
+                        decimal saldo = 0;
+                        decimal totalIngresos = 0;
+                        decimal totalGastos = 0;
+
+                        while (dr.Read())
+                        {
+                            if (decimal.TryParse(dr["TotalGastos"].ToString(), out decimal gastos) &&
+                                decimal.TryParse(dr["TotalIngresos"].ToString(), out decimal ingresos))
+                            {
+                                totalGastos += gastos;
+                                totalIngresos += ingresos;
+                            }
+                        }
+                        dr.Close();
+
+                        saldo = totalIngresos - totalGastos;
+
+                        lblTotalGastos.Text = "$ " + totalGastos.ToString();
+                        lblTotalIngresos.Text = "$ " + totalIngresos.ToString();
+                        lblsaldo.Text = "$ " + saldo.ToString();
+                        lblSaldoMain.Text = "$ " + saldo.ToString();
+
+                        lblsaldo.BackColor = saldo < 0 ? Color.Red : Color.RoyalBlue;
+                        lblSaldoMain.ForeColor = saldo < 0 ? Color.DarkRed : Color.MidnightBlue;
+                        panelMainColor.BackColor = saldo < 0 ? Color.DarkRed : Color.Green;
                     }
 
-                    lblTotalGastos.Text = "$ " + Convert.ToString(dr["TotalGastos"].ToString());
-                    lblTotalIngresos.Text = "$ " + Convert.ToString(dr["TotalIngresos"].ToString());
-                    lblsaldo.Text = "$ " + Convert.ToString(saldo);
-                    lblSaldoMain.Text = "$ " + Convert.ToString(saldo);
-
-                    if (saldo < 0)
-                    {
-                        lblsaldo.BackColor = Color.Red;
-                        lblSaldoMain.ForeColor = Color.DarkRed;
-                    }
-                    else
-                    {
-                        lblsaldo.BackColor = Color.RoyalBlue;
-                        lblSaldoMain.ForeColor = Color.MidnightBlue;
-                    }
                 }
-                dr.Close();
             }
-
+            catch (Exception ex)
+            {
+                // Mostrar un mensaje de error.
+                MessageBox.Show("Error al obtener los totales: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+        //private void ObtenerTotalesResumen()
+        //{
+
+        //    {
+        //        int Usuario_Id = Global.GlobalVarId;
+        //        SqlCommand cmd = new SqlCommand("MostrarTotales", conexion.Conexion);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        cmd.Parameters.AddWithValue("@idUsuario", Usuario_Id);
+        //        conexion.AbrirConexion();
+        //        SqlDataReader dr = cmd.ExecuteReader();
+
+        //        int? saldo = 0;
+        //        string? ttingresos = "";
+        //        string? ttgastos = "";
+
+        //        lblTotalGastos.Text = "";
+        //        lblTotalIngresos.Text = "";
+        //        lblsaldo.Text = "";
+        //        lblsaldo.BackColor = Color.RoyalBlue;
+        //        lblSaldoMain.Text = "";
+        //        lblSaldoMain.ForeColor = Color.MidnightBlue;
+
+
+        //        while (dr.Read())
+        //        {
+        //            ttgastos = dr["TotalGastos"].ToString();
+        //            ttingresos = dr["TotalIngresos"].ToString();
+
+        //            if (ttgastos != "" && ttingresos != "")
+        //            {
+        //                saldo = Convert.ToInt32(ttingresos) - Convert.ToInt32(ttgastos);
+        //            }
+
+        //            lblTotalGastos.Text = "$ " + Convert.ToString(dr["TotalGastos"].ToString());
+        //            lblTotalIngresos.Text = "$ " + Convert.ToString(dr["TotalIngresos"].ToString());
+        //            lblsaldo.Text = "$ " + Convert.ToString(saldo);
+        //            lblSaldoMain.Text = "$ " + Convert.ToString(saldo);
+
+        //            if (saldo < 0)
+        //            {
+        //                lblsaldo.BackColor = Color.Red;
+        //                lblSaldoMain.ForeColor = Color.DarkRed;
+        //            }
+        //            else
+        //            {
+        //                lblsaldo.BackColor = Color.RoyalBlue;
+        //                lblSaldoMain.ForeColor = Color.MidnightBlue;
+        //            }
+        //        }
+        //        dr.Close();
+        //    }
+
+        //}
 
         private void MostrarGastos()
         {
@@ -522,8 +551,10 @@ namespace LoginSistem.Forms
         #endregion Ingresos
 
 
-
-
-
+        private void picAbout_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.Show();
+        }
     }
 }

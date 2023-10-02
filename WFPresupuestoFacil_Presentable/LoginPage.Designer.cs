@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
             label1 = new Label();
             txtUsuarioLogin = new TextBox();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -46,7 +47,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(408, 174);
+            label1.Location = new Point(478, 183);
             label1.Name = "label1";
             label1.Size = new Size(83, 27);
             label1.TabIndex = 1;
@@ -54,7 +55,7 @@
             // 
             // txtUsuarioLogin
             // 
-            txtUsuarioLogin.Location = new Point(532, 175);
+            txtUsuarioLogin.Location = new Point(602, 183);
             txtUsuarioLogin.Name = "txtUsuarioLogin";
             txtUsuarioLogin.Size = new Size(242, 27);
             txtUsuarioLogin.TabIndex = 2;
@@ -62,15 +63,16 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = Color.White;
+            flowLayoutPanel1.BackgroundImage = (Image)resources.GetObject("flowLayoutPanel1.BackgroundImage");
             flowLayoutPanel1.Dock = DockStyle.Left;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(402, 450);
+            flowLayoutPanel1.Size = new Size(472, 497);
             flowLayoutPanel1.TabIndex = 3;
             // 
             // txtContraseñaLogin
             // 
-            txtContraseñaLogin.Location = new Point(532, 224);
+            txtContraseñaLogin.Location = new Point(602, 232);
             txtContraseñaLogin.Name = "txtContraseñaLogin";
             txtContraseñaLogin.PasswordChar = '*';
             txtContraseñaLogin.Size = new Size(242, 27);
@@ -82,7 +84,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(408, 223);
+            label2.Location = new Point(478, 231);
             label2.Name = "label2";
             label2.Size = new Size(120, 27);
             label2.TabIndex = 4;
@@ -94,7 +96,7 @@
             btnEntrarLogin.Cursor = Cursors.Hand;
             btnEntrarLogin.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnEntrarLogin.ForeColor = Color.Transparent;
-            btnEntrarLogin.Location = new Point(527, 318);
+            btnEntrarLogin.Location = new Point(597, 326);
             btnEntrarLogin.Name = "btnEntrarLogin";
             btnEntrarLogin.Size = new Size(247, 46);
             btnEntrarLogin.TabIndex = 6;
@@ -108,7 +110,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI Variable Display", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(511, 99);
+            label3.Location = new Point(602, 119);
             label3.Name = "label3";
             label3.Size = new Size(163, 27);
             label3.TabIndex = 7;
@@ -119,7 +121,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(763, 9);
+            label4.Location = new Point(819, 9);
             label4.Name = "label4";
             label4.Size = new Size(25, 28);
             label4.TabIndex = 8;
@@ -133,7 +135,7 @@
             btnCancelarLogin.Cursor = Cursors.Hand;
             btnCancelarLogin.Font = new Font("Segoe UI Variable Small", 10.2F, FontStyle.Underline, GraphicsUnit.Point);
             btnCancelarLogin.ForeColor = Color.White;
-            btnCancelarLogin.Location = new Point(597, 377);
+            btnCancelarLogin.Location = new Point(667, 385);
             btnCancelarLogin.Name = "btnCancelarLogin";
             btnCancelarLogin.Size = new Size(94, 22);
             btnCancelarLogin.TabIndex = 9;
@@ -147,7 +149,7 @@
             label5.Cursor = Cursors.Hand;
             label5.Font = new Font("Segoe UI Variable Small", 7.8F, FontStyle.Underline, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(532, 264);
+            label5.Location = new Point(602, 272);
             label5.Name = "label5";
             label5.Size = new Size(139, 17);
             label5.TabIndex = 10;
@@ -158,7 +160,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MidnightBlue;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(856, 497);
             Controls.Add(label5);
             Controls.Add(btnCancelarLogin);
             Controls.Add(label4);
