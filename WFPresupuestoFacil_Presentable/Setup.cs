@@ -28,10 +28,13 @@ namespace WFPresupuestoFacil_Presentable
 
         private void btnAtrasSetup_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             PanelPresupuesto menuPrincipal = new PanelPresupuesto();
             menuPrincipal.lblUser.Text = Global.GlobalVarNombre;
             menuPrincipal.lblPerfil.Text = Global.GlobalVarPerfil;
+            menuPrincipal.ShowDialog();
+
 
         }
 

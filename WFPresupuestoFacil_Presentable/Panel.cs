@@ -40,7 +40,7 @@ namespace LoginSistem.Forms
             login.ShowDialog();
         }
 
-        private void PanelPresupuesto_Load(object sender, EventArgs e)
+        public void PanelPresupuesto_Load(object sender, EventArgs e)
         {
             string date = DateTime.UtcNow.ToString("D");
             lblFecha.Text = date;
@@ -59,29 +59,44 @@ namespace LoginSistem.Forms
             //Resumen
             ObtenerTotalesResumen();
 
-            //Llenar DataGridView
+            //Gastos
             MostrarGastos();
+            LlenarCbArticulosGastos();
+            LlenarCbCategoriaGastos();
+            LlenarCbEstatusGastos();
 
-            //Llenar combo Articulos
-            cbArticuloGasto.DataSource = ObtenerArticulos("prcGetArticulos");
-            cbArticuloGasto.DisplayMember = "Articulo";
-            cbArticuloGasto.ValueMember = "Articulo_Id";
-
-            //Llenar combo Categorias
-            cbCategoriaGastos.DataSource = ObtenerCategorias();
-            cbCategoriaGastos.DisplayMember = "Categoria";
-            cbCategoriaGastos.ValueMember = "Categoria_Id";
-
-            //Llenar combo Estatus
-            cbEstatusGasto.DataSource = ObtenerEstatus();
-            cbEstatusGasto.DisplayMember = "Estatu";
-            cbEstatusGasto.ValueMember = "Estatus_Id";
-
+            //Ingresos
             MostrarIngresos();
-            //Llenar combo Articulos Ingresos
+            LlenarCbArticulosIngresos();
+        }
+
+        public void LlenarCbArticulosIngresos()
+        {
             cbArticuloIngreso.DataSource = ObtenerArticulos("prcGetArticulosIngresos");
             cbArticuloIngreso.DisplayMember = "Articulo";
             cbArticuloIngreso.ValueMember = "Articulo_Id";
+        }
+
+        public void LlenarCbEstatusGastos()
+        {
+
+            cbEstatusGasto.DataSource = ObtenerEstatus();
+            cbEstatusGasto.DisplayMember = "Estatu";
+            cbEstatusGasto.ValueMember = "Estatus_Id";
+        }
+
+        public void LlenarCbCategoriaGastos()
+        {
+            cbCategoriaGastos.DataSource = ObtenerCategorias();
+            cbCategoriaGastos.DisplayMember = "Categoria";
+            cbCategoriaGastos.ValueMember = "Categoria_Id";
+        }
+
+        public void LlenarCbArticulosGastos()
+        {
+            cbArticuloGasto.DataSource = ObtenerArticulos("prcGetArticulos");
+            cbArticuloGasto.DisplayMember = "Articulo";
+            cbArticuloGasto.ValueMember = "Articulo_Id";
         }
 
         private void picModifyUser_Click(object sender, EventArgs e)
@@ -177,13 +192,6 @@ namespace LoginSistem.Forms
                 dr.Close();
             }
             return oListaCategorias;
-        }
-
-        private void picSetup_Click(object sender, EventArgs e)
-        {
-
-            Setup setupForm = new Setup();
-            setupForm.ShowDialog();
         }
 
         private void ObtenerTotalesResumen()
@@ -493,6 +501,12 @@ namespace LoginSistem.Forms
 
         #endregion Ingresos
 
+        private void picSetup_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Setup setupForm = new Setup();
+            setupForm.ShowDialog();
+        }
 
         private void picAbout_Click(object sender, EventArgs e)
         {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Setup));
             label1 = new Label();
             label9 = new Label();
             panel1 = new Panel();
@@ -424,6 +425,7 @@
             Controls.Add(dgvArticulos);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Setup";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Setup";
