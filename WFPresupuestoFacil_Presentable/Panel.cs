@@ -70,35 +70,6 @@ namespace LoginSistem.Forms
             LlenarCbArticulosIngresos();
         }
 
-        public void LlenarCbArticulosIngresos()
-        {
-            cbArticuloIngreso.DataSource = ObtenerArticulos("prcGetArticulosIngresos");
-            cbArticuloIngreso.DisplayMember = "Articulo";
-            cbArticuloIngreso.ValueMember = "Articulo_Id";
-        }
-
-        public void LlenarCbEstatusGastos()
-        {
-
-            cbEstatusGasto.DataSource = ObtenerEstatus();
-            cbEstatusGasto.DisplayMember = "Estatu";
-            cbEstatusGasto.ValueMember = "Estatus_Id";
-        }
-
-        public void LlenarCbCategoriaGastos()
-        {
-            cbCategoriaGastos.DataSource = ObtenerCategorias();
-            cbCategoriaGastos.DisplayMember = "Categoria";
-            cbCategoriaGastos.ValueMember = "Categoria_Id";
-        }
-
-        public void LlenarCbArticulosGastos()
-        {
-            cbArticuloGasto.DataSource = ObtenerArticulos("prcGetArticulos");
-            cbArticuloGasto.DisplayMember = "Articulo";
-            cbArticuloGasto.ValueMember = "Articulo_Id";
-        }
-
         private void picModifyUser_Click(object sender, EventArgs e)
         {
             mdlEditarUsuario mdlEditarUsuario = new mdlEditarUsuario();
@@ -146,6 +117,28 @@ namespace LoginSistem.Forms
         }
 
         #region Gastos
+
+        public void LlenarCbEstatusGastos()
+        {
+
+            cbEstatusGasto.DataSource = ObtenerEstatus();
+            cbEstatusGasto.DisplayMember = "Estatu";
+            cbEstatusGasto.ValueMember = "Estatus_Id";
+        }
+
+        public void LlenarCbCategoriaGastos()
+        {
+            cbCategoriaGastos.DataSource = ObtenerCategorias();
+            cbCategoriaGastos.DisplayMember = "Categoria";
+            cbCategoriaGastos.ValueMember = "Categoria_Id";
+        }
+
+        public void LlenarCbArticulosGastos()
+        {
+            cbArticuloGasto.DataSource = ObtenerArticulos("prcGetArticulos");
+            cbArticuloGasto.DisplayMember = "Articulo";
+            cbArticuloGasto.ValueMember = "Articulo_Id";
+        }
 
         public List<Categorias> ObtenerCategorias()
         {
@@ -384,6 +377,13 @@ namespace LoginSistem.Forms
         #endregion Gastos
 
         #region Ingresos
+
+        public void LlenarCbArticulosIngresos()
+        {
+            cbArticuloIngreso.DataSource = ObtenerArticulos("prcGetArticulosIngresos");
+            cbArticuloIngreso.DisplayMember = "Articulo";
+            cbArticuloIngreso.ValueMember = "Articulo_Id";
+        }
 
         private void btnEditarIngresos_Click_1(object sender, EventArgs e)
         {
