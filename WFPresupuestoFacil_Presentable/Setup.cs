@@ -96,7 +96,7 @@ namespace WFPresupuestoFacil_Presentable
                 string articulo = txtArticulo.Text;
                 bool activo = true;
                 bool esIngreso = false;
-                
+
                 if (checkEsIngreso.Checked)
                     esIngreso = true;
 

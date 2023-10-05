@@ -170,7 +170,7 @@
             // 
             // dgvArticulos
             // 
-            dgvArticulos.BackgroundColor = Color.RoyalBlue;
+            dgvArticulos.BackgroundColor = Color.White;
             dgvArticulos.BorderStyle = BorderStyle.None;
             dgvArticulos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvArticulos.Location = new Point(16, 82);
@@ -218,7 +218,7 @@
             // 
             // dgvCategorias
             // 
-            dgvCategorias.BackgroundColor = Color.RoyalBlue;
+            dgvCategorias.BackgroundColor = Color.White;
             dgvCategorias.BorderStyle = BorderStyle.None;
             dgvCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCategorias.Location = new Point(566, 82);
@@ -266,7 +266,7 @@
             // 
             // dgvEstatus
             // 
-            dgvEstatus.BackgroundColor = Color.RoyalBlue;
+            dgvEstatus.BackgroundColor = Color.White;
             dgvEstatus.BorderStyle = BorderStyle.None;
             dgvEstatus.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvEstatus.Location = new Point(1051, 82);
@@ -278,7 +278,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.MidnightBlue;
+            panel2.BackColor = Color.RoyalBlue;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(checkEsIngreso);
             panel2.Controls.Add(btnEliminarArticuloGasto);
@@ -330,7 +330,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.MidnightBlue;
+            panel3.BackColor = Color.RoyalBlue;
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(btnEliminarCategoria);
             panel3.Controls.Add(btnEditarCategoria);
@@ -370,7 +370,7 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.MidnightBlue;
+            panel4.BackColor = Color.RoyalBlue;
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(btnEliminarEstatus);
             panel4.Controls.Add(btnEditarEstatus);

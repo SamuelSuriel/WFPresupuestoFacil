@@ -86,7 +86,7 @@ namespace WFPresupuestoFacil_Presentable
                 MessageBox.Show("No se pudo realizar la operación: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-               
+
         private void LimpiarCamposUsuario()
         {
 
