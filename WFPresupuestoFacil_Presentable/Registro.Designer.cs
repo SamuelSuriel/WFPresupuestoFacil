@@ -60,9 +60,9 @@
             chkRegistroVerContraseña.ForeColor = Color.MidnightBlue;
             chkRegistroVerContraseña.Location = new Point(356, 246);
             chkRegistroVerContraseña.Name = "chkRegistroVerContraseña";
-            chkRegistroVerContraseña.Size = new Size(155, 24);
+            chkRegistroVerContraseña.Size = new Size(158, 24);
             chkRegistroVerContraseña.TabIndex = 30;
-            chkRegistroVerContraseña.Text = "Ocultar contraseña";
+            chkRegistroVerContraseña.Text = "Mostrar contraseña";
             chkRegistroVerContraseña.UseVisualStyleBackColor = true;
             chkRegistroVerContraseña.CheckedChanged += chkRegistroVerContraseña_CheckedChanged;
             // 
@@ -107,7 +107,7 @@
             // 
             txtUsuarioRegistro.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             txtUsuarioRegistro.ForeColor = Color.DimGray;
-            txtUsuarioRegistro.Location = new Point(356, 110);
+            txtUsuarioRegistro.Location = new Point(356, 114);
             txtUsuarioRegistro.MaxLength = 50;
             txtUsuarioRegistro.Name = "txtUsuarioRegistro";
             txtUsuarioRegistro.Size = new Size(331, 34);

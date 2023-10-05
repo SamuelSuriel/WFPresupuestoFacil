@@ -21,7 +21,7 @@ namespace LoginSistem.Forms
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
-            
+
             menuPrincipal.lblUser.Text = Global.GlobalVarNombre;
             menuPrincipal.lblPerfil.Text = Global.GlobalVarPerfil;
 
@@ -117,6 +117,6 @@ namespace LoginSistem.Forms
 
         }
 
-       
+
     }
 }

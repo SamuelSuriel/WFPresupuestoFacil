@@ -63,6 +63,7 @@
             txtEditUsuarioClave.Location = new Point(437, 205);
             txtEditUsuarioClave.MaxLength = 20;
             txtEditUsuarioClave.Name = "txtEditUsuarioClave";
+            txtEditUsuarioClave.PasswordChar = '*';
             txtEditUsuarioClave.Size = new Size(331, 34);
             txtEditUsuarioClave.TabIndex = 10;
             // 
@@ -139,9 +140,9 @@
             chkVerContraseña.ForeColor = Color.RoyalBlue;
             chkVerContraseña.Location = new Point(437, 254);
             chkVerContraseña.Name = "chkVerContraseña";
-            chkVerContraseña.Size = new Size(155, 24);
+            chkVerContraseña.Size = new Size(158, 24);
             chkVerContraseña.TabIndex = 19;
-            chkVerContraseña.Text = "Ocultar contraseña";
+            chkVerContraseña.Text = "Mostrar contraseña";
             chkVerContraseña.UseVisualStyleBackColor = true;
             chkVerContraseña.CheckedChanged += chkVerContraseña_CheckedChanged;
             // 
