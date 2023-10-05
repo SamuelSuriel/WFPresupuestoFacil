@@ -33,7 +33,7 @@ namespace WFPresupuestoFacil_Presentable
             PanelPresupuesto menuPrincipal = new PanelPresupuesto();
             menuPrincipal.lblUser.Text = Global.GlobalVarNombre;
             menuPrincipal.lblPerfil.Text = Global.GlobalVarPerfil;
-            menuPrincipal.ShowDialog();
+            menuPrincipal.Show();
 
 
         }
