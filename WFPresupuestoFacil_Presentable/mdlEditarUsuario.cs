@@ -40,6 +40,8 @@ namespace LoginSistem.Forms
             else
             {
                 label4.Visible = false;
+                LlenarComboBox(cbPerfiles, "Select * From Perfiles", "IdPerfil", "Perfil");
+                cbPerfiles.Text = Global.GlobalVarPerfil;
                 cbPerfiles.Visible = false;
             }
 
