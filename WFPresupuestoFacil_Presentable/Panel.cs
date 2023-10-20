@@ -235,7 +235,7 @@ namespace LoginSistem.Forms
                 MessageBox.Show("Error al obtener los totales: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-              
+
         private void MostrarGastos()
         {
             CN_Gastos objetoGastos = new CN_Gastos();

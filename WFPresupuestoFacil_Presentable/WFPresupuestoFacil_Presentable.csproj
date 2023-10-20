@@ -6,7 +6,15 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>bagofmoney_5108.ico</ApplicationIcon>
+    <Title>Presupuesto Fácil App</Title>
+    <Product>Presupuesto Fácil  App</Product>
+    <Copyright>2023</Copyright>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="bagofmoney_5108.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PresupuestoFacil_CapaNegocio\PresupuestoFacil_CapaNegocio.csproj" />
