@@ -203,24 +203,28 @@ namespace LoginSistem.Forms
                         decimal saldo = 0;
                         decimal totalIngresos = 0;
                         decimal totalGastos = 0;
+                        decimal totalAhorros = 0;
 
                         while (dr.Read())
                         {
                             if (decimal.TryParse(dr["TotalGastos"].ToString(), out decimal gastos) &&
-                                decimal.TryParse(dr["TotalIngresos"].ToString(), out decimal ingresos))
+                                decimal.TryParse(dr["TotalIngresos"].ToString(), out decimal ingresos) &&
+                                decimal.TryParse(dr["TotalAhorros"].ToString(), out decimal ahorros))
                             {
                                 totalGastos += gastos;
                                 totalIngresos += ingresos;
+                                totalAhorros += ahorros;
                             }
                         }
                         dr.Close();
 
                         saldo = totalIngresos - totalGastos;
 
-                        lblTotalGastos.Text = "$ " + totalGastos.ToString();
-                        lblTotalIngresos.Text = "$ " + totalIngresos.ToString();
-                        lblsaldo.Text = "$ " + saldo.ToString();
-                        lblSaldoMain.Text = "$ " + saldo.ToString();
+                        lblTotalGastos.Text = "RD$" + totalGastos.ToString();
+                        lblTotalIngresos.Text = "RD$" + totalIngresos.ToString();
+                        lblsaldo.Text = "RD$" + saldo.ToString();
+                        lblSaldoMain.Text = "RD$" + saldo.ToString();
+                        lblTotalAhorros.Text = "RD$ " + totalAhorros.ToString();
 
                         lblsaldo.BackColor = saldo < 0 ? Color.Red : Color.RoyalBlue;
                         lblSaldoMain.ForeColor = saldo < 0 ? Color.DarkRed : Color.MidnightBlue;

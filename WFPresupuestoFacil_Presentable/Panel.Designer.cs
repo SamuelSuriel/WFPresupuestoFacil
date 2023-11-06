@@ -63,6 +63,8 @@
             label2 = new Label();
             label1 = new Label();
             panelResumenSaldo = new Panel();
+            lblTotalAhorros = new Label();
+            label18 = new Label();
             lblSaldoMain = new Label();
             label17 = new Label();
             tabIngresos = new TabPage();
@@ -500,12 +502,35 @@
             // panelResumenSaldo
             // 
             panelResumenSaldo.BackColor = Color.White;
+            panelResumenSaldo.Controls.Add(lblTotalAhorros);
+            panelResumenSaldo.Controls.Add(label18);
             panelResumenSaldo.Controls.Add(lblSaldoMain);
             panelResumenSaldo.Controls.Add(label17);
             panelResumenSaldo.Location = new Point(129, 155);
             panelResumenSaldo.Name = "panelResumenSaldo";
             panelResumenSaldo.Size = new Size(680, 324);
             panelResumenSaldo.TabIndex = 7;
+            // 
+            // lblTotalAhorros
+            // 
+            lblTotalAhorros.AutoSize = true;
+            lblTotalAhorros.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTotalAhorros.ForeColor = Color.Gray;
+            lblTotalAhorros.Location = new Point(179, 287);
+            lblTotalAhorros.Name = "lblTotalAhorros";
+            lblTotalAhorros.Size = new Size(0, 28);
+            lblTotalAhorros.TabIndex = 3;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label18.ForeColor = Color.Gray;
+            label18.Location = new Point(11, 287);
+            label18.Name = "label18";
+            label18.Size = new Size(162, 28);
+            label18.TabIndex = 2;
+            label18.Text = "Total ahorrado: ";
             // 
             // lblSaldoMain
             // 
@@ -1027,5 +1052,7 @@
         private Panel panelMainColor;
         private Clases.RoundButton roundButton2;
         private PictureBox pictureBox1;
+        private Label lblTotalAhorros;
+        private Label label18;
     }
 }
