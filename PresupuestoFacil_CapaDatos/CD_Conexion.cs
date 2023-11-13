@@ -6,7 +6,7 @@ namespace PresupuestoFacil_CapaDatos
 {
     public class CD_Conexion
     {
-        public SqlConnection Conexion = new SqlConnection(@"server=LEVHDLL; Database=PresupuestoFacilDb; integrated security =True; TrustServerCertificate=True");
+        public SqlConnection Conexion = new SqlConnection(@"server=SRSDELLI5; Database=PresupuestoFacilDb; integrated security =True; TrustServerCertificate=True");
      
         public SqlConnection AbrirConexion()
         {
